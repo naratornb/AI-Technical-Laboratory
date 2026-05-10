@@ -1,0 +1,121 @@
+activity_id,activity_name,city,category,price_aud,rating,suitable_for
+INT-AC-00001,Tokyo Food Tour,Tokyo,Food,60,4.0,Couple
+INT-AC-00002,Paris Cooking Class,Paris,Food,110,4.2,Group
+INT-AC-00003,Street Food Night Walk Brisbane,Brisbane,Food,80,4.7,Group
+INT-AC-00004,Sushi Making Workshop,Berlin,Food,135,4.4,Group
+INT-AC-00005,Wine & Cheese Tasting,Dubai,Food,70,4.2,Couple
+INT-AC-00006,Local Market Food Experience,Singapore,Food,65,4.2,Group
+INT-AC-00007,London History Walking Tour,London,Culture,50,4.4,Group
+INT-AC-00008,Museum Skip-the-Line Tour,New York,Culture,90,4.9,Solo
+INT-AC-00009,Sydney Art Gallery Visit,Sydney,Culture,50,4.3,Solo
+INT-AC-00010,Ancient Temple Morning Walk,Bangkok,Culture,45,5.0,Group
+INT-AC-00011,Old Town Architecture Tour,Barcelona,Culture,45,4.1,Group
+INT-AC-00012,Cultural Dance Show,Rome,Culture,100,4.8,Group
+INT-AC-00013,Traditional Craft Workshop,Amsterdam,Culture,70,4.7,Group
+INT-AC-00014,Photography City Tour,Seoul,Culture,110,4.4,Couple
+INT-AC-00015,Bali Bike Tour,Bali,Adventure,80,4.6,Group
+INT-AC-00016,River Kayaking Experience,Cape Town,Adventure,145,4.2,Group
+INT-AC-00017,Sunset Sailing Cruise,Kyoto,Adventure,85,4.7,Group
+INT-AC-00018,Jungle Trekking Adventure,Vienna,Adventure,70,4.9,Group
+INT-AC-00019,Desert Safari Experience,Istanbul,Adventure,250,4.3,Couple
+INT-AC-00020,Rock Climbing Lisbon,Lisbon,Adventure,75,4.4,Solo
+INT-AC-00021,Scuba Diving Lesson,Prague,Adventure,175,4.3,Couple
+INT-AC-00022,Hot Air Balloon Ride,Maldives,Adventure,405,4.6,Couple
+INT-AC-00023,Zip Line Forest Canopy,Zurich,Adventure,85,4.5,Solo
+INT-AC-00024,Stand-Up Paddleboard Tour,Los Angeles,Adventure,85,4.7,Solo
+INT-AC-00025,Harbour Sunset Cruise,Toronto,Relaxation,95,4.8,Couple
+INT-AC-00026,Spa & Wellness Half Day,Tokyo,Relaxation,110,4.8,Solo
+INT-AC-00027,Rooftop Bar Sunset Experience,Paris,Relaxation,65,4.3,Couple
+INT-AC-00028,City Panorama Cable Car,Brisbane,Relaxation,65,4.9,Couple
+INT-AC-00029,Berlin Food Tour,Berlin,Food,70,4.7,Couple
+INT-AC-00030,Dubai Cooking Class,Dubai,Food,160,4.5,Couple
+INT-AC-00031,Street Food Night Walk Singapore,Singapore,Food,45,4.2,Solo
+INT-AC-00032,Sushi Making Workshop,London,Food,145,4.6,Couple
+INT-AC-00033,Wine & Cheese Tasting,New York,Food,105,4.2,Couple
+INT-AC-00034,Local Market Food Experience,Sydney,Food,60,4.5,Solo
+INT-AC-00035,Bangkok History Walking Tour,Bangkok,Culture,90,4.1,Solo
+INT-AC-00036,Museum Skip-the-Line Tour,Barcelona,Culture,90,4.7,Solo
+INT-AC-00037,Rome Art Gallery Visit,Rome,Culture,50,4.4,Couple
+INT-AC-00038,Ancient Temple Morning Walk,Amsterdam,Culture,65,4.3,Solo
+INT-AC-00039,Old Town Architecture Tour,Seoul,Culture,85,4.7,Couple
+INT-AC-00040,Cultural Dance Show,Bali,Culture,100,4.1,Group
+INT-AC-00041,Traditional Craft Workshop,Cape Town,Culture,85,4.5,Couple
+INT-AC-00042,Photography City Tour,Kyoto,Culture,80,4.8,Solo
+INT-AC-00043,Vienna Bike Tour,Vienna,Adventure,80,4.3,Solo
+INT-AC-00044,River Kayaking Experience,Istanbul,Adventure,90,4.4,Group
+INT-AC-00045,Sunset Sailing Cruise,Lisbon,Adventure,150,5.0,Couple
+INT-AC-00046,Jungle Trekking Adventure,Prague,Adventure,135,4.3,Group
+INT-AC-00047,Desert Safari Experience,Maldives,Adventure,215,4.9,Couple
+INT-AC-00048,Rock Climbing Zurich,Zurich,Adventure,85,4.1,Solo
+INT-AC-00049,Scuba Diving Lesson,Los Angeles,Adventure,100,4.7,Couple
+INT-AC-00050,Hot Air Balloon Ride,Toronto,Adventure,445,4.5,Couple
+INT-AC-00051,Zip Line Forest Canopy,Tokyo,Adventure,80,4.7,Group
+INT-AC-00052,Stand-Up Paddleboard Tour,Paris,Adventure,60,4.5,Couple
+INT-AC-00053,Harbour Sunset Cruise,Brisbane,Relaxation,80,4.9,Couple
+INT-AC-00054,Spa & Wellness Half Day,Berlin,Relaxation,170,4.3,Solo
+INT-AC-00055,Rooftop Bar Sunset Experience,Dubai,Relaxation,70,4.9,Group
+INT-AC-00056,City Panorama Cable Car,Singapore,Relaxation,35,4.2,Solo
+INT-AC-00057,London Food Tour,London,Food,90,4.0,Solo
+INT-AC-00058,New York Cooking Class,New York,Food,110,4.6,Group
+INT-AC-00059,Street Food Night Walk Sydney,Sydney,Food,40,4.7,Group
+INT-AC-00060,Sushi Making Workshop,Bangkok,Food,115,4.1,Group
+INT-AC-00061,Wine & Cheese Tasting,Barcelona,Food,100,4.1,Couple
+INT-AC-00062,Local Market Food Experience,Rome,Food,45,4.7,Solo
+INT-AC-00063,Amsterdam History Walking Tour,Amsterdam,Culture,70,4.1,Group
+INT-AC-00064,Museum Skip-the-Line Tour,Seoul,Culture,55,4.8,Couple
+INT-AC-00065,Bali Art Gallery Visit,Bali,Culture,35,4.1,Couple
+INT-AC-00066,Ancient Temple Morning Walk,Cape Town,Culture,50,4.4,Group
+INT-AC-00067,Old Town Architecture Tour,Kyoto,Culture,45,4.7,Group
+INT-AC-00068,Cultural Dance Show,Vienna,Culture,60,4.4,Group
+INT-AC-00069,Traditional Craft Workshop,Istanbul,Culture,80,4.2,Group
+INT-AC-00070,Photography City Tour,Lisbon,Culture,85,4.4,Couple
+INT-AC-00071,Prague Bike Tour,Prague,Adventure,50,4.3,Solo
+INT-AC-00072,River Kayaking Experience,Maldives,Adventure,80,4.4,Group
+INT-AC-00073,Sunset Sailing Cruise,Zurich,Adventure,85,4.7,Couple
+INT-AC-00074,Jungle Trekking Adventure,Los Angeles,Adventure,70,4.9,Group
+INT-AC-00075,Desert Safari Experience,Toronto,Adventure,220,4.4,Couple
+INT-AC-00076,Rock Climbing Tokyo,Tokyo,Adventure,80,4.9,Solo
+INT-AC-00077,Scuba Diving Lesson,Paris,Adventure,110,4.4,Solo
+INT-AC-00078,Hot Air Balloon Ride,Brisbane,Adventure,315,4.9,Group
+INT-AC-00079,Zip Line Forest Canopy,Berlin,Adventure,100,4.4,Solo
+INT-AC-00080,Stand-Up Paddleboard Tour,Dubai,Adventure,55,4.2,Solo
+INT-AC-00081,Harbour Sunset Cruise,Singapore,Relaxation,60,4.6,Couple
+INT-AC-00082,Spa & Wellness Half Day,London,Relaxation,175,4.3,Couple
+INT-AC-00083,Rooftop Bar Sunset Experience,New York,Relaxation,75,4.5,Couple
+INT-AC-00084,City Panorama Cable Car,Sydney,Relaxation,35,5.0,Solo
+INT-AC-00085,Bangkok Food Tour,Bangkok,Food,70,4.1,Group
+INT-AC-00086,Barcelona Cooking Class,Barcelona,Food,165,4.9,Couple
+INT-AC-00087,Street Food Night Walk Rome,Rome,Food,40,4.9,Group
+INT-AC-00088,Sushi Making Workshop,Amsterdam,Food,135,4.6,Group
+INT-AC-00089,Wine & Cheese Tasting,Seoul,Food,115,4.7,Group
+INT-AC-00090,Local Market Food Experience,Bali,Food,45,4.2,Group
+INT-AC-00091,Cape Town History Walking Tour,Cape Town,Culture,50,4.3,Solo
+INT-AC-00092,Museum Skip-the-Line Tour,Kyoto,Culture,80,4.6,Couple
+INT-AC-00093,Vienna Art Gallery Visit,Vienna,Culture,45,4.9,Solo
+INT-AC-00094,Ancient Temple Morning Walk,Istanbul,Culture,30,4.5,Solo
+INT-AC-00095,Old Town Architecture Tour,Lisbon,Culture,45,4.5,Couple
+INT-AC-00096,Cultural Dance Show,Prague,Culture,70,4.9,Couple
+INT-AC-00097,Traditional Craft Workshop,Maldives,Culture,95,4.4,Group
+INT-AC-00098,Photography City Tour,Zurich,Culture,80,4.8,Couple
+INT-AC-00099,Los Angeles Bike Tour,Los Angeles,Adventure,80,5.0,Solo
+INT-AC-00100,River Kayaking Experience,Toronto,Adventure,140,4.3,Group
+INT-AC-00101,Sunset Sailing Cruise,Tokyo,Adventure,200,4.9,Group
+INT-AC-00102,Jungle Trekking Adventure,Paris,Adventure,75,4.9,Group
+INT-AC-00103,Desert Safari Experience,Brisbane,Adventure,235,4.3,Group
+INT-AC-00104,Rock Climbing Berlin,Berlin,Adventure,100,4.2,Group
+INT-AC-00105,Scuba Diving Lesson,Dubai,Adventure,155,4.5,Couple
+INT-AC-00106,Hot Air Balloon Ride,Singapore,Adventure,275,4.6,Group
+INT-AC-00107,Zip Line Forest Canopy,London,Adventure,70,4.0,Group
+INT-AC-00108,Stand-Up Paddleboard Tour,New York,Adventure,85,5.0,Solo
+INT-AC-00109,Harbour Sunset Cruise,Sydney,Relaxation,110,4.6,Group
+INT-AC-00110,Spa & Wellness Half Day,Bangkok,Relaxation,150,4.0,Couple
+INT-AC-00111,Rooftop Bar Sunset Experience,Barcelona,Relaxation,85,4.9,Couple
+INT-AC-00112,City Panorama Cable Car,Rome,Relaxation,55,4.6,Solo
+INT-AC-00113,Amsterdam Food Tour,Amsterdam,Food,100,4.1,Couple
+INT-AC-00114,Seoul Cooking Class,Seoul,Food,125,4.9,Group
+INT-AC-00115,Street Food Night Walk Bali,Bali,Food,55,4.2,Group
+INT-AC-00116,Sushi Making Workshop,Cape Town,Food,140,4.1,Couple
+INT-AC-00117,Wine & Cheese Tasting,Kyoto,Food,140,4.7,Couple
+INT-AC-00118,Local Market Food Experience,Vienna,Food,40,5.0,Solo
+INT-AC-00119,Istanbul History Walking Tour,Istanbul,Culture,60,4.0,Group
+INT-AC-00120,Museum Skip-the-Line Tour,Lisbon,Culture,90,4.9,Solo

@@ -1,0 +1,121 @@
+flight_id,airline,origin,destination,departure_datetime,cabin_class,price_aud
+INT-FL-00001,Etihad Airways,Paris,Vienna,2026-06-04 21:00,Premium Economy,350
+INT-FL-00002,United Airlines,Istanbul,Bangkok,2026-09-22 11:00,Economy,1000
+INT-FL-00003,Qantas,Cape Town,Berlin,2026-05-08 07:15,Economy,800
+INT-FL-00004,Qantas,Istanbul,Bangkok,2026-05-31 19:15,First,8650
+INT-FL-00005,Delta Airlines,Amsterdam,Bali,2026-11-06 15:00,Economy,1750
+INT-FL-00006,Japan Airlines,Los Angeles,Berlin,2026-08-14 08:15,Premium Economy,1600
+INT-FL-00007,Qantas,Singapore,Vienna,2026-10-27 20:45,Economy,1100
+INT-FL-00008,Etihad Airways,Paris,New York,2026-11-19 08:15,Business,3650
+INT-FL-00009,Japan Airlines,Prague,Istanbul,2026-07-25 10:30,Economy,800
+INT-FL-00010,Air France,Brisbane,Paris,2026-08-26 20:00,Business,5100
+INT-FL-00011,Swiss International,Zurich,Bangkok,2026-12-13 21:45,Business,2300
+INT-FL-00012,Air Canada,Lisbon,Paris,2026-08-07 06:00,Business,1100
+INT-FL-00013,Virgin Australia,Maldives,Istanbul,2026-08-16 07:15,First,8050
+INT-FL-00014,Delta Airlines,Kyoto,Prague,2026-07-02 19:45,Business,2400
+INT-FL-00015,Air Canada,Cape Town,Rome,2026-05-24 11:30,Economy,1350
+INT-FL-00016,Etihad Airways,Zurich,Cape Town,2026-10-23 07:45,Premium Economy,1100
+INT-FL-00017,Cathay Pacific,Barcelona,Sydney,2026-10-24 22:00,Economy,1600
+INT-FL-00018,Singapore Airlines,Bali,Seoul,2026-10-03 21:45,Economy,600
+INT-FL-00019,Thai Airways,Paris,London,2026-08-26 20:45,Premium Economy,1200
+INT-FL-00020,Air New Zealand,Tokyo,Prague,2026-06-21 15:00,Business,5700
+INT-FL-00021,Korean Air,Seoul,Brisbane,2026-05-29 20:00,First,4500
+INT-FL-00022,Etihad Airways,Cape Town,Zurich,2026-08-18 19:45,Premium Economy,2350
+INT-FL-00023,Air Asia,New York,Bali,2026-07-07 22:15,Economy,650
+INT-FL-00024,Air Canada,Sydney,Toronto,2026-12-16 14:00,Economy,1100
+INT-FL-00025,Virgin Australia,Los Angeles,Bangkok,2026-12-07 10:45,Premium Economy,2550
+INT-FL-00026,Cathay Pacific,Cape Town,Rome,2026-10-11 20:30,Premium Economy,1400
+INT-FL-00027,Virgin Australia,Zurich,New York,2026-10-28 07:30,Economy,1450
+INT-FL-00028,Swiss International,Zurich,Amsterdam,2026-06-17 21:00,First,1450
+INT-FL-00029,Cathay Pacific,Kyoto,Istanbul,2026-11-12 09:45,Business,1850
+INT-FL-00030,Air Canada,Los Angeles,Dubai,2026-06-19 08:45,Business,3650
+INT-FL-00031,Swiss International,Barcelona,Lisbon,2026-09-16 18:30,Premium Economy,850
+INT-FL-00032,United Airlines,Zurich,Toronto,2026-04-19 08:15,Business,6250
+INT-FL-00033,Korean Air,Maldives,Bangkok,2026-11-09 09:00,Business,4950
+INT-FL-00034,Etihad Airways,Singapore,Zurich,2026-04-24 16:00,Business,3850
+INT-FL-00035,British Airways,Rome,Seoul,2026-10-28 11:15,Economy,850
+INT-FL-00036,Swiss International,Brisbane,Lisbon,2026-08-02 21:15,Premium Economy,1550
+INT-FL-00037,Thai Airways,Bali,Prague,2026-04-05 20:30,Economy,1600
+INT-FL-00038,Delta Airlines,Singapore,Brisbane,2026-09-01 19:30,Business,5000
+INT-FL-00039,Swiss International,Bangkok,London,2026-05-25 13:45,Business,5850
+INT-FL-00040,Etihad Airways,Rome,Istanbul,2026-08-30 06:45,First,5850
+INT-FL-00041,Singapore Airlines,Tokyo,Istanbul,2026-12-11 15:15,Business,6100
+INT-FL-00042,Japan Airlines,Rome,New York,2026-06-10 09:00,Premium Economy,1800
+INT-FL-00043,Virgin Australia,Bali,Paris,2026-06-07 08:30,Economy,1150
+INT-FL-00044,Air France,Los Angeles,Seoul,2026-10-05 22:30,Economy,850
+INT-FL-00045,Etihad Airways,Sydney,Cape Town,2026-09-21 09:45,Business,2300
+INT-FL-00046,Korean Air,Dubai,Toronto,2026-10-21 17:00,Business,4600
+INT-FL-00047,Air Asia,Tokyo,Sydney,2026-10-06 14:45,Economy,1250
+INT-FL-00048,Korean Air,Berlin,Maldives,2026-09-15 13:00,Economy,1450
+INT-FL-00049,Air Canada,Zurich,Bangkok,2026-04-24 07:30,Economy,1500
+INT-FL-00050,Air Asia,Berlin,New York,2026-11-19 17:45,Economy,1700
+INT-FL-00051,Air Canada,Los Angeles,Dubai,2026-12-07 19:30,Premium Economy,900
+INT-FL-00052,Japan Airlines,Zurich,Rome,2026-07-30 17:00,Economy,550
+INT-FL-00053,Turkish Airlines,Rome,Vienna,2026-08-20 12:00,Economy,450
+INT-FL-00054,Japan Airlines,Brisbane,Maldives,2026-04-11 07:30,Premium Economy,1600
+INT-FL-00055,Japan Airlines,Dubai,Istanbul,2026-07-16 12:15,Economy,1150
+INT-FL-00056,Air New Zealand,Toronto,Dubai,2026-06-14 10:30,Economy,850
+INT-FL-00057,Emirates,Berlin,Maldives,2026-10-01 13:30,Economy,550
+INT-FL-00058,Singapore Airlines,Singapore,Sydney,2026-11-02 22:00,Economy,650
+INT-FL-00059,Turkish Airlines,Cape Town,Bali,2026-05-26 20:15,Premium Economy,2800
+INT-FL-00060,ANA,Paris,Los Angeles,2026-04-16 07:45,Economy,1300
+INT-FL-00061,Lufthansa,Seoul,Maldives,2026-11-14 08:00,Economy,1150
+INT-FL-00062,Qantas,Lisbon,Dubai,2026-09-14 18:30,Economy,1450
+INT-FL-00063,Air Canada,Kyoto,Lisbon,2026-05-29 12:45,Economy,1400
+INT-FL-00064,Cathay Pacific,New York,Seoul,2026-10-22 19:00,Business,4000
+INT-FL-00065,Thai Airways,Seoul,Barcelona,2026-06-18 21:00,Economy,700
+INT-FL-00066,Lufthansa,Brisbane,Seoul,2026-10-08 10:00,Business,5950
+INT-FL-00067,Lufthansa,Vienna,Barcelona,2026-11-03 07:30,Economy,500
+INT-FL-00068,Lufthansa,Bangkok,Rome,2026-07-18 10:45,Premium Economy,1550
+INT-FL-00069,Air Asia,Berlin,Rome,2026-08-21 13:45,Economy,500
+INT-FL-00070,Air New Zealand,Toronto,Lisbon,2026-04-14 14:00,Premium Economy,1400
+INT-FL-00071,Etihad Airways,Sydney,Zurich,2026-09-27 06:15,Business,2800
+INT-FL-00072,Swiss International,Istanbul,Maldives,2026-04-16 08:15,Economy,1250
+INT-FL-00073,Cathay Pacific,Seoul,Bali,2026-09-07 16:00,Economy,250
+INT-FL-00074,Air New Zealand,Dubai,Singapore,2026-05-12 14:45,Economy,1350
+INT-FL-00075,Delta Airlines,Cape Town,Lisbon,2026-07-20 22:00,Economy,1200
+INT-FL-00076,Etihad Airways,Seoul,Berlin,2026-12-06 22:30,Premium Economy,950
+INT-FL-00077,Air New Zealand,New York,Amsterdam,2026-07-14 15:15,Economy,800
+INT-FL-00078,Etihad Airways,Toronto,Sydney,2026-04-04 21:45,Economy,850
+INT-FL-00079,Air Asia,Dubai,Amsterdam,2026-12-13 17:00,Business,4600
+INT-FL-00080,Air Canada,Los Angeles,Paris,2026-05-10 16:45,Economy,1650
+INT-FL-00081,Air Canada,Amsterdam,Zurich,2026-10-25 06:30,Economy,300
+INT-FL-00082,Turkish Airlines,Lisbon,Bali,2026-05-25 13:45,Economy,1700
+INT-FL-00083,Qantas,Amsterdam,Kyoto,2026-09-06 16:15,Economy,1200
+INT-FL-00084,Qantas,Toronto,Singapore,2026-05-29 22:15,Premium Economy,1950
+INT-FL-00085,British Airways,Rome,Los Angeles,2026-06-14 14:15,Economy,850
+INT-FL-00086,Qantas,Lisbon,Dubai,2026-12-09 20:45,Economy,1650
+INT-FL-00087,Cathay Pacific,Prague,Lisbon,2026-09-09 10:45,Business,800
+INT-FL-00088,Etihad Airways,Cape Town,Bali,2026-04-29 17:00,Business,3950
+INT-FL-00089,Singapore Airlines,Bali,Paris,2026-08-25 08:00,Economy,1750
+INT-FL-00090,Swiss International,Lisbon,Kyoto,2026-04-22 20:15,Economy,1150
+INT-FL-00091,ANA,Lisbon,Cape Town,2026-05-02 20:00,Economy,1200
+INT-FL-00092,ANA,Zurich,Brisbane,2026-04-21 13:45,Premium Economy,2250
+INT-FL-00093,Air France,Kyoto,Lisbon,2026-08-23 18:45,Economy,1200
+INT-FL-00094,Singapore Airlines,Maldives,Lisbon,2026-09-19 08:30,Business,2450
+INT-FL-00095,Swiss International,Vienna,Maldives,2026-06-16 16:00,Economy,1700
+INT-FL-00096,Turkish Airlines,Maldives,Dubai,2026-10-18 10:00,Economy,1150
+INT-FL-00097,Cathay Pacific,Vienna,Amsterdam,2026-12-26 08:45,Business,1600
+INT-FL-00098,Turkish Airlines,Rome,Tokyo,2026-07-19 16:45,Economy,900
+INT-FL-00099,British Airways,New York,Dubai,2026-05-22 22:00,Economy,1200
+INT-FL-00100,British Airways,Toronto,Lisbon,2026-06-18 11:15,Premium Economy,2850
+INT-FL-00101,Delta Airlines,Singapore,Los Angeles,2026-10-04 13:45,Economy,1750
+INT-FL-00102,Delta Airlines,Bangkok,Toronto,2026-08-01 15:45,Economy,900
+INT-FL-00103,Virgin Australia,Rome,Maldives,2026-11-23 15:45,First,8400
+INT-FL-00104,Air France,Kyoto,Seoul,2026-06-10 14:00,Business,5200
+INT-FL-00105,Lufthansa,Rome,Vienna,2026-12-21 09:30,Business,850
+INT-FL-00106,Thai Airways,Toronto,Singapore,2026-12-19 10:45,Economy,700
+INT-FL-00107,Turkish Airlines,New York,Bali,2026-10-30 07:45,Business,5350
+INT-FL-00108,Swiss International,Rome,New York,2026-10-09 13:00,First,6350
+INT-FL-00109,Cathay Pacific,Berlin,Zurich,2026-06-10 07:30,Business,1550
+INT-FL-00110,United Airlines,Zurich,Dubai,2026-04-03 08:00,Economy,1000
+INT-FL-00111,Air Asia,London,Dubai,2026-12-27 19:00,Business,3800
+INT-FL-00112,Lufthansa,New York,Bangkok,2026-11-01 20:00,Economy,750
+INT-FL-00113,Air Asia,Cape Town,Lisbon,2026-12-20 13:15,Economy,1100
+INT-FL-00114,Air New Zealand,Seoul,Tokyo,2026-10-31 11:00,Economy,450
+INT-FL-00115,ANA,Rome,Brisbane,2026-12-16 06:45,Premium Economy,2350
+INT-FL-00116,Swiss International,Paris,Prague,2026-08-08 06:30,First,1300
+INT-FL-00117,Lufthansa,Rome,New York,2026-09-18 10:00,Business,4250
+INT-FL-00118,Air France,Vienna,Barcelona,2026-11-24 21:15,Business,950
+INT-FL-00119,Delta Airlines,Brisbane,Zurich,2026-07-13 07:15,Economy,600
+INT-FL-00120,ANA,Barcelona,Bangkok,2026-11-29 14:00,Economy,900
