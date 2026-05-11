@@ -3,7 +3,7 @@ import random
 from datetime import datetime, timedelta
 
 # Configuration
-NUM_RECORDS = 2500
+NUM_RECORDS = 250
 # City to Country Mapping for Data Integrity
 CITY_COUNTRY_MAP = {
     "New York": "USA", "London": "UK", "Tokyo": "Japan", "Paris": "France", 

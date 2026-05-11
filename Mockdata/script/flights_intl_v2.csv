@@ -1,0 +1,251 @@
+flight_id,airline,origin,origin_country,destination,destination_country,departure_datetime,arrival_datetime,duration_minutes,cabin_class,price_aud,seats_available,booking_class
+INT-FL-00001,Singapore Airlines,Dubai,UAE,Bangkok,Thailand,2026-08-15 18:30,2026-08-16 02:35,485,Business,3902,208,Saver
+INT-FL-00002,Delta,Barcelona,Spain,Rome,Italy,2026-04-13 16:18,2026-04-13 18:50,152,Business,3634,245,Flex
+INT-FL-00003,Lufthansa,San Francisco,USA,London,UK,2026-11-14 11:32,2026-11-14 17:07,335,Economy,2099,161,Saver
+INT-FL-00004,Lufthansa,Hong Kong,China,London,UK,2026-11-29 05:54,2026-11-29 17:36,702,First,6665,87,Saver
+INT-FL-00005,British Airways,Barcelona,Spain,Singapore,Singapore,2026-05-08 21:11,2026-05-09 03:10,359,First,7484,126,Saver
+INT-FL-00006,Qatar Airways,Cape Town,South Africa,Los Angeles,USA,2026-08-09 22:28,2026-08-10 05:54,446,Business,3371,134,Saver
+INT-FL-00007,Qatar Airways,Seoul,South Korea,Rome,Italy,2026-03-08 09:20,2026-03-08 16:52,452,Business,3591,275,Premium
+INT-FL-00008,Qatar Airways,Istanbul,Turkey,Tokyo,Japan,2026-11-17 00:14,2026-11-17 08:30,496,Business,3047,300,Premium
+INT-FL-00009,Emirates,San Francisco,USA,Zurich,Switzerland,2026-09-21 15:31,2026-09-22 02:09,638,Economy,819,58,Flex
+INT-FL-00010,Delta,Rome,Italy,Istanbul,Turkey,2026-10-05 23:58,2026-10-06 01:02,64,Business,2623,256,Flex
+INT-FL-00011,Emirates,Hong Kong,China,Barcelona,Spain,2026-09-23 15:35,2026-09-24 01:49,614,First,7381,219,Saver
+INT-FL-00012,Delta,Tokyo,Japan,Istanbul,Turkey,2026-05-02 14:20,2026-05-02 16:43,143,Economy,1951,235,Saver
+INT-FL-00013,Qatar Airways,London,UK,Seoul,South Korea,2026-02-26 22:50,2026-02-27 02:02,192,First,6113,157,Saver
+INT-FL-00014,Singapore Airlines,London,UK,Los Angeles,USA,2026-10-16 11:03,2026-10-16 19:06,483,Business,3256,218,Flex
+INT-FL-00015,British Airways,Los Angeles,USA,Zurich,Switzerland,2026-01-24 13:29,2026-01-24 19:18,349,First,6159,184,Premium
+INT-FL-00016,Singapore Airlines,Cape Town,South Africa,San Francisco,USA,2026-01-04 08:24,2026-01-04 16:15,471,First,6040,22,Saver
+INT-FL-00017,Lufthansa,Amsterdam,Netherlands,Zurich,Switzerland,2026-04-08 02:29,2026-04-08 16:03,814,Business,2739,34,Saver
+INT-FL-00018,Singapore Airlines,Amsterdam,Netherlands,Dubai,UAE,2026-01-11 09:52,2026-01-12 01:50,958,First,6601,80,Saver
+INT-FL-00019,Lufthansa,Barcelona,Spain,Cape Town,South Africa,2026-02-14 07:22,2026-02-14 12:48,326,Economy,1255,86,Saver
+INT-FL-00020,Delta,Rome,Italy,Barcelona,Spain,2026-10-30 22:36,2026-10-31 13:45,909,First,6192,189,Premium
+INT-FL-00021,British Airways,Los Angeles,USA,Hong Kong,China,2026-07-15 11:12,2026-07-15 21:54,642,Economy,1565,125,Premium
+INT-FL-00022,Singapore Airlines,Hong Kong,China,Tokyo,Japan,2026-05-02 06:25,2026-05-02 07:58,93,First,7235,134,Flex
+INT-FL-00023,Delta,Paris,France,London,UK,2026-12-16 11:39,2026-12-16 13:43,124,First,7454,175,Premium
+INT-FL-00024,Delta,Bangkok,Thailand,London,UK,2026-11-29 17:35,2026-11-30 01:13,458,Business,3515,77,Saver
+INT-FL-00025,Lufthansa,Berlin,Germany,Barcelona,Spain,2026-11-28 16:02,2026-11-28 18:30,148,Economy,1866,282,Saver
+INT-FL-00026,Delta,Bangkok,Thailand,San Francisco,USA,2026-03-19 11:45,2026-03-19 18:30,405,First,6589,77,Flex
+INT-FL-00027,Singapore Airlines,Cape Town,South Africa,Mumbai,India,2026-01-30 23:57,2026-01-31 15:26,929,Economy,1386,183,Saver
+INT-FL-00028,Emirates,Cape Town,South Africa,Bangkok,Thailand,2026-04-13 02:45,2026-04-13 11:46,541,Business,3292,72,Saver
+INT-FL-00029,Delta,Los Angeles,USA,Berlin,Germany,2026-11-14 23:43,2026-11-15 06:25,402,Business,3807,257,Saver
+INT-FL-00030,Delta,Istanbul,Turkey,Mumbai,India,2026-04-03 09:28,2026-04-03 22:59,811,Business,2533,232,Premium
+INT-FL-00031,Singapore Airlines,Paris,France,Istanbul,Turkey,2026-03-13 10:12,2026-03-13 12:46,154,Business,3161,249,Premium
+INT-FL-00032,Delta,Toronto,Canada,Zurich,Switzerland,2026-06-01 13:55,2026-06-01 17:28,213,Business,3485,197,Premium
+INT-FL-00033,Lufthansa,Seoul,South Korea,Rome,Italy,2026-04-12 12:15,2026-04-12 20:36,501,First,7198,42,Premium
+INT-FL-00034,Qatar Airways,Dubai,UAE,Tokyo,Japan,2026-09-01 14:19,2026-09-01 20:04,345,First,6634,179,Saver
+INT-FL-00035,Singapore Airlines,Rome,Italy,Barcelona,Spain,2026-04-27 07:16,2026-04-27 10:28,192,Economy,1769,225,Flex
+INT-FL-00036,Emirates,Cape Town,South Africa,Amsterdam,Netherlands,2026-03-06 23:57,2026-03-07 11:30,693,First,6505,150,Flex
+INT-FL-00037,Qatar Airways,Mumbai,India,Singapore,Singapore,2026-01-18 06:35,2026-01-18 10:38,243,Business,3195,199,Premium
+INT-FL-00038,British Airways,Bangkok,Thailand,Cape Town,South Africa,2026-09-01 19:41,2026-09-02 02:56,435,First,6386,248,Premium
+INT-FL-00039,Emirates,New York,USA,Toronto,Canada,2026-12-06 23:11,2026-12-07 05:33,382,Economy,1342,95,Flex
+INT-FL-00040,Singapore Airlines,Barcelona,Spain,Amsterdam,Netherlands,2026-07-06 07:52,2026-07-06 10:49,177,Economy,1500,71,Flex
+INT-FL-00041,Emirates,Toronto,Canada,Singapore,Singapore,2026-06-13 18:23,2026-06-14 07:39,796,First,6661,33,Premium
+INT-FL-00042,Singapore Airlines,Dubai,UAE,Singapore,Singapore,2026-03-10 21:14,2026-03-11 08:31,677,First,7201,296,Premium
+INT-FL-00043,Emirates,New York,USA,Amsterdam,Netherlands,2026-07-06 10:39,2026-07-06 13:47,188,First,6008,252,Premium
+INT-FL-00044,Emirates,Tokyo,Japan,Paris,France,2026-12-20 22:41,2026-12-21 08:00,559,Economy,1765,159,Saver
+INT-FL-00045,British Airways,Seoul,South Korea,Dubai,UAE,2026-12-02 12:12,2026-12-02 16:46,274,Economy,1506,209,Saver
+INT-FL-00046,British Airways,San Francisco,USA,Zurich,Switzerland,2026-06-13 19:28,2026-06-14 08:18,770,First,6517,253,Saver
+INT-FL-00047,Emirates,Cape Town,South Africa,Tokyo,Japan,2026-08-31 13:58,2026-08-31 17:23,205,First,6535,148,Premium
+INT-FL-00048,Singapore Airlines,Toronto,Canada,Bangkok,Thailand,2026-07-26 08:49,2026-07-26 20:56,727,First,6664,234,Saver
+INT-FL-00049,British Airways,Istanbul,Turkey,Barcelona,Spain,2026-03-07 08:46,2026-03-07 23:14,868,Economy,1651,224,Saver
+INT-FL-00050,British Airways,Rome,Italy,Amsterdam,Netherlands,2026-01-02 03:38,2026-01-02 15:34,716,First,7420,11,Saver
+INT-FL-00051,Delta,San Francisco,USA,Dubai,UAE,2026-11-12 21:38,2026-11-13 05:00,442,Economy,734,29,Premium
+INT-FL-00052,Singapore Airlines,London,UK,Tokyo,Japan,2026-09-01 02:42,2026-09-01 11:59,557,Economy,749,241,Flex
+INT-FL-00053,Emirates,London,UK,Hong Kong,China,2026-08-25 12:59,2026-08-25 19:44,405,First,7405,50,Saver
+INT-FL-00054,British Airways,Tokyo,Japan,Bangkok,Thailand,2026-10-24 12:07,2026-10-24 16:53,286,First,6520,27,Premium
+INT-FL-00055,Qatar Airways,Dubai,UAE,Istanbul,Turkey,2026-11-25 22:54,2026-11-26 09:11,617,First,6113,260,Premium
+INT-FL-00056,Lufthansa,Paris,France,Rome,Italy,2026-11-18 18:58,2026-11-19 04:15,557,Economy,786,83,Premium
+INT-FL-00057,Delta,London,UK,Berlin,Germany,2026-11-24 01:52,2026-11-24 10:42,530,Economy,1366,56,Saver
+INT-FL-00058,Lufthansa,Amsterdam,Netherlands,Paris,France,2026-05-01 07:05,2026-05-01 12:09,304,Business,2591,157,Saver
+INT-FL-00059,Delta,Paris,France,San Francisco,USA,2026-06-01 02:37,2026-06-01 06:54,257,Business,3588,78,Saver
+INT-FL-00060,Singapore Airlines,Berlin,Germany,Rome,Italy,2026-03-27 22:55,2026-03-28 06:52,477,First,6077,19,Premium
+INT-FL-00061,Lufthansa,Dubai,UAE,Los Angeles,USA,2026-12-22 03:56,2026-12-22 07:20,204,Business,3716,230,Saver
+INT-FL-00062,Delta,Tokyo,Japan,Bangkok,Thailand,2026-06-07 15:48,2026-06-08 05:34,826,First,6142,31,Flex
+INT-FL-00063,Singapore Airlines,Zurich,Switzerland,Los Angeles,USA,2026-07-06 01:16,2026-07-06 02:49,93,Economy,1436,279,Flex
+INT-FL-00064,Delta,Los Angeles,USA,Seoul,South Korea,2026-06-13 01:55,2026-06-13 08:29,394,First,6966,278,Saver
+INT-FL-00065,Singapore Airlines,Mumbai,India,Cape Town,South Africa,2026-03-29 05:43,2026-03-29 11:53,370,Business,2854,113,Flex
+INT-FL-00066,Lufthansa,Paris,France,Toronto,Canada,2026-07-04 20:35,2026-07-05 06:40,605,First,7213,105,Saver
+INT-FL-00067,Qatar Airways,Rome,Italy,Singapore,Singapore,2026-09-16 10:27,2026-09-16 13:08,161,Economy,1920,77,Premium
+INT-FL-00068,Delta,San Francisco,USA,Mumbai,India,2026-03-25 20:57,2026-03-26 12:51,954,First,7466,140,Flex
+INT-FL-00069,Lufthansa,Paris,France,Amsterdam,Netherlands,2026-08-26 02:01,2026-08-26 06:36,275,Business,3944,281,Flex
+INT-FL-00070,Lufthansa,Los Angeles,USA,Cape Town,South Africa,2026-04-15 09:15,2026-04-15 17:07,472,First,6845,296,Premium
+INT-FL-00071,Singapore Airlines,Los Angeles,USA,Hong Kong,China,2026-06-06 14:10,2026-06-07 04:22,852,Economy,1561,108,Flex
+INT-FL-00072,Lufthansa,Dubai,UAE,Amsterdam,Netherlands,2026-05-23 18:05,2026-05-24 08:49,884,First,6684,125,Premium
+INT-FL-00073,Delta,New York,USA,Istanbul,Turkey,2026-04-18 08:01,2026-04-18 09:34,93,Business,2811,50,Flex
+INT-FL-00074,Singapore Airlines,Singapore,Singapore,Barcelona,Spain,2026-10-21 21:40,2026-10-22 09:30,710,Economy,861,227,Saver
+INT-FL-00075,Lufthansa,Barcelona,Spain,Dubai,UAE,2026-12-14 06:44,2026-12-14 09:01,137,Business,3073,122,Flex
+INT-FL-00076,Lufthansa,London,UK,Toronto,Canada,2026-11-03 02:43,2026-11-03 06:06,203,First,6690,35,Premium
+INT-FL-00077,British Airways,Rome,Italy,Paris,France,2026-12-08 12:23,2026-12-08 16:34,251,First,6376,82,Flex
+INT-FL-00078,Qatar Airways,Amsterdam,Netherlands,Hong Kong,China,2026-01-17 21:54,2026-01-18 06:57,543,First,7267,47,Saver
+INT-FL-00079,Delta,San Francisco,USA,Amsterdam,Netherlands,2026-11-15 12:44,2026-11-15 22:57,613,Economy,1638,103,Premium
+INT-FL-00080,Singapore Airlines,Amsterdam,Netherlands,Istanbul,Turkey,2026-09-05 08:57,2026-09-05 11:27,150,First,6319,247,Premium
+INT-FL-00081,Emirates,Singapore,Singapore,Los Angeles,USA,2026-08-31 16:58,2026-09-01 03:37,639,Economy,613,224,Premium
+INT-FL-00082,British Airways,London,UK,Zurich,Switzerland,2026-03-25 05:37,2026-03-25 20:12,875,Economy,2030,194,Premium
+INT-FL-00083,Singapore Airlines,Mumbai,India,San Francisco,USA,2026-05-12 10:26,2026-05-12 18:29,483,Business,3564,75,Premium
+INT-FL-00084,Delta,Cape Town,South Africa,Singapore,Singapore,2026-12-13 21:34,2026-12-14 10:20,766,Business,3499,237,Premium
+INT-FL-00085,Singapore Airlines,Amsterdam,Netherlands,Paris,France,2026-10-17 22:00,2026-10-18 00:26,146,First,6448,175,Saver
+INT-FL-00086,Singapore Airlines,Los Angeles,USA,Tokyo,Japan,2026-09-13 19:56,2026-09-13 21:18,82,Business,2572,120,Flex
+INT-FL-00087,Delta,San Francisco,USA,Seoul,South Korea,2026-02-18 18:00,2026-02-19 06:01,721,Business,3311,221,Saver
+INT-FL-00088,British Airways,New York,USA,Singapore,Singapore,2026-05-24 15:39,2026-05-24 22:59,440,Economy,1330,263,Saver
+INT-FL-00089,Delta,Toronto,Canada,London,UK,2026-02-09 19:53,2026-02-10 09:11,798,Economy,1173,212,Flex
+INT-FL-00090,Singapore Airlines,Tokyo,Japan,Berlin,Germany,2026-10-25 05:06,2026-10-25 19:19,853,Economy,1538,190,Saver
+INT-FL-00091,British Airways,Berlin,Germany,Amsterdam,Netherlands,2026-09-14 10:07,2026-09-14 16:17,370,Business,3762,43,Premium
+INT-FL-00092,Delta,Hong Kong,China,San Francisco,USA,2026-03-06 16:33,2026-03-06 23:36,423,Business,2620,165,Flex
+INT-FL-00093,Delta,Bangkok,Thailand,Toronto,Canada,2026-05-08 23:26,2026-05-09 14:01,875,First,6741,239,Premium
+INT-FL-00094,British Airways,Singapore,Singapore,Tokyo,Japan,2026-06-17 18:28,2026-06-17 20:22,114,Economy,1801,209,Flex
+INT-FL-00095,Lufthansa,Tokyo,Japan,Seoul,South Korea,2026-02-01 04:01,2026-02-01 12:56,535,Economy,1841,71,Saver
+INT-FL-00096,Delta,Toronto,Canada,Dubai,UAE,2026-04-23 08:54,2026-04-23 15:11,377,Business,3825,113,Saver
+INT-FL-00097,Delta,New York,USA,Singapore,Singapore,2026-12-10 17:27,2026-12-10 22:07,280,First,6649,37,Flex
+INT-FL-00098,Lufthansa,New York,USA,Toronto,Canada,2026-01-25 21:49,2026-01-26 05:09,440,Economy,2054,195,Premium
+INT-FL-00099,Qatar Airways,Barcelona,Spain,Dubai,UAE,2026-10-17 20:03,2026-10-18 05:26,563,Business,2894,289,Premium
+INT-FL-00100,Lufthansa,Toronto,Canada,Istanbul,Turkey,2026-04-14 09:27,2026-04-14 15:41,374,Business,3697,104,Premium
+INT-FL-00101,British Airways,Zurich,Switzerland,Bangkok,Thailand,2026-01-20 14:43,2026-01-20 22:15,452,First,7308,92,Premium
+INT-FL-00102,Qatar Airways,Dubai,UAE,Barcelona,Spain,2026-10-23 08:01,2026-10-23 10:29,148,Economy,1056,153,Premium
+INT-FL-00103,Lufthansa,Hong Kong,China,Rome,Italy,2026-05-12 05:49,2026-05-12 10:03,254,Economy,1294,297,Premium
+INT-FL-00104,Delta,Barcelona,Spain,Cape Town,South Africa,2026-03-17 05:55,2026-03-17 14:56,541,First,6847,49,Saver
+INT-FL-00105,Qatar Airways,Los Angeles,USA,Toronto,Canada,2026-05-20 12:38,2026-05-21 03:04,866,First,7460,52,Premium
+INT-FL-00106,Qatar Airways,London,UK,Mumbai,India,2026-06-03 02:45,2026-06-03 06:15,210,Business,3584,271,Flex
+INT-FL-00107,British Airways,Cape Town,South Africa,Barcelona,Spain,2026-04-22 16:09,2026-04-22 22:43,394,Economy,614,254,Flex
+INT-FL-00108,British Airways,Barcelona,Spain,Hong Kong,China,2026-12-20 12:27,2026-12-21 01:45,798,Business,2615,65,Saver
+INT-FL-00109,Qatar Airways,Dubai,UAE,Berlin,Germany,2026-08-06 05:51,2026-08-06 14:36,525,First,7290,135,Flex
+INT-FL-00110,Singapore Airlines,Dubai,UAE,Rome,Italy,2026-02-27 20:45,2026-02-28 03:12,387,Business,3824,230,Premium
+INT-FL-00111,Lufthansa,Hong Kong,China,Amsterdam,Netherlands,2026-09-26 19:14,2026-09-26 21:44,150,Business,3246,211,Saver
+INT-FL-00112,Qatar Airways,Seoul,South Korea,Mumbai,India,2026-04-22 04:44,2026-04-22 10:38,354,Economy,858,85,Premium
+INT-FL-00113,Lufthansa,Seoul,South Korea,Singapore,Singapore,2026-10-16 09:25,2026-10-16 18:37,552,First,6460,59,Saver
+INT-FL-00114,British Airways,New York,USA,Hong Kong,China,2026-04-30 12:16,2026-04-30 14:48,152,Economy,690,42,Saver
+INT-FL-00115,Qatar Airways,Zurich,Switzerland,Bangkok,Thailand,2026-01-28 21:39,2026-01-29 11:23,824,Economy,955,79,Flex
+INT-FL-00116,Emirates,Mumbai,India,Cape Town,South Africa,2026-04-26 17:57,2026-04-27 01:26,449,Business,3348,231,Flex
+INT-FL-00117,Singapore Airlines,Toronto,Canada,Los Angeles,USA,2026-02-17 07:52,2026-02-17 09:35,103,First,6106,86,Premium
+INT-FL-00118,Emirates,Paris,France,New York,USA,2026-10-04 09:07,2026-10-04 13:29,262,Business,2585,222,Premium
+INT-FL-00119,Delta,London,UK,Zurich,Switzerland,2026-07-23 19:45,2026-07-24 06:28,643,Economy,1365,129,Saver
+INT-FL-00120,Singapore Airlines,Cape Town,South Africa,Seoul,South Korea,2026-11-08 04:34,2026-11-08 06:29,115,Business,2941,215,Saver
+INT-FL-00121,British Airways,Amsterdam,Netherlands,Singapore,Singapore,2026-09-11 06:50,2026-09-11 13:25,395,First,7168,32,Flex
+INT-FL-00122,Lufthansa,Toronto,Canada,Paris,France,2026-05-09 01:06,2026-05-09 02:57,111,Business,3281,211,Flex
+INT-FL-00123,Emirates,Los Angeles,USA,Singapore,Singapore,2026-06-06 08:47,2026-06-06 15:09,382,Business,3091,168,Saver
+INT-FL-00124,British Airways,New York,USA,Amsterdam,Netherlands,2026-07-27 09:33,2026-07-27 13:46,253,First,6391,197,Premium
+INT-FL-00125,Singapore Airlines,Los Angeles,USA,Cape Town,South Africa,2026-04-08 22:28,2026-04-09 11:07,759,Economy,603,113,Saver
+INT-FL-00126,Delta,London,UK,Seoul,South Korea,2026-09-09 12:22,2026-09-10 02:19,837,First,6090,88,Premium
+INT-FL-00127,Singapore Airlines,Singapore,Singapore,New York,USA,2026-07-10 11:54,2026-07-10 23:25,691,Business,2762,245,Flex
+INT-FL-00128,Lufthansa,Toronto,Canada,Bangkok,Thailand,2026-11-25 20:15,2026-11-26 02:17,362,First,7018,127,Flex
+INT-FL-00129,Singapore Airlines,Istanbul,Turkey,Tokyo,Japan,2026-12-30 22:32,2026-12-31 07:58,566,Economy,2042,64,Saver
+INT-FL-00130,British Airways,Berlin,Germany,Los Angeles,USA,2026-11-17 09:50,2026-11-17 20:07,617,Business,3332,5,Flex
+INT-FL-00131,Lufthansa,Los Angeles,USA,Cape Town,South Africa,2026-09-04 17:29,2026-09-04 19:19,110,First,6746,155,Premium
+INT-FL-00132,British Airways,Bangkok,Thailand,Toronto,Canada,2026-02-20 19:00,2026-02-21 02:39,459,First,7045,93,Flex
+INT-FL-00133,British Airways,Amsterdam,Netherlands,Tokyo,Japan,2026-09-26 18:31,2026-09-27 09:57,926,Economy,1389,44,Flex
+INT-FL-00134,Delta,Toronto,Canada,New York,USA,2026-07-12 05:07,2026-07-12 07:10,123,Business,2794,102,Flex
+INT-FL-00135,Singapore Airlines,New York,USA,Singapore,Singapore,2026-06-14 19:08,2026-06-15 03:57,529,First,6850,25,Premium
+INT-FL-00136,Singapore Airlines,Singapore,Singapore,Bangkok,Thailand,2026-07-13 21:38,2026-07-14 04:51,433,First,6528,270,Flex
+INT-FL-00137,Emirates,Cape Town,South Africa,London,UK,2026-10-07 00:53,2026-10-07 15:14,861,Economy,1186,241,Premium
+INT-FL-00138,Lufthansa,Amsterdam,Netherlands,Berlin,Germany,2026-05-16 18:42,2026-05-17 06:10,688,Economy,1759,300,Premium
+INT-FL-00139,Qatar Airways,Toronto,Canada,Barcelona,Spain,2026-05-25 19:53,2026-05-26 11:17,924,Economy,1505,80,Flex
+INT-FL-00140,Delta,Los Angeles,USA,Rome,Italy,2026-09-01 20:42,2026-09-01 21:46,64,Economy,1286,77,Saver
+INT-FL-00141,Lufthansa,Zurich,Switzerland,Los Angeles,USA,2026-11-04 00:35,2026-11-04 12:08,693,Business,3625,61,Premium
+INT-FL-00142,Emirates,Los Angeles,USA,Istanbul,Turkey,2026-08-15 17:11,2026-08-16 05:06,715,First,7134,126,Saver
+INT-FL-00143,Lufthansa,Barcelona,Spain,Bangkok,Thailand,2026-03-08 10:01,2026-03-08 21:37,696,Business,2964,85,Saver
+INT-FL-00144,Singapore Airlines,San Francisco,USA,Rome,Italy,2026-03-11 15:01,2026-03-11 17:37,156,Business,2743,254,Saver
+INT-FL-00145,British Airways,Barcelona,Spain,Mumbai,India,2026-03-31 16:23,2026-04-01 00:08,465,Economy,813,37,Saver
+INT-FL-00146,Lufthansa,Toronto,Canada,Paris,France,2026-11-13 04:53,2026-11-13 15:29,636,First,6535,183,Premium
+INT-FL-00147,Qatar Airways,Berlin,Germany,Bangkok,Thailand,2026-01-15 11:27,2026-01-15 20:28,541,First,7314,72,Premium
+INT-FL-00148,Singapore Airlines,Dubai,UAE,Mumbai,India,2026-04-18 03:15,2026-04-18 06:40,205,First,7338,276,Saver
+INT-FL-00149,Lufthansa,Los Angeles,USA,Berlin,Germany,2026-07-01 22:58,2026-07-02 07:02,484,First,6516,28,Saver
+INT-FL-00150,British Airways,San Francisco,USA,Mumbai,India,2026-05-11 00:55,2026-05-11 13:52,777,Business,3446,23,Flex
+INT-FL-00151,Emirates,Seoul,South Korea,Bangkok,Thailand,2026-10-29 23:40,2026-10-30 03:59,259,First,6144,61,Premium
+INT-FL-00152,Singapore Airlines,Hong Kong,China,Los Angeles,USA,2026-04-30 05:31,2026-04-30 18:59,808,Economy,1391,171,Flex
+INT-FL-00153,Emirates,Seoul,South Korea,Toronto,Canada,2026-05-01 09:24,2026-05-01 12:12,168,Economy,932,197,Premium
+INT-FL-00154,Lufthansa,Toronto,Canada,San Francisco,USA,2026-04-21 23:20,2026-04-22 00:26,66,Economy,1921,201,Saver
+INT-FL-00155,British Airways,Singapore,Singapore,Bangkok,Thailand,2026-11-30 13:18,2026-12-01 02:46,808,Business,3770,137,Saver
+INT-FL-00156,British Airways,New York,USA,Amsterdam,Netherlands,2026-03-06 06:45,2026-03-06 11:12,267,Business,3567,275,Premium
+INT-FL-00157,Emirates,Hong Kong,China,New York,USA,2026-05-09 15:37,2026-05-10 03:21,704,Economy,1751,61,Saver
+INT-FL-00158,Delta,Paris,France,San Francisco,USA,2026-03-24 00:56,2026-03-24 15:12,856,First,6013,178,Saver
+INT-FL-00159,Delta,London,UK,Berlin,Germany,2026-04-15 03:07,2026-04-15 05:43,156,First,6643,209,Premium
+INT-FL-00160,Singapore Airlines,San Francisco,USA,Istanbul,Turkey,2026-06-19 22:31,2026-06-20 04:37,366,Business,3463,294,Saver
+INT-FL-00161,Lufthansa,Bangkok,Thailand,Seoul,South Korea,2026-08-08 02:28,2026-08-08 16:28,840,First,6137,24,Premium
+INT-FL-00162,British Airways,Toronto,Canada,Tokyo,Japan,2026-05-10 11:01,2026-05-11 02:36,935,Economy,1646,32,Premium
+INT-FL-00163,Qatar Airways,Amsterdam,Netherlands,San Francisco,USA,2026-07-02 04:15,2026-07-02 10:38,383,First,6720,244,Premium
+INT-FL-00164,British Airways,New York,USA,London,UK,2026-08-29 00:50,2026-08-29 09:38,528,Economy,857,191,Saver
+INT-FL-00165,British Airways,Istanbul,Turkey,Seoul,South Korea,2026-09-09 20:50,2026-09-10 01:19,269,Economy,1160,11,Premium
+INT-FL-00166,Singapore Airlines,New York,USA,Zurich,Switzerland,2026-01-30 02:28,2026-01-30 18:15,947,Economy,881,131,Flex
+INT-FL-00167,Qatar Airways,Zurich,Switzerland,Toronto,Canada,2026-11-05 07:18,2026-11-05 08:18,60,Business,3519,53,Premium
+INT-FL-00168,Qatar Airways,Hong Kong,China,Zurich,Switzerland,2026-07-07 12:32,2026-07-08 02:21,829,Economy,1990,4,Saver
+INT-FL-00169,British Airways,Berlin,Germany,Hong Kong,China,2026-11-16 15:46,2026-11-16 17:03,77,First,6488,137,Flex
+INT-FL-00170,Singapore Airlines,Zurich,Switzerland,London,UK,2026-05-23 23:04,2026-05-24 02:57,233,First,6969,281,Flex
+INT-FL-00171,Delta,Tokyo,Japan,London,UK,2026-01-04 13:33,2026-01-04 20:38,425,Economy,1942,52,Flex
+INT-FL-00172,Qatar Airways,San Francisco,USA,Los Angeles,USA,2026-08-22 19:43,2026-08-22 21:48,125,Business,3384,21,Flex
+INT-FL-00173,Singapore Airlines,Toronto,Canada,Zurich,Switzerland,2026-10-05 08:28,2026-10-05 13:55,327,Economy,1229,198,Saver
+INT-FL-00174,Qatar Airways,Los Angeles,USA,Toronto,Canada,2026-07-04 16:09,2026-07-05 03:50,701,Business,2963,236,Saver
+INT-FL-00175,Emirates,Bangkok,Thailand,Amsterdam,Netherlands,2026-06-05 18:14,2026-06-05 20:15,121,Business,3753,96,Saver
+INT-FL-00176,Singapore Airlines,Paris,France,New York,USA,2026-06-17 03:40,2026-06-17 18:50,910,Economy,1354,128,Premium
+INT-FL-00177,British Airways,San Francisco,USA,Barcelona,Spain,2026-01-02 17:18,2026-01-02 21:35,257,Economy,725,32,Saver
+INT-FL-00178,Lufthansa,Amsterdam,Netherlands,Hong Kong,China,2026-09-20 13:29,2026-09-21 01:30,721,Economy,1636,198,Premium
+INT-FL-00179,Singapore Airlines,New York,USA,Bangkok,Thailand,2026-06-29 19:46,2026-06-30 05:42,596,Economy,746,11,Saver
+INT-FL-00180,Singapore Airlines,Singapore,Singapore,Mumbai,India,2026-12-28 06:23,2026-12-28 19:39,796,Business,3816,228,Premium
+INT-FL-00181,Lufthansa,Dubai,UAE,Mumbai,India,2026-01-20 13:54,2026-01-20 22:05,491,First,6831,274,Saver
+INT-FL-00182,Qatar Airways,Dubai,UAE,Berlin,Germany,2026-03-18 13:05,2026-03-18 19:06,361,First,6769,42,Saver
+INT-FL-00183,Singapore Airlines,Istanbul,Turkey,Toronto,Canada,2026-12-01 08:39,2026-12-01 18:32,593,Business,2584,220,Premium
+INT-FL-00184,Lufthansa,Toronto,Canada,Istanbul,Turkey,2026-06-22 12:11,2026-06-22 14:36,145,Business,2938,277,Saver
+INT-FL-00185,Lufthansa,Bangkok,Thailand,Singapore,Singapore,2026-06-18 12:40,2026-06-18 18:18,338,Business,3619,167,Flex
+INT-FL-00186,Lufthansa,Berlin,Germany,Istanbul,Turkey,2026-09-21 06:39,2026-09-21 11:48,309,Business,3492,196,Saver
+INT-FL-00187,Qatar Airways,Istanbul,Turkey,Paris,France,2026-04-26 08:56,2026-04-26 17:56,540,First,6177,170,Flex
+INT-FL-00188,Singapore Airlines,Mumbai,India,Istanbul,Turkey,2026-07-14 08:10,2026-07-14 17:44,574,Business,3783,134,Flex
+INT-FL-00189,Delta,Singapore,Singapore,Istanbul,Turkey,2026-10-02 22:18,2026-10-03 03:58,340,First,6154,79,Saver
+INT-FL-00190,Qatar Airways,Rome,Italy,Dubai,UAE,2026-08-01 20:27,2026-08-02 01:45,318,Economy,1177,47,Flex
+INT-FL-00191,Delta,Dubai,UAE,London,UK,2026-01-02 03:41,2026-01-02 13:36,595,Business,3286,50,Saver
+INT-FL-00192,British Airways,Mumbai,India,Los Angeles,USA,2026-01-19 01:23,2026-01-19 11:54,631,Economy,2034,85,Flex
+INT-FL-00193,Delta,San Francisco,USA,Cape Town,South Africa,2026-07-29 12:07,2026-07-29 18:18,371,Business,2806,89,Flex
+INT-FL-00194,Qatar Airways,Dubai,UAE,Cape Town,South Africa,2026-08-15 15:03,2026-08-15 20:51,348,First,7061,96,Saver
+INT-FL-00195,Emirates,San Francisco,USA,Rome,Italy,2026-04-26 09:23,2026-04-26 15:06,343,Business,3388,227,Flex
+INT-FL-00196,Delta,Tokyo,Japan,Rome,Italy,2026-04-23 11:21,2026-04-23 13:03,102,Business,3491,83,Flex
+INT-FL-00197,Emirates,Cape Town,South Africa,New York,USA,2026-12-15 20:15,2026-12-16 00:23,248,First,7310,59,Flex
+INT-FL-00198,Lufthansa,Rome,Italy,Berlin,Germany,2026-06-17 22:06,2026-06-18 13:05,899,Business,3802,211,Flex
+INT-FL-00199,British Airways,Los Angeles,USA,Tokyo,Japan,2026-06-27 15:51,2026-06-27 23:13,442,First,6892,117,Flex
+INT-FL-00200,British Airways,Toronto,Canada,Paris,France,2026-03-14 07:30,2026-03-14 14:49,439,Business,3942,96,Premium
+INT-FL-00201,Lufthansa,Tokyo,Japan,Mumbai,India,2026-07-25 19:17,2026-07-26 02:24,427,Economy,1024,273,Flex
+INT-FL-00202,Emirates,Barcelona,Spain,Tokyo,Japan,2026-03-08 21:57,2026-03-09 11:23,806,First,6478,220,Flex
+INT-FL-00203,Emirates,Hong Kong,China,Singapore,Singapore,2026-03-05 00:16,2026-03-05 07:28,432,Economy,1111,52,Premium
+INT-FL-00204,Lufthansa,Mumbai,India,Rome,Italy,2026-01-22 19:52,2026-01-23 09:55,843,Business,3811,45,Premium
+INT-FL-00205,Lufthansa,Cape Town,South Africa,Paris,France,2026-03-20 22:08,2026-03-21 13:30,922,First,7188,273,Premium
+INT-FL-00206,Lufthansa,Mumbai,India,Istanbul,Turkey,2026-02-05 15:28,2026-02-06 01:13,585,Business,2626,213,Premium
+INT-FL-00207,Singapore Airlines,Dubai,UAE,Zurich,Switzerland,2026-10-06 12:37,2026-10-06 14:26,109,First,6742,125,Premium
+INT-FL-00208,Delta,Berlin,Germany,Hong Kong,China,2026-11-18 17:53,2026-11-18 20:10,137,Economy,939,95,Flex
+INT-FL-00209,Qatar Airways,Amsterdam,Netherlands,Tokyo,Japan,2026-01-15 07:01,2026-01-15 19:00,719,First,6997,98,Premium
+INT-FL-00210,Qatar Airways,Amsterdam,Netherlands,Barcelona,Spain,2026-07-10 18:39,2026-07-11 00:17,338,Economy,1928,150,Saver
+INT-FL-00211,Delta,Mumbai,India,Istanbul,Turkey,2026-10-16 04:32,2026-10-16 06:47,135,First,6342,255,Premium
+INT-FL-00212,Emirates,London,UK,Hong Kong,China,2026-11-14 15:47,2026-11-14 17:54,127,Economy,1058,262,Saver
+INT-FL-00213,Qatar Airways,Amsterdam,Netherlands,Toronto,Canada,2026-12-04 17:28,2026-12-04 22:08,280,Business,3877,262,Premium
+INT-FL-00214,Emirates,London,UK,Toronto,Canada,2026-03-06 09:55,2026-03-06 23:40,825,First,7009,75,Saver
+INT-FL-00215,Emirates,Hong Kong,China,Cape Town,South Africa,2026-04-01 17:05,2026-04-01 21:24,259,Economy,1799,184,Flex
+INT-FL-00216,Qatar Airways,Tokyo,Japan,Seoul,South Korea,2026-01-25 23:45,2026-01-26 04:22,277,Economy,1230,226,Premium
+INT-FL-00217,Singapore Airlines,Tokyo,Japan,Seoul,South Korea,2026-04-12 22:45,2026-04-13 12:19,814,Economy,691,77,Premium
+INT-FL-00218,Singapore Airlines,Bangkok,Thailand,New York,USA,2026-06-14 15:23,2026-06-15 03:04,701,First,6970,33,Saver
+INT-FL-00219,Lufthansa,Mumbai,India,Barcelona,Spain,2026-05-31 21:42,2026-06-01 05:59,497,Business,3595,201,Saver
+INT-FL-00220,British Airways,Barcelona,Spain,Dubai,UAE,2026-08-30 21:05,2026-08-31 03:54,409,Economy,1879,266,Premium
+INT-FL-00221,Emirates,Barcelona,Spain,New York,USA,2026-01-26 01:27,2026-01-26 07:46,379,Business,3737,52,Saver
+INT-FL-00222,Singapore Airlines,New York,USA,San Francisco,USA,2026-01-01 12:04,2026-01-01 21:41,577,Economy,1884,282,Saver
+INT-FL-00223,Delta,Amsterdam,Netherlands,Tokyo,Japan,2026-06-07 12:16,2026-06-07 21:34,558,First,6043,26,Saver
+INT-FL-00224,Delta,Istanbul,Turkey,Berlin,Germany,2026-08-11 00:42,2026-08-11 05:20,278,Economy,1816,202,Flex
+INT-FL-00225,Delta,Barcelona,Spain,Singapore,Singapore,2026-11-08 19:55,2026-11-09 09:42,827,Economy,1066,122,Saver
+INT-FL-00226,Delta,Amsterdam,Netherlands,Cape Town,South Africa,2026-10-17 18:55,2026-10-18 09:23,868,Economy,1170,272,Premium
+INT-FL-00227,Lufthansa,Zurich,Switzerland,Barcelona,Spain,2026-02-19 00:48,2026-02-19 04:25,217,Economy,1631,177,Flex
+INT-FL-00228,Delta,Los Angeles,USA,Mumbai,India,2026-09-17 11:37,2026-09-17 17:20,343,Economy,2051,273,Saver
+INT-FL-00229,Qatar Airways,Singapore,Singapore,Cape Town,South Africa,2026-04-27 06:39,2026-04-27 17:48,669,First,6457,55,Premium
+INT-FL-00230,Delta,Cape Town,South Africa,Berlin,Germany,2026-11-25 09:37,2026-11-25 13:17,220,First,6318,113,Saver
+INT-FL-00231,Emirates,Hong Kong,China,Paris,France,2026-07-26 13:41,2026-07-26 19:14,333,Economy,1508,109,Saver
+INT-FL-00232,Singapore Airlines,Seoul,South Korea,Paris,France,2026-03-19 12:55,2026-03-19 17:37,282,Business,3559,39,Saver
+INT-FL-00233,Delta,Tokyo,Japan,Rome,Italy,2026-10-27 05:09,2026-10-27 18:29,800,First,6790,23,Flex
+INT-FL-00234,Emirates,Istanbul,Turkey,Berlin,Germany,2026-01-07 22:47,2026-01-08 02:13,206,Economy,1494,110,Saver
+INT-FL-00235,Qatar Airways,Istanbul,Turkey,Bangkok,Thailand,2026-04-09 13:01,2026-04-09 15:50,169,Economy,1378,131,Saver
+INT-FL-00236,Emirates,Barcelona,Spain,Amsterdam,Netherlands,2026-07-21 07:13,2026-07-21 08:17,64,First,7006,179,Flex
+INT-FL-00237,Delta,Zurich,Switzerland,Mumbai,India,2026-02-13 20:11,2026-02-14 11:11,900,First,7202,227,Flex
+INT-FL-00238,Lufthansa,Singapore,Singapore,Berlin,Germany,2026-09-23 17:08,2026-09-24 07:27,859,Economy,1534,293,Saver
+INT-FL-00239,Singapore Airlines,Istanbul,Turkey,Los Angeles,USA,2026-01-14 12:37,2026-01-15 03:23,886,First,6253,249,Premium
+INT-FL-00240,British Airways,Hong Kong,China,Rome,Italy,2026-07-01 12:41,2026-07-01 16:11,210,Economy,1343,98,Premium
+INT-FL-00241,British Airways,Seoul,South Korea,London,UK,2026-07-03 13:22,2026-07-04 02:12,770,Business,2803,51,Premium
+INT-FL-00242,Emirates,Toronto,Canada,Cape Town,South Africa,2026-10-16 18:44,2026-10-17 03:29,525,Business,3832,132,Flex
+INT-FL-00243,Emirates,Cape Town,South Africa,Los Angeles,USA,2026-06-20 22:18,2026-06-21 03:45,327,Business,3873,23,Flex
+INT-FL-00244,Qatar Airways,Bangkok,Thailand,Hong Kong,China,2026-05-25 15:20,2026-05-26 02:09,649,Economy,1661,196,Flex
+INT-FL-00245,Qatar Airways,Zurich,Switzerland,Dubai,UAE,2026-10-30 17:33,2026-10-31 09:11,938,Business,3888,288,Saver
+INT-FL-00246,British Airways,San Francisco,USA,Cape Town,South Africa,2026-10-10 05:05,2026-10-10 18:06,781,Economy,1203,241,Premium
+INT-FL-00247,Singapore Airlines,Seoul,South Korea,Los Angeles,USA,2026-11-10 03:41,2026-11-10 10:50,429,Economy,1108,268,Premium
+INT-FL-00248,Qatar Airways,Paris,France,Tokyo,Japan,2026-10-25 15:38,2026-10-25 18:14,156,First,6360,139,Premium
+INT-FL-00249,Qatar Airways,Seoul,South Korea,Berlin,Germany,2026-12-18 19:00,2026-12-18 23:41,281,Business,2751,261,Premium
+INT-FL-00250,Singapore Airlines,San Francisco,USA,Bangkok,Thailand,2026-03-17 17:04,2026-03-18 07:17,853,Economy,1023,153,Premium
