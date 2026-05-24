@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Itinerary Builder — Demo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface2: #F0EDE8;
+    --border: #E2DDD6;
+    --border2: #C8C2B8;
+    --text: #1A1814;
+    --text2: #6B6660;
+    --text3: #A09A94;
+    --accent: #1F4E3D;
+    --accent2: #2D7A5F;
+    --accent-light: #E8F2EE;
+    --amber: #C17B2A;
+    --amber-light: #FDF3E3;
+    --red: #B53A3A;
+    --red-light: #FDF0F0;
+    --blue: #2C5F8A;
+    --blue-light: #EDF3F9;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+    --shadow-lg: 0 4px 24px rgba(0,0,0,0.10);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--accent);
+    color: white;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo { font-family: 'DM Serif Display', serif; font-size: 22px; letter-spacing: -0.3px; }
+  .logo span { color: #6FCF97; }
+  .header-badge {
+    margin-left: auto;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* ── Layout ── */
+  .layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 0;
+    min-height: calc(100vh - 64px);
+  }
+
+  /* ── Left Panel ── */
+  .left-panel {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 64px);
+    position: sticky;
+    top: 64px;
+  }
+
+  .panel-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .panel-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .panel-subtitle { font-size: 13px; color: var(--text2); }
+
+  .panel-body { padding: 20px 24px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+
+  /* Input form */
+  .input-group { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 12px; font-weight: 500; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .main-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    background: var(--bg);
+    color: var(--text);
+    resize: none;
+    transition: border-color 0.15s;
+    min-height: 90px;
+  }
+  .main-input:focus { outline: none; border-color: var(--accent2); background: white; }
+  .main-input::placeholder { color: var(--text3); }
+
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  select, input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    background: var(--bg);
+    color: var(--text);
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  select:focus, input:focus { outline: none; border-color: var(--accent2); background: white; }
+
+  .chip-group { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    padding: 5px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text2);
+    transition: all 0.12s;
+    user-select: none;
+    font-weight: 400;
+  }
+  .chip:hover { border-color: var(--accent2); color: var(--accent); }
+  .chip.active { background: var(--accent-light); border-color: var(--accent2); color: var(--accent); font-weight: 500; }
+
+  .example-prompts { display: flex; flex-direction: column; gap: 6px; }
+  .example-chip {
+    padding: 8px 12px;
+    border: 1px dashed var(--border2);
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--text2);
+    transition: all 0.12s;
+    background: var(--bg);
+    font-style: italic;
+  }
+  .example-chip:hover { border-color: var(--accent2); color: var(--accent); background: var(--accent-light); border-style: solid; }
+
+  .generate-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    letter-spacing: 0.01em;
+  }
+  .generate-btn:hover:not(:disabled) { background: var(--accent2); transform: translateY(-1px); }
+  .generate-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .generate-btn.loading { background: var(--accent2); }
+
+  /* Spinner */
+  .spinner {
+    width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: none;
+  }
+  .loading .spinner { display: block; }
+  .loading .btn-text { opacity: 0.8; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* API key input */
+  .api-section {
+    border-top: 1px solid var(--border);
+    padding: 16px 24px;
+  }
+  .api-label { font-size: 11px; color: var(--text3); margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+  .api-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 12px;
+    background: var(--bg);
+    color: var(--text2);
+  }
+  .api-input:focus { outline: none; border-color: var(--accent2); }
+
+  /* ── Right Panel ── */
+  .right-panel {
+    padding: 32px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Empty state */
+  .empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 32px;
+    color: var(--text3);
+  }
+  .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.6; }
+  .empty-title { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--text2); margin-bottom: 8px; }
+  .empty-desc { font-size: 14px; line-height: 1.7; max-width: 380px; }
+
+  /* Pipeline steps */
+  .pipeline {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: none;
+  }
+  .pipeline.visible { display: block; }
+  .pipeline-title { font-size: 13px; font-weight: 500; color: var(--text2); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .steps { display: flex; gap: 0; }
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .step.done:not(:last-child)::after { background: var(--accent2); }
+  .step-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600;
+    color: var(--text3);
+    position: relative; z-index: 1;
+    transition: all 0.3s;
+  }
+  .step.active .step-dot { border-color: var(--accent2); color: var(--accent); background: var(--accent-light); animation: pulse 1s infinite; }
+  .step.done .step-dot { border-color: var(--accent2); background: var(--accent); color: white; }
+  .step-label { font-size: 11px; color: var(--text3); text-align: center; }
+  .step.active .step-label, .step.done .step-label { color: var(--accent); }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
+
+  /* Result cards */
+  .result-section { animation: fadeUp 0.4s ease-out; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+  .trip-header {
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .trip-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .trip-title { font-family: 'DM Serif Display', serif; font-size: 28px; margin-bottom: 8px; line-height: 1.2; }
+  .trip-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+  .trip-meta-item { display: flex; align-items: center; gap: 6px; font-size: 14px; opacity: 0.85; }
+  .trip-cost {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+  .trip-cost-amount { font-family: 'DM Serif Display', serif; font-size: 28px; }
+  .trip-cost-label { font-size: 13px; opacity: 0.75; }
+
+  /* Validation bar */
+  .validation-bar {
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .validation-bar.valid { background: var(--accent-light); border: 1px solid #A8D5C2; color: var(--accent); }
+  .validation-bar.warning { background: var(--amber-light); border: 1px solid #E8C97A; color: #7A4F0A; }
+  .validation-bar.error { background: var(--red-light); border: 1px solid #F0B4B4; color: var(--red); }
+  .validation-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .validation-msgs { display: flex; flex-direction: column; gap: 3px; }
+
+  /* Section header */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .section-label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    color: var(--text);
+  }
+  .count-badge {
+    background: var(--surface2);
+    color: var(--text2);
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Cards grid */
+  .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+  }
+  .card-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text3);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .leg-badge {
+    background: var(--blue-light);
+    color: var(--blue);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .card-main { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+  .card-sub { font-size: 13px; color: var(--text2); }
+  .card-price { 
+    margin-top: 10px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--accent);
+  }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
+  .tag {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--surface2);
+    color: var(--text2);
+  }
+  .tag.green { background: var(--accent-light); color: var(--accent); }
+  .tag.amber { background: var(--amber-light); color: var(--amber); }
+  .tag.red { background: var(--red-light); color: var(--red); }
+
+  /* Day timeline */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .day-block {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+  }
+  .day-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  .day-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .day-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 8px;
+  }
+  .day-block:last-child .day-line { display: none; }
+  .day-right { padding: 16px 0 24px 16px; }
+  .day-title { font-size: 16px; font-weight: 500; margin-bottom: 2px; }
+  .day-date { font-size: 12px; color: var(--text3); margin-bottom: 10px; }
+  .day-desc { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 12px; }
+  .activity-list { display: flex; flex-direction: column; gap: 8px; }
+  .activity-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: start;
+  }
+  .act-name { font-size: 14px; font-weight: 500; }
+  .act-meta { font-size: 12px; color: var(--text2); margin-top: 2px; }
+  .act-price { font-size: 14px; font-weight: 600; color: var(--accent); text-align: right; }
+  .act-note { font-size: 12px; color: var(--text3); font-style: italic; margin-top: 4px; grid-column: 1 / -1; }
+  .act-time { font-size: 11px; color: var(--accent2); font-weight: 500; background: var(--accent-light); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 4px; }
+
+  /* Budget breakdown */
+  .budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .budget-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .budget-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; }
+  .budget-amount { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--text); }
+  .budget-total {
+    background: var(--accent);
+    color: white;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .budget-total-label { font-size: 14px; opacity: 0.8; }
+  .budget-total-amount { font-family: 'DM Serif Display', serif; font-size: 28px; }
+
+  /* Description */
+  .description-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .description-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text2);
+    white-space: pre-wrap;
+  }
+  .description-text strong, .description-text b { color: var(--text); }
+
+  /* JSON output */
+  .json-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .json-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #1E2530;
+    color: #A8B5C8;
+    font-size: 13px;
+  }
+  .json-title { font-weight: 500; color: #CDD6E0; }
+  .copy-btn {
+    padding: 4px 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    color: #A8B5C8;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.12s;
+  }
+  .copy-btn:hover { background: rgba(255,255,255,0.18); color: white; }
+  .json-body {
+    background: #252D3A;
+    padding: 20px;
+    overflow-x: auto;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  pre {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #A8C5A0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Error state */
+  .error-card {
+    background: var(--red-light);
+    border: 1px solid #F0B4B4;
+    border-radius: var(--radius);
+    padding: 20px;
+    color: var(--red);
+  }
+  .error-title { font-weight: 600; margin-bottom: 6px; }
+  .error-msg { font-size: 14px; opacity: 0.85; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .left-panel { height: auto; position: static; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .budget-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Wander<span>AI</span></div>
+  <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-left:4px;">Itinerary Builder</div>
+  <div class="header-badge">Mock Data Demo</div>
+</header>
+
+<div class="layout">
+  <!-- ── LEFT PANEL ── -->
+  <aside class="left-panel">
+    <div class="panel-header">
+      <div class="panel-title">Plan your trip</div>
+      <div class="panel-subtitle">Describe your dream trip and let AI build the itinerary</div>
+    </div>
+
+    <div class="panel-body">
+      <!-- Main prompt -->
+      <div class="input-group">
+        <label>Tell us your trip in your own words</label>
+        <textarea id="tripInput" class="main-input" 
+          placeholder="e.g. 5 days Japan cherry blossom trip for 2 people, budget $8,000 AUD"
+        ></textarea>
+      </div>
+
+      <!-- Destination quick-select -->
+      <div class="input-group">
+        <label>Quick destination</label>
+        <div class="chip-group" id="destChips">
+          <div class="chip active" data-dest="Tokyo">🇯🇵 Tokyo</div>
+          <div class="chip" data-dest="Paris">🇫🇷 Paris</div>
+          <div class="chip" data-dest="Bangkok">🇹🇭 Bangkok</div>
+          <div class="chip" data-dest="Dubai">🇦🇪 Dubai</div>
+          <div class="chip" data-dest="Barcelona">🇪🇸 Barcelona</div>
+        </div>
+      </div>
+
+      <!-- Theme quick-select -->
+      <div class="input-group">
+        <label>Travel theme</label>
+        <div class="chip-group" id="themeChips">
+          <div class="chip active" data-theme="culture">🏛 Culture</div>
+          <div class="chip" data-theme="luxury">✨ Luxury</div>
+          <div class="chip" data-theme="romance">💝 Romance</div>
+          <div class="chip" data-theme="adventure">🏔 Adventure</div>
+          <div class="chip" data-theme="food">🍜 Food</div>
+          <div class="chip" data-theme="budget">💰 Budget</div>
+        </div>
+      </div>
+
+      <!-- Duration / Group -->
+      <div class="row2">
+        <div class="input-group">
+          <label>Duration (days)</label>
+          <input type="number" id="durationInput" value="5" min="2" max="21">
+        </div>
+        <div class="input-group">
+          <label>Travellers</label>
+          <select id="groupInput">
+            <option value="1">1 – Solo</option>
+            <option value="2" selected>2 – Couple</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Cabin class -->
+      <div class="input-group">
+        <label>Cabin class</label>
+        <select id="cabinInput">
+          <option value="Economy" selected>Economy</option>
+          <option value="Business">Business</option>
+          <option value="First">First</option>
+        </select>
+      </div>
+
+      <!-- Example prompts -->
+      <div class="input-group">
+        <label>Try an example</label>
+        <div class="example-prompts">
+          <div class="example-chip" onclick="useExample(this)">5 days Japan cherry blossom trip for 2, AUD $8,000</div>
+          <div class="example-chip" onclick="useExample(this)">7 days romantic Paris getaway for a couple, luxury hotels, budget $15,000 AUD</div>
+          <div class="example-chip" onclick="useExample(this)">4 days adventure trip to Bangkok for 2 people</div>
+          <div class="example-chip" onclick="useExample(this)">5 days luxury Dubai escape, business class, for 2</div>
+        </div>
+      </div>
+
+      <!-- Generate button -->
+      <button id="generateBtn" class="generate-btn" onclick="generateItinerary()">
+        <div class="spinner"></div>
+        <span class="btn-text">✦ Generate AI Itinerary</span>
+      </button>
+    </div>
+
+    <!-- API Key input -->
+    <div class="api-section">
+      <div class="api-label">🔑 Anthropic API Key (required)</div>
+      <input type="password" id="apiKeyInput" class="api-input" placeholder="sk-ant-...">
+    </div>
+  </aside>
+
+  <!-- ── RIGHT PANEL ── -->
+  <main class="right-panel" id="rightPanel">
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">✈️</div>
+      <div class="empty-title">Your AI itinerary awaits</div>
+      <div class="empty-desc">
+        Type a trip description on the left, select your preferences, and click Generate. 
+        The AI will query real inventory data and return a structured JSON itinerary 
+        ready for your builder page.
+      </div>
+    </div>
+
+    <!-- Pipeline indicator (hidden initially) -->
+    <div class="pipeline" id="pipelineBar">
+      <div class="pipeline-title">Processing pipeline</div>
+      <div class="steps">
+        <div class="step" id="s1"><div class="step-dot">1</div><div class="step-label">Parse request</div></div>
+        <div class="step" id="s2"><div class="step-dot">2</div><div class="step-label">Query inventory</div></div>
+        <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Build prompt</div></div>
+        <div class="step" id="s4"><div class="step-dot">4</div><div class="step-label">Call Claude</div></div>
+        <div class="step" id="s5"><div class="step-dot">5</div><div class="step-label">Validate</div></div>
+      </div>
+    </div>
+
+    <!-- Results container -->
+    <div id="results"></div>
+
+  </main>
+</div>
+
+<script>
+// ── Embedded inventory (pre-filtered mock data) ────────────────────────────────
+const INVENTORY_DATA = {"Tokyo":{"outbound":[{"flight_id":"INT-FL-00017","airline":"Emirates","origin":"New York","origin_country":"USA","destination":"Tokyo","destination_country":"Japan","departure_datetime":"2026-02-12 20:53","arrival_datetime":"2026-02-13 09:57","duration_minutes":784,"stops":0,"cabin_class":"Economy","price_aud":1276,"seats_available":36,"booking_class":"Premium","baggage_kg":20,"refundable":false,"dest_themes":"culture,food,urban,adventure,seasonal","dest_best_months":"3,4,10,11"},{"flight_id":"INT-FL-00025","airline":"Qatar Airways","origin":"Bangkok","origin_country":"Thailand","destination":"Tokyo","destination_country":"Japan","departure_datetime":"2026-05-16 07:31","arrival_datetime":"2026-05-16 23:02","duration_minutes":931,"stops":1,"cabin_class":"Economy","price_aud":1081,"seats_available":206,"booking_class":"Saver","baggage_kg":20,"refundable":true,"dest_themes":"culture,food,urban,adventure,seasonal","dest_best_months":"3,4,10,11"},{"flight_id":"INT-FL-00042","airline":"Delta","origin":"Singapore","origin_country":"Singapore","destination":"Tokyo","destination_country":"Japan","departure_datetime":"2026-09-02 01:50","arrival_datetime":"2026-09-02 07:40","duration_minutes":350,"stops":1,"cabin_class":"Economy","price_aud":1977,"seats_available":158,"booking_class":"Saver","baggage_kg":20,"refundable":true,"dest_themes":"culture,food,urban,adventure,seasonal","dest_best_months":"3,4,10,11"},{"flight_id":"INT-FL-00057","airline":"Singapore Airlines","origin":"Hong Kong","origin_country":"China","destination":"Tokyo","destination_country":"Japan","departure_datetime":"2026-06-26 20:06","arrival_datetime":"2026-06-27 07:12","duration_minutes":666,"stops":1,"cabin_class":"Economy","price_aud":2001,"seats_available":61,"booking_class":"Premium","baggage_kg":15,"refundable":false,"dest_themes":"culture,food,urban,adventure,seasonal","dest_best_months":"3,4,10,11"}],"inbound":[{"flight_id":"INT-FL-00149","airline":"Delta","origin":"Tokyo","origin_country":"Japan","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-08-02 16:16","arrival_datetime":"2026-08-02 17:53","duration_minutes":97,"stops":0,"cabin_class":"Economy","price_aud":685,"seats_available":161,"booking_class":"Flex","baggage_kg":30,"refundable":false,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"},{"flight_id":"INT-FL-00225","airline":"Delta","origin":"Tokyo","origin_country":"Japan","destination":"Bangkok","destination_country":"Thailand","departure_datetime":"2026-09-09 20:19","arrival_datetime":"2026-09-10 10:02","duration_minutes":823,"stops":0,"cabin_class":"Economy","price_aud":755,"seats_available":174,"booking_class":"Premium","baggage_kg":30,"refundable":false,"dest_themes":"culture,food,budget,adventure","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00312","airline":"Delta","origin":"Tokyo","origin_country":"Japan","destination":"Rome","destination_country":"Italy","departure_datetime":"2026-12-16 18:20","arrival_datetime":"2026-12-17 09:23","duration_minutes":903,"stops":0,"cabin_class":"Economy","price_aud":949,"seats_available":149,"booking_class":"Saver","baggage_kg":30,"refundable":true,"dest_themes":"history,culture,food,romance","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00324","airline":"Lufthansa","origin":"Tokyo","origin_country":"Japan","destination":"Rome","destination_country":"Italy","departure_datetime":"2026-10-21 17:39","arrival_datetime":"2026-10-22 06:45","duration_minutes":786,"stops":1,"cabin_class":"Economy","price_aud":1764,"seats_available":14,"booking_class":"Saver","baggage_kg":20,"refundable":true,"dest_themes":"history,culture,food,romance","dest_best_months":"4,5,6,9,10"}],"hotels":[{"hotel_id":"INT-HT-00043","hotel_name":"Sheraton Tokyo","city":"Tokyo","country":"Japan","property_type":"Boutique","star_rating":5,"room_type":"Standard","price_per_night_aud":943,"max_guests":4,"amenities":"gym,airport_shuttle,concierge,kids_club,bar,restaurant","breakfast_included":true,"cancellation_policy":"Partial","min_nights":3,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"hotel_id":"INT-HT-00096","hotel_name":"Hilton Tokyo","city":"Tokyo","country":"Japan","property_type":"Hotel","star_rating":5,"room_type":"Deluxe","price_per_night_aud":1045,"max_guests":2,"amenities":"wifi,concierge,kids_club,gym,pool,spa,pet_friendly","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"hotel_id":"INT-HT-00443","hotel_name":"Hilton Tokyo","city":"Tokyo","country":"Japan","property_type":"Boutique","star_rating":5,"room_type":"Deluxe","price_per_night_aud":912,"max_guests":2,"amenities":"kids_club,parking,pool,pet_friendly,wifi,concierge","breakfast_included":true,"cancellation_policy":"Non-refundable","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"hotel_id":"INT-HT-00392","hotel_name":"Hilton Tokyo","city":"Tokyo","country":"Japan","property_type":"Boutique","star_rating":5,"room_type":"Deluxe","price_per_night_aud":688,"max_guests":2,"amenities":"wifi,concierge,pet_friendly,airport_shuttle","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,adventure,urban,seasonal,culture","best_months":"3,4,10,11"}],"activities":[{"activity_id":"INT-AC-02439","activity_name":"Tokyo Museum Pass","city":"Tokyo","country":"Japan","category":"Culture","duration_hours":1,"price_aud":572,"rating":5.0,"suitable_for":"Couple","difficulty":"Challenging","min_age":12,"group_size_max":2,"booking_lead_days":3,"availability":"Year-round","theme_tags":"food,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"activity_id":"INT-AC-02288","activity_name":"Tokyo River Cruise","city":"Tokyo","country":"Japan","category":"Adventure","duration_hours":4,"price_aud":432,"rating":5.0,"suitable_for":"Group","difficulty":"Challenging","min_age":0,"group_size_max":50,"booking_lead_days":0,"availability":"Year-round","theme_tags":"food,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"activity_id":"INT-AC-01883","activity_name":"Tokyo Spa Day","city":"Tokyo","country":"Japan","category":"Luxury","duration_hours":3,"price_aud":534,"rating":5.0,"suitable_for":"Solo","difficulty":"Moderate","min_age":5,"group_size_max":6,"booking_lead_days":1,"availability":"Year-round","theme_tags":"food,luxury,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"activity_id":"INT-AC-00169","activity_name":"Tokyo Night Market Tour","city":"Tokyo","country":"Japan","category":"Food","duration_hours":1,"price_aud":265,"rating":4.9,"suitable_for":"Couple","difficulty":"Easy","min_age":18,"group_size_max":12,"booking_lead_days":7,"availability":"Year-round","theme_tags":"food,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"activity_id":"INT-AC-00325","activity_name":"Tokyo Street Food Walk","city":"Tokyo","country":"Japan","category":"Food","duration_hours":8,"price_aud":213,"rating":4.9,"suitable_for":"Couple","difficulty":"Challenging","min_age":0,"group_size_max":20,"booking_lead_days":7,"availability":"Year-round","theme_tags":"food,adventure,urban,seasonal,culture","best_months":"3,4,10,11"},{"activity_id":"INT-AC-00678","activity_name":"Tokyo Photography Tour","city":"Tokyo","country":"Japan","category":"Culture","duration_hours":3,"price_aud":66,"rating":4.9,"suitable_for":"Group","difficulty":"Moderate","min_age":0,"group_size_max":20,"booking_lead_days":0,"availability":"Year-round","theme_tags":"food,adventure,urban,seasonal,culture","best_months":"3,4,10,11"}]},"Paris":{"outbound":[{"flight_id":"INT-FL-00014","airline":"Lufthansa","origin":"New York","origin_country":"USA","destination":"Paris","destination_country":"France","departure_datetime":"2026-08-12 22:11","arrival_datetime":"2026-08-13 05:22","duration_minutes":431,"stops":0,"cabin_class":"Economy","price_aud":761,"seats_available":43,"booking_class":"Premium","baggage_kg":30,"refundable":true,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00119","airline":"Qatar Airways","origin":"Bangkok","origin_country":"Thailand","destination":"Paris","destination_country":"France","departure_datetime":"2026-11-10 01:17","arrival_datetime":"2026-11-10 08:10","duration_minutes":413,"stops":0,"cabin_class":"Economy","price_aud":1814,"seats_available":249,"booking_class":"Premium","baggage_kg":23,"refundable":true,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00290","airline":"Delta","origin":"Barcelona","origin_country":"Spain","destination":"Paris","destination_country":"France","departure_datetime":"2026-04-12 19:03","arrival_datetime":"2026-04-13 09:46","duration_minutes":883,"stops":0,"cabin_class":"Economy","price_aud":867,"seats_available":101,"booking_class":"Flex","baggage_kg":23,"refundable":true,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00342","airline":"Emirates","origin":"Dubai","origin_country":"UAE","destination":"Paris","destination_country":"France","departure_datetime":"2026-08-11 21:44","arrival_datetime":"2026-08-12 05:16","duration_minutes":452,"stops":0,"cabin_class":"Economy","price_aud":1210,"seats_available":148,"booking_class":"Flex","baggage_kg":23,"refundable":false,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"}],"inbound":[{"flight_id":"INT-FL-00001","airline":"Qatar Airways","origin":"Paris","origin_country":"France","destination":"New York","destination_country":"USA","departure_datetime":"2026-07-20 06:29","arrival_datetime":"2026-07-20 20:08","duration_minutes":819,"stops":0,"cabin_class":"Economy","price_aud":809,"seats_available":279,"booking_class":"Saver","baggage_kg":30,"refundable":true,"dest_themes":"culture,urban,shopping,food","dest_best_months":"3,4,5,9,10,11"},{"flight_id":"INT-FL-00029","airline":"Delta","origin":"Paris","origin_country":"France","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-03-26 01:15","arrival_datetime":"2026-03-26 06:45","duration_minutes":330,"stops":1,"cabin_class":"Economy","price_aud":1157,"seats_available":144,"booking_class":"Premium","baggage_kg":20,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00065","airline":"British Airways","origin":"Paris","origin_country":"France","destination":"San Francisco","destination_country":"USA","departure_datetime":"2026-05-15 19:43","arrival_datetime":"2026-05-16 09:43","duration_minutes":840,"stops":0,"cabin_class":"Economy","price_aud":1166,"seats_available":268,"booking_class":"Premium","baggage_kg":23,"refundable":true,"dest_themes":"urban,culture,food,adventure","dest_best_months":"9,10,11,3,4,5"},{"flight_id":"INT-FL-00292","airline":"British Airways","origin":"Paris","origin_country":"France","destination":"London","destination_country":"UK","departure_datetime":"2026-02-06 20:57","arrival_datetime":"2026-02-07 05:49","duration_minutes":532,"stops":2,"cabin_class":"Economy","price_aud":2083,"seats_available":202,"booking_class":"Flex","baggage_kg":15,"refundable":false,"dest_themes":"culture,history,urban,family","dest_best_months":"5,6,7,8,9"}],"hotels":[{"hotel_id":"INT-HT-00035","hotel_name":"Hyatt Paris","city":"Paris","country":"France","property_type":"Resort","star_rating":5,"room_type":"Standard","price_per_night_aud":1078,"max_guests":3,"amenities":"gym,wifi,pet_friendly,restaurant,spa,pool,concierge","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":3,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"hotel_id":"INT-HT-00117","hotel_name":"Sheraton Paris","city":"Paris","country":"France","property_type":"Boutique","star_rating":5,"room_type":"Standard","price_per_night_aud":780,"max_guests":2,"amenities":"pet_friendly,gym,airport_shuttle,bar,kids_club","breakfast_included":false,"cancellation_policy":"Partial","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"hotel_id":"INT-HT-01061","hotel_name":"InterContinental Paris","city":"Paris","country":"France","property_type":"Boutique","star_rating":5,"room_type":"Suite","price_per_night_aud":677,"max_guests":3,"amenities":"bar,airport_shuttle,parking,pet_friendly,kids_club","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":3,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"hotel_id":"INT-HT-00662","hotel_name":"Marriott Paris","city":"Paris","country":"France","property_type":"Resort","star_rating":5,"room_type":"Suite","price_per_night_aud":643,"max_guests":3,"amenities":"kids_club,pet_friendly,concierge,airport_shuttle,restaurant","breakfast_included":false,"cancellation_policy":"Partial","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"}],"activities":[{"activity_id":"INT-AC-00139","activity_name":"Paris Wine Tasting","city":"Paris","country":"France","category":"Food","duration_hours":8,"price_aud":163,"rating":5.0,"suitable_for":"Group","difficulty":"Moderate","min_age":18,"group_size_max":20,"booking_lead_days":7,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"activity_id":"INT-AC-00137","activity_name":"Paris Sunset Cruise","city":"Paris","country":"France","category":"Romance","duration_hours":7,"price_aud":462,"rating":5.0,"suitable_for":"Solo","difficulty":"Easy","min_age":12,"group_size_max":20,"booking_lead_days":7,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"activity_id":"INT-AC-02427","activity_name":"Paris Spa Day","city":"Paris","country":"France","category":"Luxury","duration_hours":8,"price_aud":517,"rating":5.0,"suitable_for":"Solo","difficulty":"Easy","min_age":0,"group_size_max":2,"booking_lead_days":3,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"activity_id":"INT-AC-01191","activity_name":"Paris Historic Walk","city":"Paris","country":"France","category":"Culture","duration_hours":4,"price_aud":101,"rating":5.0,"suitable_for":"Solo","difficulty":"Moderate","min_age":0,"group_size_max":2,"booking_lead_days":2,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"activity_id":"INT-AC-00775","activity_name":"Paris Historic Walk","city":"Paris","country":"France","category":"Culture","duration_hours":5,"price_aud":380,"rating":4.9,"suitable_for":"Solo","difficulty":"Moderate","min_age":0,"group_size_max":2,"booking_lead_days":7,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"},{"activity_id":"INT-AC-01008","activity_name":"Paris City Tour","city":"Paris","country":"France","category":"Culture","duration_hours":4,"price_aud":384,"rating":4.9,"suitable_for":"Solo","difficulty":"Moderate","min_age":5,"group_size_max":50,"booking_lead_days":0,"availability":"Year-round","theme_tags":"romance,culture,food,luxury","best_months":"4,5,6,9,10"}]},"Bangkok":{"outbound":[{"flight_id":"INT-FL-00013","airline":"Delta","origin":"Rome","origin_country":"Italy","destination":"Bangkok","destination_country":"Thailand","departure_datetime":"2026-05-25 20:13","arrival_datetime":"2026-05-26 07:36","duration_minutes":683,"stops":0,"cabin_class":"Economy","price_aud":1704,"seats_available":271,"booking_class":"Saver","baggage_kg":23,"refundable":false,"dest_themes":"culture,food,budget,adventure","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00046","airline":"British Airways","origin":"Cape Town","origin_country":"South Africa","destination":"Bangkok","destination_country":"Thailand","departure_datetime":"2026-11-21 16:54","arrival_datetime":"2026-11-22 01:10","duration_minutes":496,"stops":1,"cabin_class":"Economy","price_aud":1521,"seats_available":132,"booking_class":"Saver","baggage_kg":23,"refundable":false,"dest_themes":"culture,food,budget,adventure","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00083","airline":"British Airways","origin":"Hong Kong","origin_country":"China","destination":"Bangkok","destination_country":"Thailand","departure_datetime":"2026-04-10 09:39","arrival_datetime":"2026-04-10 23:23","duration_minutes":824,"stops":0,"cabin_class":"Economy","price_aud":1296,"seats_available":259,"booking_class":"Flex","baggage_kg":15,"refundable":false,"dest_themes":"culture,food,budget,adventure","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00175","airline":"Delta","origin":"Hong Kong","origin_country":"China","destination":"Bangkok","destination_country":"Thailand","departure_datetime":"2026-12-31 03:29","arrival_datetime":"2026-12-31 11:20","duration_minutes":471,"stops":0,"cabin_class":"Economy","price_aud":2061,"seats_available":170,"booking_class":"Flex","baggage_kg":30,"refundable":true,"dest_themes":"culture,food,budget,adventure","dest_best_months":"11,12,1,2,3"}],"inbound":[{"flight_id":"INT-FL-00025","airline":"Qatar Airways","origin":"Bangkok","origin_country":"Thailand","destination":"Tokyo","destination_country":"Japan","departure_datetime":"2026-05-16 07:31","arrival_datetime":"2026-05-16 23:02","duration_minutes":931,"stops":1,"cabin_class":"Economy","price_aud":1081,"seats_available":206,"booking_class":"Saver","baggage_kg":20,"refundable":true,"dest_themes":"culture,food,urban,adventure,seasonal","dest_best_months":"3,4,10,11"},{"flight_id":"INT-FL-00119","airline":"Qatar Airways","origin":"Bangkok","origin_country":"Thailand","destination":"Paris","destination_country":"France","departure_datetime":"2026-11-10 01:17","arrival_datetime":"2026-11-10 08:10","duration_minutes":413,"stops":0,"cabin_class":"Economy","price_aud":1814,"seats_available":249,"booking_class":"Premium","baggage_kg":23,"refundable":true,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00165","airline":"Qatar Airways","origin":"Bangkok","origin_country":"Thailand","destination":"Singapore","destination_country":"Singapore","departure_datetime":"2026-04-23 06:44","arrival_datetime":"2026-04-23 17:50","duration_minutes":666,"stops":1,"cabin_class":"Economy","price_aud":1839,"seats_available":172,"booking_class":"Premium","baggage_kg":15,"refundable":true,"dest_themes":"food,urban,family,culture","dest_best_months":"1,2,6,7"},{"flight_id":"INT-FL-00196","airline":"Lufthansa","origin":"Bangkok","origin_country":"Thailand","destination":"Mumbai","destination_country":"India","departure_datetime":"2026-03-23 16:59","arrival_datetime":"2026-03-23 19:18","duration_minutes":139,"stops":1,"cabin_class":"Economy","price_aud":1014,"seats_available":293,"booking_class":"Premium","baggage_kg":20,"refundable":true,"dest_themes":"culture,food,urban,budget","dest_best_months":"11,12,1,2,3"}],"hotels":[{"hotel_id":"INT-HT-00008","hotel_name":"Hyatt Bangkok","city":"Bangkok","country":"Thailand","property_type":"Boutique","star_rating":5,"room_type":"Standard","price_per_night_aud":761,"max_guests":2,"amenities":"kids_club,concierge,parking,pet_friendly,airport_shuttle,bar,gym","breakfast_included":true,"cancellation_policy":"Free","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,budget,adventure,culture","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00319","hotel_name":"Hyatt Bangkok","city":"Bangkok","country":"Thailand","property_type":"Hotel","star_rating":5,"room_type":"Standard","price_per_night_aud":1089,"max_guests":3,"amenities":"concierge,kids_club,wifi","breakfast_included":false,"cancellation_policy":"Free","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,budget,adventure,culture","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00091","hotel_name":"Four Seasons Bangkok","city":"Bangkok","country":"Thailand","property_type":"Boutique","star_rating":5,"room_type":"Deluxe","price_per_night_aud":1097,"max_guests":4,"amenities":"parking,concierge,airport_shuttle,kids_club,spa,wifi,restaurant","breakfast_included":true,"cancellation_policy":"Partial","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,budget,adventure,culture","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00391","hotel_name":"Sheraton Bangkok","city":"Bangkok","country":"Thailand","property_type":"Boutique","star_rating":5,"room_type":"Standard","price_per_night_aud":664,"max_guests":3,"amenities":"pool,wifi,pet_friendly,kids_club,gym,airport_shuttle","breakfast_included":false,"cancellation_policy":"Partial","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,budget,adventure,culture","best_months":"11,12,1,2,3"}],"activities":[{"activity_id":"INT-AC-00125","activity_name":"Bangkok Kayaking","city":"Bangkok","country":"Thailand","category":"Adventure","duration_hours":7,"price_aud":565,"rating":5.0,"suitable_for":"Solo","difficulty":"Easy","min_age":5,"group_size_max":2,"booking_lead_days":1,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00244","activity_name":"Bangkok Museum Pass","city":"Bangkok","country":"Thailand","category":"Culture","duration_hours":5,"price_aud":520,"rating":5.0,"suitable_for":"Family","difficulty":"Challenging","min_age":0,"group_size_max":50,"booking_lead_days":1,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00680","activity_name":"Bangkok Hiking Trail","city":"Bangkok","country":"Thailand","category":"Adventure","duration_hours":1,"price_aud":195,"rating":5.0,"suitable_for":"Group","difficulty":"Moderate","min_age":0,"group_size_max":50,"booking_lead_days":1,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00898","activity_name":"Bangkok Wine Tasting","city":"Bangkok","country":"Thailand","category":"Food","duration_hours":8,"price_aud":370,"rating":5.0,"suitable_for":"Solo","difficulty":"Challenging","min_age":0,"group_size_max":20,"booking_lead_days":3,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00937","activity_name":"Bangkok River Cruise","city":"Bangkok","country":"Thailand","category":"Adventure","duration_hours":6,"price_aud":213,"rating":5.0,"suitable_for":"Solo","difficulty":"Easy","min_age":5,"group_size_max":2,"booking_lead_days":7,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-02087","activity_name":"Bangkok Scuba Diving","city":"Bangkok","country":"Thailand","category":"Adventure","duration_hours":8,"price_aud":336,"rating":5.0,"suitable_for":"Group","difficulty":"Moderate","min_age":0,"group_size_max":2,"booking_lead_days":0,"availability":"Year-round","theme_tags":"budget,culture,adventure,food","best_months":"11,12,1,2,3"}]},"Dubai":{"outbound":[{"flight_id":"INT-FL-00032","airline":"Delta","origin":"Tokyo","origin_country":"Japan","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-01-27 05:38","arrival_datetime":"2026-01-27 15:56","duration_minutes":618,"stops":1,"cabin_class":"Business","price_aud":3380,"seats_available":65,"booking_class":"Saver","baggage_kg":23,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00055","airline":"Lufthansa","origin":"Cape Town","origin_country":"South Africa","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-04-02 21:52","arrival_datetime":"2026-04-03 02:56","duration_minutes":304,"stops":1,"cabin_class":"Business","price_aud":2946,"seats_available":238,"booking_class":"Premium","baggage_kg":23,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00109","airline":"Lufthansa","origin":"Cape Town","origin_country":"South Africa","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-04-02 21:21","arrival_datetime":"2026-04-02 23:28","duration_minutes":127,"stops":1,"cabin_class":"Business","price_aud":3623,"seats_available":166,"booking_class":"Flex","baggage_kg":23,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00127","airline":"Singapore Airlines","origin":"Toronto","origin_country":"Canada","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-02-19 17:23","arrival_datetime":"2026-02-20 01:53","duration_minutes":510,"stops":0,"cabin_class":"Business","price_aud":3062,"seats_available":28,"booking_class":"Flex","baggage_kg":15,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"}],"inbound":[{"flight_id":"INT-FL-00028","airline":"British Airways","origin":"Dubai","origin_country":"UAE","destination":"Mumbai","destination_country":"India","departure_datetime":"2026-06-27 21:10","arrival_datetime":"2026-06-27 23:20","duration_minutes":130,"stops":0,"cabin_class":"Business","price_aud":3612,"seats_available":154,"booking_class":"Premium","baggage_kg":15,"refundable":false,"dest_themes":"culture,food,urban,budget","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00095","airline":"Emirates","origin":"Dubai","origin_country":"UAE","destination":"Paris","destination_country":"France","departure_datetime":"2026-01-29 16:57","arrival_datetime":"2026-01-30 04:39","duration_minutes":702,"stops":1,"cabin_class":"Business","price_aud":3686,"seats_available":186,"booking_class":"Premium","baggage_kg":20,"refundable":true,"dest_themes":"romance,luxury,culture,food","dest_best_months":"4,5,6,9,10"},{"flight_id":"INT-FL-00114","airline":"Singapore Airlines","origin":"Dubai","origin_country":"UAE","destination":"Amsterdam","destination_country":"Netherlands","departure_datetime":"2026-03-20 19:15","arrival_datetime":"2026-03-21 00:04","duration_minutes":289,"stops":1,"cabin_class":"Business","price_aud":2735,"seats_available":142,"booking_class":"Premium","baggage_kg":20,"refundable":false,"dest_themes":"culture,history,urban,romance","dest_best_months":"4,5,6,7,8,9"},{"flight_id":"INT-FL-00195","airline":"British Airways","origin":"Dubai","origin_country":"UAE","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-09-30 01:34","arrival_datetime":"2026-09-30 15:19","duration_minutes":825,"stops":1,"cabin_class":"Business","price_aud":3600,"seats_available":111,"booking_class":"Saver","baggage_kg":15,"refundable":false,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"}],"hotels":[{"hotel_id":"INT-HT-00006","hotel_name":"Marriott Dubai","city":"Dubai","country":"UAE","property_type":"Hotel","star_rating":5,"room_type":"Suite","price_per_night_aud":680,"max_guests":3,"amenities":"pool,airport_shuttle,parking","breakfast_included":false,"cancellation_policy":"Free","min_nights":3,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"urban,shopping,adventure,luxury","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00123","hotel_name":"Marriott Dubai","city":"Dubai","country":"UAE","property_type":"Hotel","star_rating":5,"room_type":"Standard","price_per_night_aud":735,"max_guests":2,"amenities":"bar,kids_club,pool,airport_shuttle,pet_friendly,parking,restaurant","breakfast_included":false,"cancellation_policy":"Free","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"urban,shopping,adventure,luxury","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00152","hotel_name":"InterContinental Dubai","city":"Dubai","country":"UAE","property_type":"Hotel","star_rating":5,"room_type":"Standard","price_per_night_aud":718,"max_guests":2,"amenities":"bar,spa,pet_friendly,wifi,gym,concierge,pool","breakfast_included":true,"cancellation_policy":"Free","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"urban,shopping,adventure,luxury","best_months":"11,12,1,2,3"},{"hotel_id":"INT-HT-00180","hotel_name":"Sheraton Dubai","city":"Dubai","country":"UAE","property_type":"Resort","star_rating":5,"room_type":"Standard","price_per_night_aud":680,"max_guests":2,"amenities":"gym,restaurant,airport_shuttle,concierge","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"urban,shopping,adventure,luxury","best_months":"11,12,1,2,3"}],"activities":[{"activity_id":"INT-AC-00019","activity_name":"Dubai Museum Pass","city":"Dubai","country":"UAE","category":"Culture","duration_hours":8,"price_aud":508,"rating":5.0,"suitable_for":"Group","difficulty":"Easy","min_age":0,"group_size_max":6,"booking_lead_days":2,"availability":"Year-round","theme_tags":"luxury,shopping,adventure,urban,culture","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00403","activity_name":"Dubai Museum Pass","city":"Dubai","country":"UAE","category":"Culture","duration_hours":4,"price_aud":126,"rating":5.0,"suitable_for":"Couple","difficulty":"Moderate","min_age":0,"group_size_max":6,"booking_lead_days":7,"availability":"Year-round","theme_tags":"luxury,shopping,adventure,urban,culture","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00385","activity_name":"Dubai Cooking Class","city":"Dubai","country":"UAE","category":"Food","duration_hours":2,"price_aud":483,"rating":5.0,"suitable_for":"Group","difficulty":"Challenging","min_age":0,"group_size_max":2,"booking_lead_days":7,"availability":"Year-round","theme_tags":"food,luxury,adventure,urban,shopping","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-01052","activity_name":"Dubai Photography Tour","city":"Dubai","country":"UAE","category":"Culture","duration_hours":8,"price_aud":150,"rating":5.0,"suitable_for":"Couple","difficulty":"Challenging","min_age":0,"group_size_max":20,"booking_lead_days":3,"availability":"Year-round","theme_tags":"luxury,shopping,adventure,urban,culture","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-00978","activity_name":"Dubai Museum Pass","city":"Dubai","country":"UAE","category":"Culture","duration_hours":3,"price_aud":91,"rating":5.0,"suitable_for":"Group","difficulty":"Challenging","min_age":12,"group_size_max":50,"booking_lead_days":3,"availability":"Year-round","theme_tags":"luxury,shopping,adventure,urban,culture","best_months":"11,12,1,2,3"},{"activity_id":"INT-AC-01035","activity_name":"Dubai Art Gallery Pass","city":"Dubai","country":"UAE","category":"Culture","duration_hours":1,"price_aud":348,"rating":5.0,"suitable_for":"Solo","difficulty":"Challenging","min_age":0,"group_size_max":12,"booking_lead_days":7,"availability":"Year-round","theme_tags":"luxury,shopping,adventure,urban,culture","best_months":"11,12,1,2,3"}]},"Barcelona":{"outbound":[{"flight_id":"INT-FL-00027","airline":"Lufthansa","origin":"Rome","origin_country":"Italy","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-02-22 19:46","arrival_datetime":"2026-02-23 02:09","duration_minutes":383,"stops":0,"cabin_class":"Economy","price_aud":804,"seats_available":37,"booking_class":"Premium","baggage_kg":20,"refundable":false,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"},{"flight_id":"INT-FL-00068","airline":"British Airways","origin":"Amsterdam","origin_country":"Netherlands","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-05-15 05:59","arrival_datetime":"2026-05-15 12:47","duration_minutes":408,"stops":0,"cabin_class":"Economy","price_aud":833,"seats_available":33,"booking_class":"Flex","baggage_kg":30,"refundable":true,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"},{"flight_id":"INT-FL-00080","airline":"Qatar Airways","origin":"Rome","origin_country":"Italy","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-12-19 22:57","arrival_datetime":"2026-12-20 11:52","duration_minutes":775,"stops":0,"cabin_class":"Economy","price_aud":1846,"seats_available":122,"booking_class":"Premium","baggage_kg":20,"refundable":false,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"},{"flight_id":"INT-FL-00149","airline":"Delta","origin":"Tokyo","origin_country":"Japan","destination":"Barcelona","destination_country":"Spain","departure_datetime":"2026-08-02 16:16","arrival_datetime":"2026-08-02 17:53","duration_minutes":97,"stops":0,"cabin_class":"Economy","price_aud":685,"seats_available":161,"booking_class":"Flex","baggage_kg":30,"refundable":false,"dest_themes":"beach,culture,food,romance","dest_best_months":"5,6,9,10"}],"inbound":[{"flight_id":"INT-FL-00009","airline":"Lufthansa","origin":"Barcelona","origin_country":"Spain","destination":"Dubai","destination_country":"UAE","departure_datetime":"2026-04-12 16:13","arrival_datetime":"2026-04-12 21:44","duration_minutes":331,"stops":1,"cabin_class":"Economy","price_aud":1138,"seats_available":299,"booking_class":"Flex","baggage_kg":30,"refundable":false,"dest_themes":"luxury,shopping,adventure,urban","dest_best_months":"11,12,1,2,3"},{"flight_id":"INT-FL-00162","airline":"Lufthansa","origin":"Barcelona","origin_country":"Spain","destination":"Cape Town","destination_country":"South Africa","departure_datetime":"2026-09-08 20:49","arrival_datetime":"2026-09-09 09:25","duration_minutes":756,"stops":2,"cabin_class":"Economy","price_aud":1910,"seats_available":300,"booking_class":"Saver","baggage_kg":20,"refundable":false,"dest_themes":"adventure,nature,beach,culture","dest_best_months":"11,12,1,2,3,4"},{"flight_id":"INT-FL-00205","airline":"Singapore Airlines","origin":"Barcelona","origin_country":"Spain","destination":"Los Angeles","destination_country":"USA","departure_datetime":"2026-06-08 05:03","arrival_datetime":"2026-06-08 15:15","duration_minutes":612,"stops":0,"cabin_class":"Economy","price_aud":1079,"seats_available":294,"booking_class":"Flex","baggage_kg":23,"refundable":true,"dest_themes":"urban,beach,entertainment,food","dest_best_months":"3,4,5,9,10,11"},{"flight_id":"INT-FL-00274","airline":"Delta","origin":"Barcelona","origin_country":"Spain","destination":"London","destination_country":"UK","departure_datetime":"2026-05-08 21:38","arrival_datetime":"2026-05-09 03:54","duration_minutes":376,"stops":0,"cabin_class":"Economy","price_aud":2036,"seats_available":5,"booking_class":"Saver","baggage_kg":30,"refundable":false,"dest_themes":"culture,history,urban,family","dest_best_months":"5,6,7,8,9"}],"hotels":[{"hotel_id":"INT-HT-00113","hotel_name":"Four Seasons Barcelona","city":"Barcelona","country":"Spain","property_type":"Boutique","star_rating":5,"room_type":"Standard","price_per_night_aud":1098,"max_guests":3,"amenities":"concierge,parking,pet_friendly","breakfast_included":true,"cancellation_policy":"Non-refundable","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,beach,romance,culture","best_months":"5,6,9,10"},{"hotel_id":"INT-HT-00694","hotel_name":"Hyatt Barcelona","city":"Barcelona","country":"Spain","property_type":"Hotel","star_rating":5,"room_type":"Suite","price_per_night_aud":896,"max_guests":4,"amenities":"bar,concierge,pool,parking","breakfast_included":false,"cancellation_policy":"Free","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,beach,romance,culture","best_months":"5,6,9,10"},{"hotel_id":"INT-HT-00355","hotel_name":"Hilton Barcelona","city":"Barcelona","country":"Spain","property_type":"Hotel","star_rating":5,"room_type":"Suite","price_per_night_aud":922,"max_guests":2,"amenities":"kids_club,airport_shuttle,spa,pool,gym,restaurant,pet_friendly","breakfast_included":true,"cancellation_policy":"Partial","min_nights":1,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,beach,romance,culture","best_months":"5,6,9,10"},{"hotel_id":"INT-HT-00339","hotel_name":"Four Seasons Barcelona","city":"Barcelona","country":"Spain","property_type":"Resort","star_rating":5,"room_type":"Standard","price_per_night_aud":841,"max_guests":2,"amenities":"airport_shuttle,bar,spa,pet_friendly,concierge,restaurant","breakfast_included":false,"cancellation_policy":"Non-refundable","min_nights":2,"availability_start":"2026-01-01","availability_end":"2026-12-31","theme_tags":"food,luxury,beach,romance,culture","best_months":"5,6,9,10"}],"activities":[{"activity_id":"INT-AC-00804","activity_name":"Barcelona Hiking Trail","city":"Barcelona","country":"Spain","category":"Adventure","duration_hours":2,"price_aud":532,"rating":5.0,"suitable_for":"Family","difficulty":"Moderate","min_age":0,"group_size_max":12,"booking_lead_days":2,"availability":"Year-round","theme_tags":"food,beach,adventure,romance,culture","best_months":"5,6,9,10"},{"activity_id":"INT-AC-01323","activity_name":"Barcelona Night Market Tour","city":"Barcelona","country":"Spain","category":"Food","duration_hours":1,"price_aud":468,"rating":5.0,"suitable_for":"Group","difficulty":"Easy","min_age":0,"group_size_max":12,"booking_lead_days":1,"availability":"Year-round","theme_tags":"beach,romance,culture,food","best_months":"5,6,9,10"},{"activity_id":"INT-AC-01045","activity_name":"Barcelona River Cruise","city":"Barcelona","country":"Spain","category":"Adventure","duration_hours":3,"price_aud":163,"rating":5.0,"suitable_for":"Couple","difficulty":"Moderate","min_age":0,"group_size_max":50,"booking_lead_days":7,"availability":"Year-round","theme_tags":"food,beach,adventure,romance,culture","best_months":"5,6,9,10"},{"activity_id":"INT-AC-02382","activity_name":"Barcelona Sunset Cruise","city":"Barcelona","country":"Spain","category":"Romance","duration_hours":7,"price_aud":542,"rating":5.0,"suitable_for":"Couple","difficulty":"Moderate","min_age":18,"group_size_max":20,"booking_lead_days":3,"availability":"Year-round","theme_tags":"beach,romance,culture,food","best_months":"5,6,9,10"},{"activity_id":"INT-AC-01615","activity_name":"Barcelona Historic Walk","city":"Barcelona","country":"Spain","category":"Culture","duration_hours":6,"price_aud":558,"rating":5.0,"suitable_for":"Family","difficulty":"Challenging","min_age":0,"group_size_max":6,"booking_lead_days":3,"availability":"Year-round","theme_tags":"beach,romance,culture,food","best_months":"5,6,9,10"},{"activity_id":"INT-AC-00923","activity_name":"Barcelona Night Market Tour","city":"Barcelona","country":"Spain","category":"Food","duration_hours":3,"price_aud":227,"rating":5.0,"suitable_for":"Couple","difficulty":"Easy","min_age":18,"group_size_max":6,"booking_lead_days":3,"availability":"Year-round","theme_tags":"beach,romance,culture,food","best_months":"5,6,9,10"}]}};
+
+// ── Chip interactions ──────────────────────────────────────────────────────────
+let selectedDest = 'Tokyo';
+let selectedTheme = 'culture';
+
+document.querySelectorAll('#destChips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('#destChips .chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    selectedDest = chip.dataset.dest;
+    updatePrompt();
+  });
+});
+
+document.querySelectorAll('#themeChips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('#themeChips .chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    selectedTheme = chip.dataset.theme;
+    updatePrompt();
+  });
+});
+
+function updatePrompt() {
+  const dur = document.getElementById('durationInput').value;
+  const grp = document.getElementById('groupInput').value;
+  const cabin = document.getElementById('cabinInput').value;
+  const grpLabel = grp == 1 ? 'solo' : `for ${grp} people`;
+  const cabinNote = cabin !== 'Economy' ? `, ${cabin} class` : '';
+  document.getElementById('tripInput').value =
+    `${dur} days ${selectedTheme} trip to ${selectedDest} ${grpLabel}${cabinNote}`;
+}
+
+document.getElementById('durationInput').addEventListener('input', updatePrompt);
+document.getElementById('groupInput').addEventListener('change', updatePrompt);
+document.getElementById('cabinInput').addEventListener('change', updatePrompt);
+updatePrompt();
+
+function useExample(el) {
+  document.getElementById('tripInput').value = el.textContent;
+}
+
+// ── Pipeline steps ────────────────────────────────────────────────────────────
+function setStep(n) {
+  for (let i = 1; i <= 5; i++) {
+    const s = document.getElementById('s'+i);
+    if (i < n) { s.className = 'step done'; s.querySelector('.step-dot').textContent = '✓'; }
+    else if (i === n) { s.className = 'step active'; s.querySelector('.step-dot').textContent = i; }
+    else { s.className = 'step'; s.querySelector('.step-dot').textContent = i; }
+  }
+}
+
+// ── Inventory query (client-side) ─────────────────────────────────────────────
+function detectDest(text) {
+  const t = text.toLowerCase();
+  const map = { tokyo: 'Tokyo', japan: 'Tokyo', paris: 'Paris', france: 'Paris',
+                bangkok: 'Bangkok', thailand: 'Bangkok', dubai: 'Dubai', uae: 'Dubai',
+                barcelona: 'Barcelona', spain: 'Barcelona' };
+  for (const [k, v] of Object.entries(map)) {
+    if (t.includes(k)) return v;
+  }
+  return selectedDest;
+}
+
+function getInventoryContext(dest, cabin) {
+  const inv = INVENTORY_DATA[dest];
+  if (!inv) return null;
+  // Filter by cabin class or return all
+  const outbound = inv.outbound.filter(f => f.cabin_class === cabin || cabin === 'Economy');
+  const inbound  = inv.inbound.filter(f => f.cabin_class === cabin || cabin === 'Economy');
+  return { outbound: outbound.slice(0,4), inbound: inbound.slice(0,4),
+           hotels: inv.hotels, activities: inv.activities };
+}
+
+// ── Main generation logic ─────────────────────────────────────────────────────
+async function generateItinerary() {
+  const userInput = document.getElementById('tripInput').value.trim();
+  const apiKey = document.getElementById('apiKeyInput').value.trim();
+  const duration = parseInt(document.getElementById('durationInput').value) || 5;
+  const group = parseInt(document.getElementById('groupInput').value) || 2;
+  const cabin = document.getElementById('cabinInput').value;
+
+  if (!userInput) { alert('Please describe your trip first.'); return; }
+  if (!apiKey) { alert('Please enter your Anthropic API key.'); return; }
+
+  // UI: loading state
+  const btn = document.getElementById('generateBtn');
+  btn.disabled = true; btn.classList.add('loading');
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('pipelineBar').classList.add('visible');
+  document.getElementById('results').innerHTML = '';
+
+  try {
+    // Step 1 – Parse
+    setStep(1); await sleep(400);
+
+    const dest = detectDest(userInput);
+
+    // Step 2 – Query inventory
+    setStep(2); await sleep(400);
+    const inventory = getInventoryContext(dest, cabin);
+    if (!inventory) throw new Error(`No inventory found for destination: ${dest}`);
+
+    // Step 3 – Build prompt
+    setStep(3); await sleep(300);
+
+    const systemPrompt = `You are an expert travel itinerary planner for a travel agency.
+Select the best flights, hotels, and activities from the provided inventory and generate a complete structured itinerary.
+
+CRITICAL RULES:
+1. Return ONLY a single valid JSON object — no markdown fences, no explanation.
+2. All IDs (flight_id, hotel_id, activity_id) MUST come exactly from the provided inventory.
+3. Do NOT invent prices, IDs, or properties not in the inventory.
+4. The "description" field is a beautifully written human-readable markdown itinerary with an intro and ## Day 1, ## Day 2, etc sections.
+5. budget_breakdown.total_aud must equal flights + accommodation + activities + meals + transport.
+6. Days array must have exactly ${duration} entries.
+7. Match theme, group size (${group} people), cabin class (${cabin}), and budget from the user request.`;
+
+    const userPrompt = `USER REQUEST: "${userInput}"
+
+PARSED: destination=${dest}, duration=${duration} days, group=${group} people, cabin=${cabin}
+
+INVENTORY:
+OUTBOUND FLIGHTS: ${JSON.stringify(inventory.outbound)}
+RETURN FLIGHTS: ${JSON.stringify(inventory.inbound)}
+HOTELS: ${JSON.stringify(inventory.hotels)}
+ACTIVITIES: ${JSON.stringify(inventory.activities)}
+
+Generate a complete itinerary JSON with this EXACT schema:
+{
+  "meta": {"trip_id": "<uuid>","created_at":"<ISO>","version":"1.0"},
+  "trip": {"title":"<engaging title>","destination_cities":["${dest}"],"duration_days":${duration},"theme":"<theme>","travel_dates":{"depart_date":"<YYYY-MM-DD>","return_date":"<YYYY-MM-DD>"},"total_cost_aud":<float>,"currency":"AUD","group_size":${group},"status":"draft"},
+  "description": "<full markdown day-by-day narrative>",
+  "flights": [{"flight_id":"<exact from inventory>","leg":"outbound|return","airline":"<string>","origin":"<string>","destination":"<string>","departure_datetime":"<string>","arrival_datetime":"<string>","cabin_class":"<string>","price_aud":<float>,"seats_available":<int>,"booking_class":"<string>","stops":<int>,"baggage_kg":<int>,"refundable":<bool>}],
+  "accommodation": [{"hotel_id":"<exact from inventory>","hotel_name":"<string>","city":"<string>","star_rating":<int>,"room_type":"<string>","price_per_night_aud":<float>,"nights":${duration-1},"total_price_aud":<float>,"check_in":"<YYYY-MM-DD>","check_out":"<YYYY-MM-DD>","amenities":"<string>","breakfast_included":<bool>,"cancellation_policy":"<string>"}],
+  "days": [{"day_number":<int>,"date":"<YYYY-MM-DD>","city":"${dest}","title":"<string>","description":"<2-3 sentences>","activities":[{"activity_id":"<exact from inventory>","activity_name":"<string>","category":"<string>","start_time":"<HH:MM>","duration_hours":<int>,"price_aud":<float>,"rating":<float>,"notes":"<tip>"}]}],
+  "budget_breakdown": {"flights_aud":<float>,"accommodation_aud":<float>,"activities_aud":<float>,"estimated_meals_aud":<float>,"estimated_transport_aud":<float>,"total_aud":<float>},
+  "validation": {"is_valid":<bool>,"warnings":[],"errors":[]}
+}
+
+Return ONLY the JSON. No markdown. No explanation.`;
+
+    // Step 4 – Call Claude
+    setStep(4);
+
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4096,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: userPrompt }]
+      })
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(`API error ${response.status}: ${err.error?.message || response.statusText}`);
+    }
+
+    const data = await response.json();
+    let rawText = data.content[0].text.trim();
+
+    // Strip markdown fences if Claude added them
+    rawText = rawText.replace(/^```(?:json)?\s*/m, '').replace(/\s*```$/m, '');
+
+    // Step 5 – Validate
+    setStep(5); await sleep(300);
+
+    let itinerary;
+    try { itinerary = JSON.parse(rawText); }
+    catch(e) { throw new Error('AI returned invalid JSON: ' + e.message + '\n\nRaw: ' + rawText.slice(0,300)); }
+
+    // Client-side validation
+    const warnings = itinerary.validation?.warnings || [];
+    const errors = itinerary.validation?.errors || [];
+    if (!itinerary.flights?.length) errors.push('No flights selected.');
+    if (!itinerary.accommodation?.length) errors.push('No accommodation selected.');
+    if ((itinerary.days?.length || 0) !== duration) warnings.push(`Day count: ${itinerary.days?.length} generated vs ${duration} expected.`);
+    itinerary.validation = { is_valid: errors.length === 0, warnings, errors };
+
+    // Finish pipeline
+    setStep(6); // all done
+
+    renderResults(itinerary);
+
+  } catch(err) {
+    document.getElementById('results').innerHTML = `
+      <div class="error-card result-section">
+        <div class="error-title">Generation failed</div>
+        <div class="error-msg">${err.message}</div>
+      </div>`;
+  } finally {
+    btn.disabled = false; btn.classList.remove('loading');
+  }
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ── Render results ────────────────────────────────────────────────────────────
+function fmt(n) { return (n||0).toLocaleString('en-AU', {minimumFractionDigits:0, maximumFractionDigits:0}); }
+function stars(n) { return '★'.repeat(n) + '☆'.repeat(5-n); }
+
+function renderResults(it) {
+  const trip = it.trip || {};
+  const v = it.validation || {};
+  const bb = it.budget_breakdown || {};
+  const flights = it.flights || [];
+  const hotels = it.accommodation || [];
+  const days = it.days || [];
+
+  const validClass = v.errors?.length ? 'error' : v.warnings?.length ? 'warning' : 'valid';
+  const validIcon = v.errors?.length ? '⚠️' : v.warnings?.length ? '⚠️' : '✅';
+  const validMsgs = [...(v.errors||[]).map(e=>`Error: ${e}`), ...(v.warnings||[]).map(w=>`Warning: ${w}`)];
+  const validText = validMsgs.length ? validMsgs.map(m=>`<div>${m}</div>`).join('') : `<div>Itinerary validated successfully. All IDs verified from inventory.</div>`;
+
+  const flightCards = flights.map(f => `
+    <div class="info-card">
+      <div class="card-eyebrow">✈ Flight <span class="leg-badge">${f.leg||'flight'}</span></div>
+      <div class="card-main">${f.airline}</div>
+      <div class="card-sub">${f.origin} → ${f.destination}</div>
+      <div class="card-sub" style="margin-top:4px;font-size:12px;color:var(--text3)">${f.departure_datetime}</div>
+      <div class="card-price">AUD $${fmt(f.price_aud)}</div>
+      <div class="card-tags">
+        <span class="tag">${f.cabin_class}</span>
+        <span class="tag">${f.stops === 0 ? 'Direct' : f.stops+' stop'}</span>
+        <span class="tag">${f.baggage_kg}kg baggage</span>
+        <span class="tag ${f.refundable ? 'green' : 'amber'}">${f.refundable ? 'Refundable' : 'Non-refund'}</span>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px">${f.flight_id} · ${f.booking_class} · ${f.seats_available} seats left</div>
+    </div>`).join('');
+
+  const hotelCards = hotels.map(h => `
+    <div class="info-card">
+      <div class="card-eyebrow">🏨 Hotel</div>
+      <div class="card-main">${h.hotel_name}</div>
+      <div class="card-sub">${stars(h.star_rating)} · ${h.room_type} · ${h.city}</div>
+      <div class="card-price">AUD $${fmt(h.price_per_night_aud)}<span style="font-size:13px;font-weight:400;color:var(--text2)">/night</span></div>
+      <div class="card-sub" style="margin-top:6px">Check-in: ${h.check_in} → ${h.check_out} (${h.nights} nights)</div>
+      <div class="card-tags">
+        <span class="tag ${h.breakfast_included ? 'green' : ''}">${h.breakfast_included ? 'Breakfast incl.' : 'No breakfast'}</span>
+        <span class="tag ${h.cancellation_policy === 'Free' ? 'green' : h.cancellation_policy === 'Partial' ? 'amber' : 'red'}">${h.cancellation_policy} cancel</span>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px">${h.hotel_id} · Total: AUD $${fmt(h.total_price_aud)}</div>
+    </div>`).join('');
+
+  const dayBlocks = days.map(d => {
+    const acts = (d.activities||[]).map(a => `
+      <div class="activity-item">
+        <div>
+          <div class="act-time">${a.start_time || '09:00'}</div>
+          <div class="act-name">${a.activity_name}</div>
+          <div class="act-meta">${a.category} · ${a.duration_hours}h · ★${a.rating}</div>
+          ${a.notes ? `<div class="act-note">${a.notes}</div>` : ''}
+        </div>
+        <div class="act-price">$${fmt(a.price_aud)}<div style="font-size:11px;color:var(--text3);font-weight:400">${a.activity_id}</div></div>
+      </div>`).join('');
+    return `
+      <div class="day-block">
+        <div class="day-left">
+          <div class="day-num">${d.day_number}</div>
+          <div class="day-line"></div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">${d.title}</div>
+          <div class="day-date">${d.date} · ${d.city}</div>
+          <div class="day-desc">${d.description}</div>
+          <div class="activity-list">${acts}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('results').innerHTML = `
+    <!-- Trip header -->
+    <div class="result-section">
+      <div class="trip-header">
+        <div class="trip-title">${trip.title || 'Your Custom Trip'}</div>
+        <div class="trip-meta">
+          <div class="trip-meta-item">📍 ${(trip.destination_cities||[]).join(', ')}</div>
+          <div class="trip-meta-item">📅 ${trip.duration_days} days</div>
+          <div class="trip-meta-item">👥 ${trip.group_size} traveller${trip.group_size>1?'s':''}</div>
+          <div class="trip-meta-item">✦ ${trip.theme}</div>
+          <div class="trip-meta-item">🗓 ${trip.travel_dates?.depart_date||''} → ${trip.travel_dates?.return_date||''}</div>
+        </div>
+        <div class="trip-cost">
+          <div class="trip-cost-amount">AUD $${fmt(trip.total_cost_aud)}</div>
+          <div class="trip-cost-label">total estimated cost · ${trip.status}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Validation -->
+    <div class="result-section">
+      <div class="validation-bar ${validClass}">
+        <div class="validation-icon">${validIcon}</div>
+        <div class="validation-msgs">${validText}</div>
+      </div>
+    </div>
+
+    <!-- Flights -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Flights</div>
+        <div class="count-badge">${flights.length} selected</div>
+      </div>
+      <div class="cards-grid">${flightCards}</div>
+    </div>
+
+    <!-- Hotels -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Accommodation</div>
+        <div class="count-badge">${hotels.length} property</div>
+      </div>
+      <div class="cards-grid">${hotelCards}</div>
+    </div>
+
+    <!-- Day-by-day -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Day-by-day itinerary</div>
+        <div class="count-badge">${days.length} days</div>
+      </div>
+      <div class="timeline">${dayBlocks}</div>
+    </div>
+
+    <!-- Budget -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Budget breakdown</div>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-item"><div class="budget-label">✈ Flights</div><div class="budget-amount">$${fmt(bb.flights_aud)}</div></div>
+        <div class="budget-item"><div class="budget-label">🏨 Accommodation</div><div class="budget-amount">$${fmt(bb.accommodation_aud)}</div></div>
+        <div class="budget-item"><div class="budget-label">🎭 Activities</div><div class="budget-amount">$${fmt(bb.activities_aud)}</div></div>
+        <div class="budget-item"><div class="budget-label">🍽 Est. Meals</div><div class="budget-amount">$${fmt(bb.estimated_meals_aud)}</div></div>
+        <div class="budget-item"><div class="budget-label">🚌 Est. Transport</div><div class="budget-amount">$${fmt(bb.estimated_transport_aud)}</div></div>
+      </div>
+      <div class="budget-total">
+        <div class="budget-total-label">Total estimated cost (AUD)</div>
+        <div class="budget-total-amount">$${fmt(bb.total_aud)}</div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Trip description</div>
+        <div class="count-badge">Human-readable</div>
+      </div>
+      <div class="description-card">
+        <div class="description-text">${(it.description||'').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+      </div>
+    </div>
+
+    <!-- JSON output -->
+    <div class="result-section">
+      <div class="section-header">
+        <div class="section-label">Raw JSON output</div>
+        <div class="count-badge">Preset for builder page</div>
+      </div>
+      <div class="json-section">
+        <div class="json-header">
+          <span class="json-title">itinerary_preset.json · trip_id: ${it.meta?.trip_id||'—'}</span>
+          <button class="copy-btn" onclick="copyJson()">Copy JSON</button>
+        </div>
+        <div class="json-body">
+          <pre id="jsonOutput">${JSON.stringify(it, null, 2).replace(/</g,'&lt;').replace(/>/g,'&gt;')}</pre>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Store for copy
+  window._lastItinerary = it;
+}
+
+function copyJson() {
+  if (window._lastItinerary) {
+    navigator.clipboard.writeText(JSON.stringify(window._lastItinerary, null, 2));
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy JSON', 2000);
+  }
+}
+</script>
+</body>
+</html>
