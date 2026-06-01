@@ -19,14 +19,11 @@ No retrieval step is needed — the trip data is already structured in the CSV a
 ### 1. Installation
 
 ```bash
-cd travel-ai
+cd 04-content_generation
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-pip install anthropic google-generativeai pandas python-dotenv
-
-# Optional: for Jupyter visualisations
-pip install jupyter plotly matplotlib seaborn
+pip install jupyter anthropic google-generativeai pandas python-dotenv plotly matplotlib seaborn
 ```
 
 ### 2. Get an API Key
@@ -59,81 +56,23 @@ Or as a shell variable:
 export GEMINI_API_KEY="your_gemini_key_here"
 ```
 
-### 4. Run the Feature
+### 4. Open the Notebook and Run All Cells
 
 ```bash
-python content_generator.py 'TRIP-042'
+jupyter notebook travel_story_generator_refined-2.ipynb
 ```
 
-Output: `listing_<trip_id>_<timestamp>.txt` with the generated marketplace listing.
-
-### 5. Visualise the Results (Optional)
-
-```bash
-jupyter notebook content_generator.ipynb
-```
-
-Run all cells to generate word-count distributions, tone analysis charts, and side-by-side listing comparisons.
-
----
-
-## Usage Examples
-
-### Command Line
-
-```bash
-# Generate listing for a specific trip
-python content_generator.py 'TRIP-042'
-
-# Generate listings for multiple trips
-python content_generator.py 'TRIP-042' 'TRIP-108' 'TRIP-215'
-
-# Verbose mode (shows pipeline steps and validation)
-python content_generator.py 'TRIP-042' --verbose
-```
-
-### Python API
-
-```python
-from content_generator import generate_listing
-
-listing, rows = generate_listing(
-    city='Bali',
-    verbose=True
-)
-
-print(listing)
-print(f"Word count: {len(listing.split())}")
-
-import json
-with open('output.json', 'w') as f:
-    json.dump({'listing': listing}, f, indent=2)
-```
-
-### Jupyter Notebook
-
-Open `content_generator.ipynb` to:
-- Browse generated listings side-by-side with their source itineraries
-- Check word count and tone compliance across a batch
-- Export selected listings to a formatted PDF for review
+The notebook loads `trip_plans_v2.csv`, runs the 3-step generation pipeline against a selected `trip_id` (or destination city), and renders the generated listing alongside the source itinerary, word count, and validation results.
 
 ---
 
 ## Input Format
 
-The system accepts a `trip_id` or destination city name referencing rows in `trip_plans_v2.csv`. Examples:
+The notebook accepts a `trip_id` or destination city name referencing rows in `trip_plans_v2.csv`. Examples:
 
 - `"TRIP-042"` — specific trip by ID
 - `"Bali"` — picks a random Bali trip from the dataset
 - `"Sydney"` — picks a random Sydney trip from the dataset
-
-### Recognised Parameters
-
-| Parameter | Examples | Detected by |
-|---|---|---|
-| Trip ID | `TRIP-042`, `TRIP-108` | Direct CSV lookup on `trip_id` field |
-| Destination city | `Bali`, `Sydney`, `Tokyo` | Keyword match on `destination_city` column |
-| Custom note | `"emphasise the food experiences"` | Optional CLI flag `--note` or API argument |
 
 ---
 
@@ -177,16 +116,10 @@ The system accepts a `trip_id` or destination city name referencing rows in `tri
 ## File Structure
 
 ```
-travel-ai/
-├── content_generator.py              # Core generation backend
-├── content_generator.ipynb           # Jupyter visualisation notebook
-├── .env                              # Environment variables
-├── data/
-│   └── trip_plans_v2.csv            # Flight Centre verified trip inventory (5,718 rows)
-├── listing_<trip_id>_<timestamp>.txt # Generated output (created on each run)
-├── README.md                         # This file
-└── .github/
-    └── copilot-instructions.md       # Detailed specifications
+04-content_generation/
+├── travel_story_generator_refined-2.ipynb  # Notebook implementing the pipeline
+├── trip_plans_v2.csv                       # Flight Centre verified trip inventory (5,718 rows)
+└── README_content_generator.md             # This file
 ```
 
 ---
@@ -203,14 +136,7 @@ travel-ai/
 
 ## LLM Provider Swapping
 
-By default, the system uses **Gemini 2.5 Flash**. To use **Claude** instead:
-
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-python content_generator.py 'TRIP-042'
-```
-
-The `call_llm()` function checks for `GEMINI_API_KEY` first, then falls back to `ANTHROPIC_API_KEY` if present.
+By default, the notebook uses **Gemini 2.5 Flash**. To use **Claude** instead, set `ANTHROPIC_API_KEY` in `.env`; the `call_llm()` cell checks for `GEMINI_API_KEY` first, then falls back to `ANTHROPIC_API_KEY` if present.
 
 ---
 
@@ -220,59 +146,24 @@ The `call_llm()` function checks for `GEMINI_API_KEY` first, then falls back to 
 
 Cause: The provided ID does not exist in `trip_plans_v2.csv`.
 
-Fix:
-```bash
-# List available trip IDs for a city
-python content_generator.py --list-trips Bali
+Fix: List available IDs from a notebook cell:
+
+```python
+import pandas as pd
+print(pd.read_csv('trip_plans_v2.csv')['trip_id'].unique()[:50])
 ```
 
 **"Listing failed validation after 3 retries"**
 
 Cause: The model repeatedly produced output below 150 words or containing banned competitor names.
 
-Fix:
-```bash
-# Check MODEL_NAME is set to a supported model
-# Try adding a custom note for more specific guidance
-python content_generator.py 'TRIP-042' --note "Write a full 200-word listing with vivid detail"
-```
+Fix: Confirm `MODEL_NAME` is set to a supported model, then re-run the cell. You can also pass a more specific note (e.g. "Write a full 200-word listing with vivid detail") into the generator call.
 
 **"Word count out of range"**
 
 Cause: Generated listing was shorter than 150 or longer than 250 words.
 
-Fix:
-1. The validator automatically retries with the word count issue appended to the prompt
-2. If all 3 retries fail, inspect `listing_debug_<trip_id>.txt` for the raw outputs
-
----
-
-## Development & Testing
-
-### Run Unit Tests
-
-```python
-from content_generator import generate_listing
-
-listing, rows = generate_listing(city='Sydney', verbose=False)
-word_count = len(listing.split())
-print(word_count)  # Should be between 150 and 250
-```
-
-### Regenerate Mock Data
-
-```bash
-python generate_mock_trips.py
-```
-
-### Enable Verbose Logging
-
-```python
-listing, rows = generate_listing(
-    city='Bali',
-    verbose=True
-)
-```
+Fix: The validator automatically retries with the word count issue appended to the prompt. If all 3 retries fail, inspect the raw outputs printed by the notebook.
 
 ---
 
@@ -305,7 +196,7 @@ listing, rows = generate_listing(
 
 ## Future Enhancements
 
-- [ ] Batch generation for all 240 trips in `trip_plans_v2.csv`
+- [ ] Batch generation for all trips in `trip_plans_v2.csv`
 - [ ] Accept pre-submission draft JSON from the React frontend builder before database write
 - [ ] A/B variant generation: two listing options for the influencer to choose between
 - [ ] Tone customisation per influencer brand profile
@@ -315,9 +206,3 @@ listing, rows = generate_listing(
 ## License
 
 This project is provided as-is for educational and commercial use.
-
----
-
-## Support & Feedback
-
-For issues, questions, or feature requests, refer to `.github/copilot-instructions.md` for detailed specs and architecture documentation.

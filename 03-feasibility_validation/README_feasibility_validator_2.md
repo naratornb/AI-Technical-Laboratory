@@ -20,14 +20,11 @@ Every rule is applied through LLM reasoning over the package data itself — no 
 ### 1. Installation
 
 ```bash
-cd travel-ai
+cd 03-feasibility_validation
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-pip install anthropic google-generativeai pandas python-dotenv
-
-# Optional: for Jupyter visualisations
-pip install jupyter plotly matplotlib seaborn
+pip install jupyter anthropic google-generativeai pandas python-dotenv plotly matplotlib seaborn
 ```
 
 ### 2. Get an API Key
@@ -60,81 +57,23 @@ Or as a shell variable:
 export GEMINI_API_KEY="your_gemini_key_here"
 ```
 
-### 4. Run the Feature
+### 4. Open the Notebook and Run All Cells
 
 ```bash
-python feasibility_validator.py 'PKG-V-001'
+jupyter notebook feasibility_validator_v3_2-2.ipynb
 ```
 
-Output: `validation_result_<package_id>.json` with full rule-check results and any violations.
-
-### 5. Visualise the Results (Optional)
-
-```bash
-jupyter notebook feasibility_validator_v3.ipynb
-```
-
-Run all cells to generate a rule-pass/fail dashboard, severity breakdown, and per-day timeline view.
-
----
-
-## Usage Examples
-
-### Command Line
-
-```bash
-# Validate a known-good package
-python feasibility_validator.py 'PKG-V-001'
-
-# Validate a package with a seeded error
-python feasibility_validator.py 'PKG-ERR-03'
-
-# Verbose mode (shows each rule being checked)
-python feasibility_validator.py 'PKG-V-001' --verbose
-```
-
-### Python API
-
-```python
-from feasibility_validator import validate_package
-
-result = validate_package(
-    package_id='PKG-V-001',
-    verbose=True
-)
-
-print(result['is_valid'])
-print(result['violations'])
-
-import json
-with open('output.json', 'w') as f:
-    json.dump(result, f, indent=2)
-```
-
-### Jupyter Notebook
-
-Open `feasibility_validator_v3.ipynb` to:
-- View a rule-by-rule pass/fail grid per package
-- Compare error rates across the test dataset
-- Drill into day-level timeline visualisations for any package
+The notebook loads `travel_packages_v1.csv`, runs the 4-step validation pipeline against a selected `package_id`, and renders rule pass/fail results, severity breakdown, and a per-day timeline view.
 
 ---
 
 ## Input Format
 
-The system accepts a `package_id` string referencing a row in `travel_packages_v1.csv`. Examples:
+The notebook accepts a `package_id` string referencing a row in `travel_packages_v1.csv`. Examples:
 
 - `"PKG-V-001"` — valid package, should pass all 11 rules
 - `"PKG-ERR-03"` — deliberately seeded with a rule violation for testing
 - `"PKG-ERR-07"` — season mismatch violation
-
-### Recognised Parameters
-
-| Parameter | Examples | Detected by |
-|---|---|---|
-| Package ID | `PKG-V-001`, `PKG-ERR-03` | Direct CSV lookup on `package_id` field |
-| Validation mode | `strict`, `warnings-only` | CLI flag or API argument |
-| Rule subset | `R1,R3,R11` | Comma-separated rule codes |
 
 ---
 
@@ -196,17 +135,11 @@ The system accepts a `package_id` string referencing a row in `travel_packages_v
 ## File Structure
 
 ```
-travel-ai/
-├── feasibility_validator.py              # Core validation backend
-├── feasibility_validator_v3.ipynb        # Jupyter visualisation notebook
-├── .env                                  # Environment variables
-├── data/
-│   ├── travel_packages_v1.csv           # Package-level records with days_json
-│   └── trip_plans_v2.csv               # Source flat table (one row per day × slot)
-├── validation_result_<package_id>.json  # Generated output (created on each run)
-├── README.md                             # This file
-└── .github/
-    └── copilot-instructions.md           # Detailed specifications
+03-feasibility_validation/
+├── feasibility_validator_v3_2-2.ipynb     # Notebook implementing the pipeline
+├── travel_packages_v1.csv                 # Package-level records with days_json
+├── feasibility check - Sheet1.numbers     # Spreadsheet companion
+└── README_feasibility_validator_2.md      # This file
 ```
 
 ---
@@ -223,14 +156,7 @@ travel-ai/
 
 ## LLM Provider Swapping
 
-By default, the system uses **Gemini 2.5 Flash**. To use **Claude** instead:
-
-```bash
-export ANTHROPIC_API_KEY="sk-ant-..."
-python feasibility_validator.py 'PKG-V-001'
-```
-
-The `call_llm()` function checks for `GEMINI_API_KEY` first, then falls back to `ANTHROPIC_API_KEY` if present.
+By default, the notebook uses **Gemini 2.5 Flash**. To use **Claude** instead, set `ANTHROPIC_API_KEY` in `.env`; the `call_llm()` cell checks for `GEMINI_API_KEY` first, then falls back to `ANTHROPIC_API_KEY` if present.
 
 ---
 
@@ -240,21 +166,18 @@ The `call_llm()` function checks for `GEMINI_API_KEY` first, then falls back to 
 
 Cause: The provided ID does not exist in `travel_packages_v1.csv`.
 
-Fix:
-```bash
-# List all available package IDs
-python feasibility_validator.py --list-packages
+Fix: Open the CSV and pick a valid `package_id`, or list them from a notebook cell:
+
+```python
+import pandas as pd
+print(pd.read_csv('travel_packages_v1.csv')['package_id'].tolist())
 ```
 
 **"LLM returned malformed JSON"**
 
 Cause: Model output did not match the expected violations array schema.
 
-Fix:
-```bash
-# The system automatically retries up to 3 times with schema correction prompts
-# If it persists, check MODEL_NAME is set to a supported model
-```
+Fix: The notebook automatically retries up to 3 times with schema correction prompts. If it persists, confirm `MODEL_NAME` is set to a supported model.
 
 **"days_json parse error"**
 
@@ -263,35 +186,6 @@ Cause: The `days_json` field in `travel_packages_v1.csv` is malformed for this p
 Fix:
 1. Open `travel_packages_v1.csv` and locate the row by `package_id`
 2. Validate the `days_json` column value at a JSON linter (e.g. jsonlint.com)
-3. Re-run `python generate_packages.py` to regenerate from `trip_plans_v2.csv`
-
----
-
-## Development & Testing
-
-### Run Unit Tests
-
-```python
-from feasibility_validator import validate_package
-
-result = validate_package('PKG-ERR-07')
-print(result['validation']['violations'][0]['error_code'])  # Should print SEASON_MISMATCH
-```
-
-### Regenerate Mock Data
-
-```bash
-python generate_packages.py
-```
-
-### Enable Verbose Logging
-
-```python
-result = validate_package(
-    'PKG-ERR-03',
-    verbose=True
-)
-```
 
 ---
 
@@ -299,7 +193,7 @@ result = validate_package(
 
 ### Step 1: Package Ingestion
 
-The validator reads `travel_packages_v1.csv` and filters to the target `package_id`. The `days_json` field — a JSON string serialising the full day-by-day itinerary — is parsed into a Python dict for downstream use.
+The notebook reads `travel_packages_v1.csv` and filters to the target `package_id`. The `days_json` field — a JSON string serialising the full day-by-day itinerary — is parsed into a Python dict for downstream use.
 
 ### Step 2: Context Serialisation
 
@@ -337,9 +231,3 @@ The LLM is instructed to return only a JSON array of violation objects. Each obj
 ## License
 
 This project is provided as-is for educational and commercial use.
-
----
-
-## Support & Feedback
-
-For issues, questions, or feature requests, refer to `.github/copilot-instructions.md` for detailed specs and architecture documentation.

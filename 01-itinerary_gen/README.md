@@ -29,9 +29,6 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
 pip install pandas anthropic
-
-# Optional: for Jupyter visualizations
-pip install jupyter plotly matplotlib seaborn
 ```
 
 ### 2. Get an API Key
@@ -68,14 +65,6 @@ python itinerary_engine.py '5 days Japan cherry blossom trip for 2 people, budge
 ```
 
 **Output:** `itinerary_output_*.json` with complete trip structure
-
-### 5. Visualize the Results (Optional)
-
-```bash
-jupyter notebook itinerary_visualizer.ipynb
-```
-
-Then open the notebook and run all cells to generate interactive charts, budget breakdowns, and formatted itinerary views.
 
 ## Usage Examples
 
@@ -117,17 +106,6 @@ import json
 with open('my_itinerary.json', 'w') as f:
     json.dump(result, f, indent=2)
 ```
-
-### Jupyter Notebook
-
-Open `itinerary_visualizer.ipynb` in Jupyter to:
-- View formatted trip summary cards
-- Display interactive budget pie/bar charts
-- Show day-by-day itinerary with activity details
-- Visualize flight timelines
-- Explore accommodation options by city
-- Analyze activities by rating and price
-- Export formatted HTML/PDF reports
 
 ## Input Format
 
@@ -318,8 +296,6 @@ Each theme influences cabin class preference, hotel star rating, and activity se
 ```
 01-itinerary_gen/
 ├── itinerary_engine.py              # Core backend (595 lines)
-├── itinerary_visualizer.ipynb       # Jupyter visualization notebook
-├── mock_fc.py                       # Mock data generator (optional)
 ├── .env                             # Environment variables (GEMINI_API_KEY)
 ├── data/
 │   ├── flights_intl_v2.csv         # Flight inventory (2,500 records)
@@ -397,15 +373,6 @@ python itinerary_engine.py "5 days Japan, budget \$8000 AUD"
 - Use supported destination (see Supported Destinations table)
 - Try a different theme
 
-### Jupyter notebook cells fail with module not found
-
-**Cause:** Visualization dependencies not installed.
-
-**Fix:**
-```bash
-pip install jupyter plotly matplotlib seaborn
-```
-
 ### LLM returns validation errors
 
 **Check:**
@@ -425,12 +392,6 @@ params = parse_user_request('5 days Japan, budget $8000 for 2 people')
 print(params['budget_aud'])  # Should print 8000
 print(params['group_size'])  # Should print 2
 print(params['theme'])       # Should print 'seasonal'
-```
-
-### Regenerate Mock Data
-
-```bash
-python mock_fc.py  # Regenerates CSV files
 ```
 
 ### Enable Verbose Logging
