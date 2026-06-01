@@ -1,0 +1,251 @@
+hotel_id,hotel_name,city,country,property_type,star_rating,room_type,price_per_night_aud,max_guests,amenities,availability_start,availability_end
+INT-HT-00001,Sheraton London,London,UK,Resort,5,Deluxe,939,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00002,Sheraton Amsterdam,Amsterdam,Netherlands,Boutique,4,Standard,940,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00003,Four Seasons Hong Kong,Hong Kong,China,Boutique,5,Standard,733,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00004,Sheraton Seoul,Seoul,South Korea,Boutique,4,Deluxe,925,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00005,Hilton San Francisco,San Francisco,USA,Hotel,3,Suite,448,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00006,InterContinental Tokyo,Tokyo,Japan,Resort,4,Deluxe,940,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00007,Hyatt Amsterdam,Amsterdam,Netherlands,Resort,3,Suite,439,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00008,Hilton Cape Town,Cape Town,South Africa,Boutique,3,Deluxe,719,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00009,Marriott Singapore,Singapore,Singapore,Hotel,3,Deluxe,423,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00010,InterContinental Cape Town,Cape Town,South Africa,Boutique,4,Standard,863,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00011,Marriott Rome,Rome,Italy,Resort,5,Deluxe,715,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00012,InterContinental Los Angeles,Los Angeles,USA,Hotel,4,Deluxe,878,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00013,InterContinental Cape Town,Cape Town,South Africa,Resort,5,Suite,634,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00014,InterContinental Paris,Paris,France,Resort,4,Deluxe,545,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00015,Hilton Bangkok,Bangkok,Thailand,Hotel,3,Standard,400,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00016,InterContinental Mumbai,Mumbai,India,Resort,4,Suite,770,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00017,Hyatt Amsterdam,Amsterdam,Netherlands,Resort,5,Standard,823,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00018,Marriott Seoul,Seoul,South Korea,Resort,4,Standard,911,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00019,Sheraton Toronto,Toronto,Canada,Boutique,4,Suite,624,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00020,Sheraton Istanbul,Istanbul,Turkey,Boutique,5,Standard,1066,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00021,Four Seasons Barcelona,Barcelona,Spain,Resort,3,Deluxe,430,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00022,Marriott Dubai,Dubai,UAE,Resort,4,Suite,543,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00023,Marriott Bangkok,Bangkok,Thailand,Boutique,4,Suite,757,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00024,Marriott Berlin,Berlin,Germany,Boutique,5,Standard,894,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00025,Hyatt Barcelona,Barcelona,Spain,Boutique,4,Standard,965,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00026,Hilton Tokyo,Tokyo,Japan,Hotel,4,Standard,830,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00027,Hyatt Zurich,Zurich,Switzerland,Hotel,5,Suite,600,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00028,Hilton Berlin,Berlin,Germany,Resort,3,Standard,621,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00029,Sheraton Cape Town,Cape Town,South Africa,Hotel,4,Standard,834,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00030,Hyatt Toronto,Toronto,Canada,Hotel,5,Suite,957,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00031,Hilton Cape Town,Cape Town,South Africa,Boutique,5,Standard,907,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00032,InterContinental Zurich,Zurich,Switzerland,Resort,5,Standard,955,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00033,Marriott Seoul,Seoul,South Korea,Resort,4,Suite,745,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00034,Four Seasons London,London,UK,Boutique,5,Deluxe,711,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00035,InterContinental Los Angeles,Los Angeles,USA,Boutique,4,Deluxe,496,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00036,InterContinental Mumbai,Mumbai,India,Boutique,5,Standard,901,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00037,Marriott Singapore,Singapore,Singapore,Boutique,4,Suite,773,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00038,InterContinental Hong Kong,Hong Kong,China,Boutique,5,Suite,898,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00039,Sheraton Berlin,Berlin,Germany,Hotel,4,Suite,588,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00040,Sheraton Dubai,Dubai,UAE,Resort,4,Suite,650,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00041,Sheraton Hong Kong,Hong Kong,China,Boutique,3,Standard,454,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00042,InterContinental New York,New York,USA,Hotel,3,Suite,839,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00043,Marriott Berlin,Berlin,Germany,Resort,5,Deluxe,999,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00044,Four Seasons Barcelona,Barcelona,Spain,Boutique,3,Deluxe,711,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00045,Hilton San Francisco,San Francisco,USA,Hotel,4,Suite,744,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00046,InterContinental Paris,Paris,France,Hotel,4,Standard,659,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00047,Sheraton Bangkok,Bangkok,Thailand,Hotel,4,Deluxe,652,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00048,Sheraton New York,New York,USA,Boutique,5,Deluxe,759,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00049,Hilton New York,New York,USA,Resort,4,Deluxe,697,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00050,Marriott Rome,Rome,Italy,Hotel,3,Suite,658,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00051,Marriott Mumbai,Mumbai,India,Boutique,3,Deluxe,833,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00052,Four Seasons Dubai,Dubai,UAE,Hotel,4,Suite,779,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00053,Marriott Tokyo,Tokyo,Japan,Hotel,5,Standard,755,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00054,Hyatt Tokyo,Tokyo,Japan,Resort,5,Deluxe,1016,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00055,Hilton Paris,Paris,France,Boutique,3,Standard,504,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00056,Sheraton Istanbul,Istanbul,Turkey,Hotel,5,Suite,1063,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00057,Marriott Singapore,Singapore,Singapore,Hotel,3,Suite,731,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00058,Hilton London,London,UK,Boutique,5,Deluxe,703,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00059,Four Seasons Bangkok,Bangkok,Thailand,Boutique,5,Deluxe,904,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00060,Four Seasons Cape Town,Cape Town,South Africa,Boutique,3,Deluxe,843,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00061,InterContinental Zurich,Zurich,Switzerland,Boutique,4,Standard,640,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00062,Sheraton Bangkok,Bangkok,Thailand,Boutique,5,Standard,795,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00063,Four Seasons Barcelona,Barcelona,Spain,Resort,4,Suite,644,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00064,InterContinental Berlin,Berlin,Germany,Hotel,4,Deluxe,762,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00065,Four Seasons Istanbul,Istanbul,Turkey,Boutique,5,Deluxe,907,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00066,Marriott Barcelona,Barcelona,Spain,Resort,4,Deluxe,513,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00067,Sheraton Toronto,Toronto,Canada,Resort,4,Standard,507,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00068,Sheraton Bangkok,Bangkok,Thailand,Hotel,3,Deluxe,402,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00069,InterContinental Dubai,Dubai,UAE,Boutique,4,Deluxe,956,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00070,Four Seasons Rome,Rome,Italy,Hotel,3,Deluxe,533,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00071,Marriott Tokyo,Tokyo,Japan,Boutique,5,Suite,805,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00072,InterContinental Barcelona,Barcelona,Spain,Boutique,5,Deluxe,604,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00073,Marriott Paris,Paris,France,Resort,3,Suite,666,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00074,Hyatt Seoul,Seoul,South Korea,Boutique,4,Deluxe,502,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00075,Hilton Los Angeles,Los Angeles,USA,Hotel,3,Deluxe,475,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00076,Hyatt Paris,Paris,France,Boutique,5,Suite,915,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00077,InterContinental Paris,Paris,France,Resort,5,Deluxe,1062,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00078,Hilton London,London,UK,Resort,3,Deluxe,682,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00079,InterContinental Dubai,Dubai,UAE,Boutique,3,Deluxe,383,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00080,Marriott Dubai,Dubai,UAE,Hotel,5,Suite,977,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00081,Hilton Cape Town,Cape Town,South Africa,Resort,3,Standard,633,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00082,Sheraton Singapore,Singapore,Singapore,Hotel,3,Suite,636,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00083,Marriott Seoul,Seoul,South Korea,Hotel,3,Standard,494,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00084,Hyatt Mumbai,Mumbai,India,Boutique,3,Deluxe,382,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00085,Four Seasons Berlin,Berlin,Germany,Resort,3,Standard,368,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00086,Hyatt Singapore,Singapore,Singapore,Hotel,5,Suite,770,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00087,Hilton Barcelona,Barcelona,Spain,Resort,5,Deluxe,639,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00088,Marriott Berlin,Berlin,Germany,Resort,5,Suite,676,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00089,Marriott Mumbai,Mumbai,India,Hotel,4,Suite,610,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00090,Four Seasons Bangkok,Bangkok,Thailand,Boutique,5,Deluxe,1080,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00091,Hilton Paris,Paris,France,Resort,5,Deluxe,955,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00092,InterContinental Istanbul,Istanbul,Turkey,Resort,3,Deluxe,689,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00093,InterContinental Rome,Rome,Italy,Resort,3,Standard,762,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00094,Hilton Hong Kong,Hong Kong,China,Boutique,3,Deluxe,566,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00095,Hilton Paris,Paris,France,Hotel,5,Standard,685,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00096,Hilton Los Angeles,Los Angeles,USA,Boutique,3,Standard,838,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00097,Hyatt Los Angeles,Los Angeles,USA,Hotel,5,Standard,855,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00098,Sheraton Zurich,Zurich,Switzerland,Boutique,3,Suite,532,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00099,Sheraton New York,New York,USA,Hotel,4,Suite,722,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00100,Four Seasons London,London,UK,Hotel,4,Suite,538,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00101,Sheraton Dubai,Dubai,UAE,Resort,5,Standard,1034,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00102,Sheraton Los Angeles,Los Angeles,USA,Hotel,3,Deluxe,503,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00103,Hilton Seoul,Seoul,South Korea,Hotel,5,Standard,905,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00104,Marriott Istanbul,Istanbul,Turkey,Hotel,3,Deluxe,765,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00105,Hilton Amsterdam,Amsterdam,Netherlands,Boutique,4,Deluxe,684,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00106,Hilton Toronto,Toronto,Canada,Resort,3,Deluxe,582,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00107,Marriott Rome,Rome,Italy,Resort,3,Standard,857,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00108,Marriott San Francisco,San Francisco,USA,Hotel,3,Deluxe,439,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00109,Four Seasons Barcelona,Barcelona,Spain,Boutique,3,Suite,784,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00110,Marriott Dubai,Dubai,UAE,Resort,3,Standard,666,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00111,Marriott Mumbai,Mumbai,India,Boutique,4,Standard,726,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00112,InterContinental New York,New York,USA,Hotel,4,Standard,595,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00113,InterContinental San Francisco,San Francisco,USA,Resort,5,Standard,631,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00114,Hyatt Cape Town,Cape Town,South Africa,Boutique,4,Suite,540,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00115,Marriott Tokyo,Tokyo,Japan,Boutique,4,Deluxe,720,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00116,Four Seasons Dubai,Dubai,UAE,Boutique,3,Suite,854,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00117,InterContinental Rome,Rome,Italy,Boutique,3,Suite,491,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00118,Hilton Dubai,Dubai,UAE,Resort,5,Standard,993,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00119,Sheraton Tokyo,Tokyo,Japan,Boutique,5,Deluxe,802,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00120,Sheraton Tokyo,Tokyo,Japan,Resort,3,Standard,747,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00121,Sheraton Zurich,Zurich,Switzerland,Resort,4,Suite,879,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00122,Marriott Mumbai,Mumbai,India,Hotel,4,Standard,702,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00123,Hilton Cape Town,Cape Town,South Africa,Hotel,5,Standard,935,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00124,Hyatt Mumbai,Mumbai,India,Hotel,4,Standard,687,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00125,Hilton Hong Kong,Hong Kong,China,Resort,3,Suite,786,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00126,InterContinental Paris,Paris,France,Hotel,4,Suite,807,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00127,Hilton Hong Kong,Hong Kong,China,Hotel,5,Deluxe,821,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00128,Hyatt Rome,Rome,Italy,Hotel,5,Deluxe,1031,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00129,Marriott New York,New York,USA,Boutique,4,Suite,695,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00130,Hilton Hong Kong,Hong Kong,China,Hotel,4,Standard,744,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00131,Hilton Zurich,Zurich,Switzerland,Resort,5,Suite,838,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00132,Marriott Seoul,Seoul,South Korea,Boutique,3,Standard,661,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00133,Sheraton Zurich,Zurich,Switzerland,Resort,3,Deluxe,791,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00134,Four Seasons Barcelona,Barcelona,Spain,Resort,3,Deluxe,590,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00135,Hilton Istanbul,Istanbul,Turkey,Boutique,4,Suite,969,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00136,Marriott Bangkok,Bangkok,Thailand,Hotel,4,Deluxe,728,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00137,Marriott Dubai,Dubai,UAE,Boutique,3,Standard,571,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00138,Hyatt Dubai,Dubai,UAE,Resort,4,Suite,653,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00139,Hyatt Singapore,Singapore,Singapore,Hotel,3,Standard,670,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00140,InterContinental Hong Kong,Hong Kong,China,Resort,4,Standard,834,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00141,Hilton Los Angeles,Los Angeles,USA,Hotel,4,Standard,803,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00142,Sheraton Mumbai,Mumbai,India,Resort,3,Deluxe,424,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00143,Four Seasons Berlin,Berlin,Germany,Resort,4,Deluxe,670,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00144,Hilton Singapore,Singapore,Singapore,Resort,3,Standard,749,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00145,Hyatt Rome,Rome,Italy,Resort,5,Standard,947,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00146,Hyatt Bangkok,Bangkok,Thailand,Hotel,4,Suite,516,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00147,Hyatt Tokyo,Tokyo,Japan,Resort,4,Standard,484,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00148,Four Seasons Toronto,Toronto,Canada,Hotel,4,Standard,791,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00149,Hyatt Barcelona,Barcelona,Spain,Hotel,3,Deluxe,557,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00150,Marriott New York,New York,USA,Boutique,4,Suite,859,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00151,Marriott Seoul,Seoul,South Korea,Boutique,3,Suite,452,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00152,Hyatt London,London,UK,Hotel,5,Deluxe,647,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00153,InterContinental Amsterdam,Amsterdam,Netherlands,Boutique,4,Suite,633,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00154,Marriott Amsterdam,Amsterdam,Netherlands,Resort,3,Deluxe,832,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00155,Hyatt San Francisco,San Francisco,USA,Hotel,4,Standard,903,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00156,Sheraton Istanbul,Istanbul,Turkey,Resort,5,Deluxe,1039,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00157,Sheraton Istanbul,Istanbul,Turkey,Hotel,3,Suite,745,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00158,Four Seasons Bangkok,Bangkok,Thailand,Resort,5,Deluxe,760,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00159,Hilton Hong Kong,Hong Kong,China,Hotel,5,Standard,1037,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00160,Hyatt Tokyo,Tokyo,Japan,Boutique,5,Deluxe,823,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00161,Four Seasons Bangkok,Bangkok,Thailand,Resort,4,Standard,748,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00162,InterContinental San Francisco,San Francisco,USA,Resort,4,Deluxe,515,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00163,Four Seasons New York,New York,USA,Resort,3,Deluxe,853,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00164,InterContinental Paris,Paris,France,Hotel,4,Suite,510,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00165,Four Seasons Singapore,Singapore,Singapore,Boutique,3,Standard,515,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00166,Marriott Seoul,Seoul,South Korea,Resort,5,Suite,885,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00167,Hilton Rome,Rome,Italy,Boutique,4,Suite,566,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00168,Marriott New York,New York,USA,Boutique,5,Suite,961,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00169,Marriott Dubai,Dubai,UAE,Resort,5,Standard,877,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00170,Hyatt Paris,Paris,France,Resort,4,Standard,882,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00171,Four Seasons Istanbul,Istanbul,Turkey,Hotel,4,Deluxe,480,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00172,Marriott Singapore,Singapore,Singapore,Hotel,5,Standard,643,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00173,Sheraton Singapore,Singapore,Singapore,Hotel,4,Standard,499,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00174,InterContinental Tokyo,Tokyo,Japan,Boutique,3,Deluxe,622,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00175,Marriott Dubai,Dubai,UAE,Hotel,3,Deluxe,771,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00176,Marriott Barcelona,Barcelona,Spain,Resort,4,Deluxe,562,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00177,Four Seasons Los Angeles,Los Angeles,USA,Hotel,3,Standard,443,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00178,Sheraton Cape Town,Cape Town,South Africa,Boutique,5,Standard,1093,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00179,Four Seasons Mumbai,Mumbai,India,Hotel,4,Suite,690,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00180,InterContinental Singapore,Singapore,Singapore,Hotel,3,Deluxe,671,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00181,Four Seasons Toronto,Toronto,Canada,Resort,5,Suite,867,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00182,Hyatt Los Angeles,Los Angeles,USA,Hotel,4,Suite,549,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00183,Marriott Singapore,Singapore,Singapore,Resort,3,Suite,605,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00184,Four Seasons Hong Kong,Hong Kong,China,Resort,3,Deluxe,829,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00185,Hyatt San Francisco,San Francisco,USA,Boutique,3,Deluxe,813,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00186,Hyatt Hong Kong,Hong Kong,China,Hotel,3,Standard,775,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00187,Marriott London,London,UK,Boutique,3,Standard,437,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00188,Marriott Zurich,Zurich,Switzerland,Hotel,3,Suite,612,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00189,Hyatt Istanbul,Istanbul,Turkey,Hotel,5,Deluxe,711,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00190,Hilton Zurich,Zurich,Switzerland,Resort,3,Standard,581,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00191,Hyatt New York,New York,USA,Boutique,5,Standard,1053,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00192,Sheraton Mumbai,Mumbai,India,Resort,3,Deluxe,587,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00193,Marriott London,London,UK,Resort,5,Deluxe,912,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00194,Hilton Singapore,Singapore,Singapore,Hotel,3,Deluxe,769,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00195,InterContinental Zurich,Zurich,Switzerland,Boutique,4,Suite,671,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00196,InterContinental London,London,UK,Boutique,4,Deluxe,507,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00197,Sheraton Mumbai,Mumbai,India,Hotel,4,Deluxe,752,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00198,Marriott Hong Kong,Hong Kong,China,Boutique,3,Suite,361,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00199,Hilton Mumbai,Mumbai,India,Boutique,3,Standard,794,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00200,Marriott San Francisco,San Francisco,USA,Boutique,3,Standard,598,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00201,Hyatt Barcelona,Barcelona,Spain,Resort,5,Suite,967,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00202,Hilton San Francisco,San Francisco,USA,Resort,5,Suite,708,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00203,Hyatt Dubai,Dubai,UAE,Boutique,5,Deluxe,684,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00204,Hilton Istanbul,Istanbul,Turkey,Resort,3,Deluxe,797,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00205,Marriott Hong Kong,Hong Kong,China,Hotel,3,Standard,556,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00206,Marriott Seoul,Seoul,South Korea,Hotel,3,Deluxe,623,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00207,Marriott Tokyo,Tokyo,Japan,Resort,3,Standard,686,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00208,Marriott Barcelona,Barcelona,Spain,Hotel,3,Suite,666,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00209,Sheraton Hong Kong,Hong Kong,China,Resort,4,Suite,550,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00210,Marriott London,London,UK,Boutique,3,Suite,743,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00211,Hilton Zurich,Zurich,Switzerland,Resort,3,Deluxe,418,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00212,Hyatt London,London,UK,Resort,4,Standard,498,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00213,Marriott Berlin,Berlin,Germany,Boutique,3,Deluxe,507,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00214,Hilton Paris,Paris,France,Resort,5,Standard,972,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00215,InterContinental Istanbul,Istanbul,Turkey,Boutique,3,Deluxe,609,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00216,Sheraton Zurich,Zurich,Switzerland,Boutique,4,Standard,685,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00217,Hyatt Amsterdam,Amsterdam,Netherlands,Hotel,5,Deluxe,1033,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00218,Hilton Toronto,Toronto,Canada,Boutique,5,Standard,806,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00219,InterContinental Toronto,Toronto,Canada,Boutique,5,Deluxe,913,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00220,Sheraton Paris,Paris,France,Hotel,5,Standard,943,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00221,Hyatt New York,New York,USA,Boutique,4,Standard,842,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00222,Hilton Toronto,Toronto,Canada,Boutique,4,Deluxe,559,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00223,Four Seasons Zurich,Zurich,Switzerland,Boutique,3,Standard,450,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00224,Sheraton Amsterdam,Amsterdam,Netherlands,Hotel,4,Suite,865,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00225,Sheraton Bangkok,Bangkok,Thailand,Resort,5,Standard,1062,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00226,Four Seasons Singapore,Singapore,Singapore,Boutique,4,Standard,729,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00227,Four Seasons Barcelona,Barcelona,Spain,Hotel,4,Standard,686,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00228,Hilton London,London,UK,Resort,5,Suite,1003,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00229,Sheraton Toronto,Toronto,Canada,Hotel,4,Standard,584,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00230,Hyatt Mumbai,Mumbai,India,Hotel,3,Standard,488,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00231,Hyatt Los Angeles,Los Angeles,USA,Boutique,4,Suite,578,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00232,Hilton Paris,Paris,France,Boutique,4,Deluxe,670,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00233,Sheraton New York,New York,USA,Resort,5,Standard,973,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00234,Four Seasons New York,New York,USA,Resort,5,Deluxe,831,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00235,Four Seasons Paris,Paris,France,Resort,3,Suite,470,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00236,Sheraton Amsterdam,Amsterdam,Netherlands,Resort,5,Standard,928,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00237,InterContinental Zurich,Zurich,Switzerland,Hotel,5,Standard,754,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00238,Marriott Berlin,Berlin,Germany,Hotel,5,Deluxe,1052,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00239,Four Seasons New York,New York,USA,Hotel,3,Suite,451,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00240,Marriott Zurich,Zurich,Switzerland,Boutique,4,Deluxe,915,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00241,Four Seasons Toronto,Toronto,Canada,Hotel,4,Suite,707,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00242,InterContinental Barcelona,Barcelona,Spain,Hotel,3,Suite,480,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00243,Four Seasons Bangkok,Bangkok,Thailand,Hotel,3,Standard,721,1,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00244,Marriott Paris,Paris,France,Boutique,4,Standard,517,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00245,Hyatt San Francisco,San Francisco,USA,Resort,3,Standard,406,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00246,InterContinental Paris,Paris,France,Resort,4,Suite,645,3,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00247,Marriott Tokyo,Tokyo,Japan,Hotel,4,Deluxe,648,4,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00248,Hilton Tokyo,Tokyo,Japan,Boutique,4,Deluxe,924,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00249,Hilton Seoul,Seoul,South Korea,Resort,5,Suite,939,2,"wifi,AC,concierge",2026-01-01,2026-12-31
+INT-HT-00250,InterContinental Singapore,Singapore,Singapore,Boutique,4,Standard,803,3,"wifi,AC,concierge",2026-01-01,2026-12-31

@@ -1,0 +1,251 @@
+activity_id,activity_name,city,country,category,duration_hours,price_aud,rating,suitable_for,availability
+INT-AC-00001,New York River Cruise,New York,USA,Culture,3,132,4.2,Couple,Year-round
+INT-AC-00002,Paris River Cruise,Paris,France,Adventure,4,308,4.3,Solo,Year-round
+INT-AC-00003,Dubai City Tour,Dubai,UAE,Adventure,3,272,4.1,Group,Year-round
+INT-AC-00004,Los Angeles Museum Pass,Los Angeles,USA,Adventure,4,202,4.0,Group,Year-round
+INT-AC-00005,Singapore City Tour,Singapore,Singapore,Adventure,3,370,4.6,Solo,Year-round
+INT-AC-00006,London Museum Pass,London,UK,Food,5,236,4.2,Group,Year-round
+INT-AC-00007,Singapore Museum Pass,Singapore,Singapore,Food,1,170,4.1,Solo,Year-round
+INT-AC-00008,Cape Town City Tour,Cape Town,South Africa,Culture,2,131,4.1,Solo,Year-round
+INT-AC-00009,Cape Town Cooking Class,Cape Town,South Africa,Culture,4,295,4.4,Group,Year-round
+INT-AC-00010,Cape Town Cooking Class,Cape Town,South Africa,Culture,4,160,4.8,Couple,Year-round
+INT-AC-00011,Los Angeles City Tour,Los Angeles,USA,Adventure,4,279,4.1,Group,Year-round
+INT-AC-00012,Mumbai Museum Pass,Mumbai,India,Culture,3,136,4.7,Solo,Year-round
+INT-AC-00013,Cape Town River Cruise,Cape Town,South Africa,Food,3,152,5.0,Solo,Year-round
+INT-AC-00014,Rome River Cruise,Rome,Italy,Adventure,1,345,4.9,Solo,Year-round
+INT-AC-00015,San Francisco Cooking Class,San Francisco,USA,Food,2,126,4.9,Solo,Year-round
+INT-AC-00016,Seoul City Tour,Seoul,South Korea,Adventure,3,288,4.7,Solo,Year-round
+INT-AC-00017,Los Angeles Museum Pass,Los Angeles,USA,Adventure,3,111,4.2,Solo,Year-round
+INT-AC-00018,Los Angeles River Cruise,Los Angeles,USA,Adventure,4,395,4.4,Couple,Year-round
+INT-AC-00019,Barcelona River Cruise,Barcelona,Spain,Food,5,227,4.3,Couple,Year-round
+INT-AC-00020,Paris River Cruise,Paris,France,Food,1,120,4.4,Group,Year-round
+INT-AC-00021,Bangkok Museum Pass,Bangkok,Thailand,Culture,6,243,5.0,Group,Year-round
+INT-AC-00022,San Francisco Museum Pass,San Francisco,USA,Food,2,259,4.0,Solo,Year-round
+INT-AC-00023,Los Angeles Cooking Class,Los Angeles,USA,Food,6,140,5.0,Solo,Year-round
+INT-AC-00024,Cape Town Museum Pass,Cape Town,South Africa,Adventure,3,396,4.1,Solo,Year-round
+INT-AC-00025,Paris Cooking Class,Paris,France,Food,4,334,4.8,Couple,Year-round
+INT-AC-00026,London River Cruise,London,UK,Adventure,2,310,4.5,Group,Year-round
+INT-AC-00027,Zurich Cooking Class,Zurich,Switzerland,Adventure,3,324,4.6,Solo,Year-round
+INT-AC-00028,Berlin City Tour,Berlin,Germany,Food,4,378,4.0,Solo,Year-round
+INT-AC-00029,Paris Museum Pass,Paris,France,Food,6,75,4.4,Solo,Year-round
+INT-AC-00030,Mumbai City Tour,Mumbai,India,Culture,4,220,5.0,Couple,Year-round
+INT-AC-00031,New York River Cruise,New York,USA,Culture,1,381,4.5,Group,Year-round
+INT-AC-00032,Zurich Museum Pass,Zurich,Switzerland,Culture,5,332,4.8,Group,Year-round
+INT-AC-00033,Rome City Tour,Rome,Italy,Food,6,103,4.5,Solo,Year-round
+INT-AC-00034,Singapore Cooking Class,Singapore,Singapore,Adventure,6,157,4.6,Group,Year-round
+INT-AC-00035,Barcelona Museum Pass,Barcelona,Spain,Adventure,4,210,4.1,Group,Year-round
+INT-AC-00036,Toronto City Tour,Toronto,Canada,Culture,1,385,4.3,Group,Year-round
+INT-AC-00037,London Museum Pass,London,UK,Adventure,6,264,4.8,Couple,Year-round
+INT-AC-00038,New York Cooking Class,New York,USA,Culture,2,59,4.1,Solo,Year-round
+INT-AC-00039,Seoul Museum Pass,Seoul,South Korea,Adventure,1,171,4.3,Couple,Year-round
+INT-AC-00040,Tokyo City Tour,Tokyo,Japan,Culture,4,304,4.6,Couple,Year-round
+INT-AC-00041,Bangkok Cooking Class,Bangkok,Thailand,Culture,4,366,5.0,Solo,Year-round
+INT-AC-00042,Zurich Cooking Class,Zurich,Switzerland,Adventure,2,327,4.6,Couple,Year-round
+INT-AC-00043,Toronto Museum Pass,Toronto,Canada,Adventure,3,129,4.4,Group,Year-round
+INT-AC-00044,San Francisco City Tour,San Francisco,USA,Adventure,6,131,4.8,Solo,Year-round
+INT-AC-00045,Rome City Tour,Rome,Italy,Adventure,1,159,5.0,Couple,Year-round
+INT-AC-00046,Seoul Museum Pass,Seoul,South Korea,Culture,5,382,4.0,Solo,Year-round
+INT-AC-00047,Singapore Museum Pass,Singapore,Singapore,Adventure,1,190,4.6,Couple,Year-round
+INT-AC-00048,Singapore Cooking Class,Singapore,Singapore,Culture,2,167,4.9,Group,Year-round
+INT-AC-00049,Berlin Cooking Class,Berlin,Germany,Food,3,54,4.3,Couple,Year-round
+INT-AC-00050,San Francisco Cooking Class,San Francisco,USA,Adventure,6,370,4.9,Group,Year-round
+INT-AC-00051,Istanbul Museum Pass,Istanbul,Turkey,Culture,1,269,4.6,Solo,Year-round
+INT-AC-00052,Mumbai Cooking Class,Mumbai,India,Adventure,6,242,4.8,Solo,Year-round
+INT-AC-00053,Los Angeles Cooking Class,Los Angeles,USA,Food,6,190,4.9,Solo,Year-round
+INT-AC-00054,Bangkok Cooking Class,Bangkok,Thailand,Food,1,68,4.0,Solo,Year-round
+INT-AC-00055,New York River Cruise,New York,USA,Food,4,317,4.7,Couple,Year-round
+INT-AC-00056,San Francisco Cooking Class,San Francisco,USA,Adventure,1,72,4.2,Couple,Year-round
+INT-AC-00057,Amsterdam City Tour,Amsterdam,Netherlands,Culture,3,223,4.0,Solo,Year-round
+INT-AC-00058,Paris Cooking Class,Paris,France,Culture,4,165,5.0,Solo,Year-round
+INT-AC-00059,Paris City Tour,Paris,France,Adventure,2,340,4.2,Couple,Year-round
+INT-AC-00060,Barcelona Cooking Class,Barcelona,Spain,Food,3,351,4.3,Couple,Year-round
+INT-AC-00061,Singapore Cooking Class,Singapore,Singapore,Culture,2,85,4.6,Group,Year-round
+INT-AC-00062,Berlin City Tour,Berlin,Germany,Food,5,305,4.2,Group,Year-round
+INT-AC-00063,Rome Cooking Class,Rome,Italy,Adventure,2,70,4.5,Solo,Year-round
+INT-AC-00064,Bangkok City Tour,Bangkok,Thailand,Adventure,3,173,4.0,Couple,Year-round
+INT-AC-00065,London Cooking Class,London,UK,Culture,3,322,4.4,Couple,Year-round
+INT-AC-00066,Singapore Cooking Class,Singapore,Singapore,Adventure,3,80,4.1,Solo,Year-round
+INT-AC-00067,Barcelona Museum Pass,Barcelona,Spain,Food,2,250,4.3,Couple,Year-round
+INT-AC-00068,Toronto River Cruise,Toronto,Canada,Culture,2,62,4.7,Solo,Year-round
+INT-AC-00069,New York City Tour,New York,USA,Adventure,2,177,4.8,Group,Year-round
+INT-AC-00070,Istanbul River Cruise,Istanbul,Turkey,Culture,3,126,4.4,Group,Year-round
+INT-AC-00071,Amsterdam River Cruise,Amsterdam,Netherlands,Food,1,259,4.4,Couple,Year-round
+INT-AC-00072,Cape Town River Cruise,Cape Town,South Africa,Food,2,373,4.0,Group,Year-round
+INT-AC-00073,Barcelona Museum Pass,Barcelona,Spain,Culture,3,201,4.7,Solo,Year-round
+INT-AC-00074,New York Cooking Class,New York,USA,Food,2,296,4.3,Solo,Year-round
+INT-AC-00075,Mumbai City Tour,Mumbai,India,Food,4,254,4.7,Couple,Year-round
+INT-AC-00076,Los Angeles City Tour,Los Angeles,USA,Food,4,163,4.6,Group,Year-round
+INT-AC-00077,Tokyo Museum Pass,Tokyo,Japan,Food,2,307,4.7,Group,Year-round
+INT-AC-00078,London Museum Pass,London,UK,Adventure,3,217,4.9,Solo,Year-round
+INT-AC-00079,Seoul River Cruise,Seoul,South Korea,Food,4,301,4.5,Group,Year-round
+INT-AC-00080,Los Angeles Cooking Class,Los Angeles,USA,Culture,3,67,4.5,Solo,Year-round
+INT-AC-00081,Toronto City Tour,Toronto,Canada,Adventure,2,384,4.6,Solo,Year-round
+INT-AC-00082,Paris City Tour,Paris,France,Adventure,2,233,4.2,Couple,Year-round
+INT-AC-00083,Istanbul River Cruise,Istanbul,Turkey,Adventure,4,245,4.8,Couple,Year-round
+INT-AC-00084,San Francisco Museum Pass,San Francisco,USA,Adventure,3,259,5.0,Solo,Year-round
+INT-AC-00085,Paris Museum Pass,Paris,France,Food,4,375,4.3,Solo,Year-round
+INT-AC-00086,Rome River Cruise,Rome,Italy,Food,6,339,4.1,Couple,Year-round
+INT-AC-00087,New York River Cruise,New York,USA,Culture,3,257,4.5,Solo,Year-round
+INT-AC-00088,New York Museum Pass,New York,USA,Culture,2,258,4.2,Couple,Year-round
+INT-AC-00089,Bangkok River Cruise,Bangkok,Thailand,Adventure,3,232,4.4,Group,Year-round
+INT-AC-00090,Zurich City Tour,Zurich,Switzerland,Food,2,310,4.3,Group,Year-round
+INT-AC-00091,Mumbai River Cruise,Mumbai,India,Culture,3,356,4.8,Group,Year-round
+INT-AC-00092,London City Tour,London,UK,Food,6,220,4.2,Group,Year-round
+INT-AC-00093,Seoul City Tour,Seoul,South Korea,Adventure,1,63,4.3,Solo,Year-round
+INT-AC-00094,Hong Kong Museum Pass,Hong Kong,China,Adventure,3,189,4.9,Solo,Year-round
+INT-AC-00095,Seoul City Tour,Seoul,South Korea,Food,1,126,4.5,Group,Year-round
+INT-AC-00096,New York River Cruise,New York,USA,Culture,6,155,4.7,Solo,Year-round
+INT-AC-00097,London River Cruise,London,UK,Adventure,1,55,4.1,Couple,Year-round
+INT-AC-00098,Tokyo River Cruise,Tokyo,Japan,Adventure,6,53,4.9,Group,Year-round
+INT-AC-00099,Rome Cooking Class,Rome,Italy,Culture,2,222,4.7,Couple,Year-round
+INT-AC-00100,London Cooking Class,London,UK,Adventure,4,147,4.3,Couple,Year-round
+INT-AC-00101,Hong Kong City Tour,Hong Kong,China,Food,5,237,4.2,Group,Year-round
+INT-AC-00102,Cape Town City Tour,Cape Town,South Africa,Food,3,386,4.4,Group,Year-round
+INT-AC-00103,Berlin Museum Pass,Berlin,Germany,Food,1,104,4.0,Couple,Year-round
+INT-AC-00104,Los Angeles City Tour,Los Angeles,USA,Adventure,6,112,4.7,Couple,Year-round
+INT-AC-00105,London City Tour,London,UK,Adventure,6,153,4.8,Solo,Year-round
+INT-AC-00106,Singapore River Cruise,Singapore,Singapore,Adventure,5,192,4.4,Couple,Year-round
+INT-AC-00107,Tokyo River Cruise,Tokyo,Japan,Culture,3,119,4.4,Group,Year-round
+INT-AC-00108,Dubai River Cruise,Dubai,UAE,Adventure,5,175,4.2,Group,Year-round
+INT-AC-00109,Berlin Cooking Class,Berlin,Germany,Culture,4,337,4.8,Solo,Year-round
+INT-AC-00110,Berlin River Cruise,Berlin,Germany,Culture,1,187,4.9,Group,Year-round
+INT-AC-00111,Los Angeles Museum Pass,Los Angeles,USA,Adventure,5,277,4.6,Solo,Year-round
+INT-AC-00112,Barcelona Museum Pass,Barcelona,Spain,Culture,2,349,4.8,Group,Year-round
+INT-AC-00113,Rome Museum Pass,Rome,Italy,Adventure,2,314,4.2,Solo,Year-round
+INT-AC-00114,Singapore City Tour,Singapore,Singapore,Culture,2,346,4.2,Couple,Year-round
+INT-AC-00115,Los Angeles River Cruise,Los Angeles,USA,Culture,4,200,4.8,Group,Year-round
+INT-AC-00116,Cape Town Cooking Class,Cape Town,South Africa,Adventure,4,230,4.4,Couple,Year-round
+INT-AC-00117,Bangkok City Tour,Bangkok,Thailand,Culture,1,325,4.8,Couple,Year-round
+INT-AC-00118,New York Museum Pass,New York,USA,Adventure,4,99,4.5,Couple,Year-round
+INT-AC-00119,Bangkok River Cruise,Bangkok,Thailand,Food,3,102,4.9,Group,Year-round
+INT-AC-00120,Amsterdam River Cruise,Amsterdam,Netherlands,Culture,4,75,4.7,Group,Year-round
+INT-AC-00121,Paris River Cruise,Paris,France,Adventure,1,323,5.0,Couple,Year-round
+INT-AC-00122,San Francisco City Tour,San Francisco,USA,Food,2,61,4.6,Couple,Year-round
+INT-AC-00123,Tokyo River Cruise,Tokyo,Japan,Culture,5,302,4.2,Couple,Year-round
+INT-AC-00124,Mumbai City Tour,Mumbai,India,Culture,3,132,4.6,Couple,Year-round
+INT-AC-00125,Amsterdam Museum Pass,Amsterdam,Netherlands,Culture,3,272,4.1,Solo,Year-round
+INT-AC-00126,Amsterdam City Tour,Amsterdam,Netherlands,Food,4,144,4.8,Couple,Year-round
+INT-AC-00127,London City Tour,London,UK,Culture,6,212,4.4,Group,Year-round
+INT-AC-00128,Hong Kong Museum Pass,Hong Kong,China,Culture,6,211,4.6,Solo,Year-round
+INT-AC-00129,Toronto River Cruise,Toronto,Canada,Culture,2,380,4.6,Group,Year-round
+INT-AC-00130,Seoul City Tour,Seoul,South Korea,Culture,4,342,4.8,Solo,Year-round
+INT-AC-00131,Istanbul River Cruise,Istanbul,Turkey,Adventure,4,166,4.4,Group,Year-round
+INT-AC-00132,Zurich City Tour,Zurich,Switzerland,Food,4,145,4.6,Solo,Year-round
+INT-AC-00133,Rome River Cruise,Rome,Italy,Culture,4,160,4.3,Group,Year-round
+INT-AC-00134,Dubai City Tour,Dubai,UAE,Adventure,4,347,4.3,Solo,Year-round
+INT-AC-00135,Istanbul Museum Pass,Istanbul,Turkey,Culture,3,247,4.0,Solo,Year-round
+INT-AC-00136,Dubai Cooking Class,Dubai,UAE,Adventure,3,89,4.4,Solo,Year-round
+INT-AC-00137,Rome Cooking Class,Rome,Italy,Adventure,2,72,4.4,Group,Year-round
+INT-AC-00138,Barcelona Museum Pass,Barcelona,Spain,Food,1,134,4.5,Solo,Year-round
+INT-AC-00139,Hong Kong River Cruise,Hong Kong,China,Adventure,1,61,4.0,Couple,Year-round
+INT-AC-00140,Zurich City Tour,Zurich,Switzerland,Adventure,3,187,4.7,Couple,Year-round
+INT-AC-00141,Berlin Museum Pass,Berlin,Germany,Adventure,5,227,4.6,Group,Year-round
+INT-AC-00142,Bangkok River Cruise,Bangkok,Thailand,Food,3,246,4.0,Couple,Year-round
+INT-AC-00143,Zurich Museum Pass,Zurich,Switzerland,Culture,5,81,5.0,Solo,Year-round
+INT-AC-00144,Singapore Museum Pass,Singapore,Singapore,Food,2,56,4.3,Couple,Year-round
+INT-AC-00145,Bangkok Cooking Class,Bangkok,Thailand,Adventure,5,233,4.1,Group,Year-round
+INT-AC-00146,Tokyo City Tour,Tokyo,Japan,Culture,5,115,4.4,Solo,Year-round
+INT-AC-00147,Paris City Tour,Paris,France,Culture,2,94,4.8,Solo,Year-round
+INT-AC-00148,Istanbul River Cruise,Istanbul,Turkey,Food,3,217,4.4,Group,Year-round
+INT-AC-00149,New York Museum Pass,New York,USA,Culture,4,101,4.8,Group,Year-round
+INT-AC-00150,Los Angeles Museum Pass,Los Angeles,USA,Food,3,54,4.7,Group,Year-round
+INT-AC-00151,Bangkok River Cruise,Bangkok,Thailand,Food,1,206,4.7,Solo,Year-round
+INT-AC-00152,Los Angeles City Tour,Los Angeles,USA,Culture,6,379,5.0,Solo,Year-round
+INT-AC-00153,Cape Town Museum Pass,Cape Town,South Africa,Culture,3,397,4.5,Couple,Year-round
+INT-AC-00154,Toronto Museum Pass,Toronto,Canada,Culture,1,257,4.5,Solo,Year-round
+INT-AC-00155,Hong Kong City Tour,Hong Kong,China,Adventure,3,332,5.0,Solo,Year-round
+INT-AC-00156,Singapore Cooking Class,Singapore,Singapore,Adventure,2,351,4.4,Group,Year-round
+INT-AC-00157,Cape Town City Tour,Cape Town,South Africa,Culture,1,170,4.8,Solo,Year-round
+INT-AC-00158,Barcelona River Cruise,Barcelona,Spain,Adventure,6,323,4.2,Group,Year-round
+INT-AC-00159,Zurich River Cruise,Zurich,Switzerland,Culture,1,325,4.7,Couple,Year-round
+INT-AC-00160,Hong Kong City Tour,Hong Kong,China,Food,4,78,4.8,Couple,Year-round
+INT-AC-00161,Los Angeles River Cruise,Los Angeles,USA,Adventure,6,344,4.2,Couple,Year-round
+INT-AC-00162,Barcelona Museum Pass,Barcelona,Spain,Food,1,193,4.4,Solo,Year-round
+INT-AC-00163,Los Angeles River Cruise,Los Angeles,USA,Adventure,5,356,5.0,Couple,Year-round
+INT-AC-00164,Barcelona Cooking Class,Barcelona,Spain,Adventure,3,69,4.9,Solo,Year-round
+INT-AC-00165,Toronto Museum Pass,Toronto,Canada,Culture,2,245,4.2,Couple,Year-round
+INT-AC-00166,Barcelona Cooking Class,Barcelona,Spain,Culture,4,158,4.6,Group,Year-round
+INT-AC-00167,Bangkok City Tour,Bangkok,Thailand,Adventure,5,150,4.3,Couple,Year-round
+INT-AC-00168,Cape Town River Cruise,Cape Town,South Africa,Adventure,4,58,4.1,Solo,Year-round
+INT-AC-00169,Los Angeles Cooking Class,Los Angeles,USA,Food,1,124,5.0,Group,Year-round
+INT-AC-00170,Los Angeles Cooking Class,Los Angeles,USA,Adventure,3,93,4.2,Solo,Year-round
+INT-AC-00171,Los Angeles Cooking Class,Los Angeles,USA,Adventure,6,207,4.8,Couple,Year-round
+INT-AC-00172,London Museum Pass,London,UK,Culture,4,203,4.6,Group,Year-round
+INT-AC-00173,Zurich City Tour,Zurich,Switzerland,Adventure,5,254,4.2,Solo,Year-round
+INT-AC-00174,Dubai Cooking Class,Dubai,UAE,Food,4,100,4.7,Group,Year-round
+INT-AC-00175,Barcelona City Tour,Barcelona,Spain,Culture,2,239,4.2,Group,Year-round
+INT-AC-00176,Zurich City Tour,Zurich,Switzerland,Adventure,4,381,4.1,Solo,Year-round
+INT-AC-00177,Seoul Cooking Class,Seoul,South Korea,Food,3,271,4.4,Couple,Year-round
+INT-AC-00178,Zurich Museum Pass,Zurich,Switzerland,Adventure,5,245,5.0,Group,Year-round
+INT-AC-00179,Singapore Museum Pass,Singapore,Singapore,Adventure,3,288,4.5,Group,Year-round
+INT-AC-00180,Istanbul Cooking Class,Istanbul,Turkey,Food,1,177,4.8,Couple,Year-round
+INT-AC-00181,Zurich River Cruise,Zurich,Switzerland,Food,6,122,4.7,Solo,Year-round
+INT-AC-00182,Paris River Cruise,Paris,France,Food,1,70,4.9,Couple,Year-round
+INT-AC-00183,Bangkok Cooking Class,Bangkok,Thailand,Culture,1,62,4.3,Couple,Year-round
+INT-AC-00184,San Francisco Cooking Class,San Francisco,USA,Adventure,5,87,4.7,Group,Year-round
+INT-AC-00185,Rome Museum Pass,Rome,Italy,Adventure,1,235,4.4,Solo,Year-round
+INT-AC-00186,New York City Tour,New York,USA,Food,4,60,4.6,Group,Year-round
+INT-AC-00187,Mumbai Cooking Class,Mumbai,India,Culture,1,291,4.4,Solo,Year-round
+INT-AC-00188,Barcelona Museum Pass,Barcelona,Spain,Food,3,328,4.1,Group,Year-round
+INT-AC-00189,Hong Kong Museum Pass,Hong Kong,China,Culture,5,158,4.6,Group,Year-round
+INT-AC-00190,Rome River Cruise,Rome,Italy,Culture,2,83,4.3,Group,Year-round
+INT-AC-00191,Istanbul Museum Pass,Istanbul,Turkey,Culture,2,235,4.7,Solo,Year-round
+INT-AC-00192,Berlin City Tour,Berlin,Germany,Adventure,5,295,4.6,Solo,Year-round
+INT-AC-00193,Mumbai Cooking Class,Mumbai,India,Adventure,5,299,4.7,Solo,Year-round
+INT-AC-00194,San Francisco City Tour,San Francisco,USA,Adventure,3,51,4.6,Group,Year-round
+INT-AC-00195,Mumbai River Cruise,Mumbai,India,Food,1,285,4.3,Group,Year-round
+INT-AC-00196,Paris Cooking Class,Paris,France,Culture,3,55,4.1,Couple,Year-round
+INT-AC-00197,Paris River Cruise,Paris,France,Culture,3,214,4.5,Group,Year-round
+INT-AC-00198,Bangkok Museum Pass,Bangkok,Thailand,Adventure,6,256,4.5,Solo,Year-round
+INT-AC-00199,Cape Town River Cruise,Cape Town,South Africa,Culture,6,301,4.9,Group,Year-round
+INT-AC-00200,Istanbul Cooking Class,Istanbul,Turkey,Culture,2,120,4.1,Group,Year-round
+INT-AC-00201,Zurich City Tour,Zurich,Switzerland,Adventure,4,386,4.9,Couple,Year-round
+INT-AC-00202,Zurich City Tour,Zurich,Switzerland,Adventure,6,290,4.1,Solo,Year-round
+INT-AC-00203,Berlin City Tour,Berlin,Germany,Adventure,2,203,4.6,Group,Year-round
+INT-AC-00204,Mumbai River Cruise,Mumbai,India,Culture,3,63,4.1,Solo,Year-round
+INT-AC-00205,Los Angeles Cooking Class,Los Angeles,USA,Culture,4,289,4.6,Group,Year-round
+INT-AC-00206,Amsterdam Museum Pass,Amsterdam,Netherlands,Culture,2,174,4.0,Solo,Year-round
+INT-AC-00207,Berlin River Cruise,Berlin,Germany,Culture,1,185,4.8,Solo,Year-round
+INT-AC-00208,London River Cruise,London,UK,Food,4,118,4.7,Couple,Year-round
+INT-AC-00209,Paris Museum Pass,Paris,France,Culture,2,382,4.2,Solo,Year-round
+INT-AC-00210,Berlin Cooking Class,Berlin,Germany,Culture,2,260,5.0,Solo,Year-round
+INT-AC-00211,Toronto Cooking Class,Toronto,Canada,Culture,3,221,4.3,Solo,Year-round
+INT-AC-00212,Mumbai River Cruise,Mumbai,India,Culture,2,62,4.0,Group,Year-round
+INT-AC-00213,Rome River Cruise,Rome,Italy,Adventure,5,239,4.3,Solo,Year-round
+INT-AC-00214,Hong Kong City Tour,Hong Kong,China,Food,5,128,4.5,Solo,Year-round
+INT-AC-00215,Amsterdam Cooking Class,Amsterdam,Netherlands,Adventure,1,95,4.0,Couple,Year-round
+INT-AC-00216,Toronto Museum Pass,Toronto,Canada,Culture,4,240,4.2,Group,Year-round
+INT-AC-00217,Toronto Museum Pass,Toronto,Canada,Food,5,187,4.3,Solo,Year-round
+INT-AC-00218,Seoul River Cruise,Seoul,South Korea,Culture,3,165,4.2,Solo,Year-round
+INT-AC-00219,Amsterdam Museum Pass,Amsterdam,Netherlands,Culture,1,123,4.5,Group,Year-round
+INT-AC-00220,Toronto Cooking Class,Toronto,Canada,Culture,1,146,4.2,Solo,Year-round
+INT-AC-00221,Istanbul City Tour,Istanbul,Turkey,Food,1,64,4.5,Couple,Year-round
+INT-AC-00222,Amsterdam Cooking Class,Amsterdam,Netherlands,Culture,6,371,4.0,Couple,Year-round
+INT-AC-00223,Paris River Cruise,Paris,France,Culture,5,316,4.6,Solo,Year-round
+INT-AC-00224,Tokyo River Cruise,Tokyo,Japan,Adventure,3,233,4.9,Group,Year-round
+INT-AC-00225,Los Angeles Cooking Class,Los Angeles,USA,Food,5,173,5.0,Couple,Year-round
+INT-AC-00226,Paris Cooking Class,Paris,France,Culture,6,96,4.5,Group,Year-round
+INT-AC-00227,Amsterdam Museum Pass,Amsterdam,Netherlands,Food,1,59,5.0,Solo,Year-round
+INT-AC-00228,Zurich Museum Pass,Zurich,Switzerland,Food,3,301,4.9,Group,Year-round
+INT-AC-00229,Seoul Museum Pass,Seoul,South Korea,Food,3,129,4.5,Solo,Year-round
+INT-AC-00230,Dubai Cooking Class,Dubai,UAE,Food,6,365,4.1,Group,Year-round
+INT-AC-00231,New York Cooking Class,New York,USA,Culture,1,178,4.2,Solo,Year-round
+INT-AC-00232,London Museum Pass,London,UK,Adventure,1,202,4.3,Solo,Year-round
+INT-AC-00233,Rome City Tour,Rome,Italy,Adventure,1,121,4.6,Solo,Year-round
+INT-AC-00234,Los Angeles River Cruise,Los Angeles,USA,Culture,2,262,4.7,Group,Year-round
+INT-AC-00235,Seoul River Cruise,Seoul,South Korea,Food,1,229,4.2,Group,Year-round
+INT-AC-00236,San Francisco Museum Pass,San Francisco,USA,Culture,1,250,4.5,Group,Year-round
+INT-AC-00237,Toronto City Tour,Toronto,Canada,Adventure,3,136,4.9,Solo,Year-round
+INT-AC-00238,Paris River Cruise,Paris,France,Adventure,6,103,4.4,Solo,Year-round
+INT-AC-00239,London Museum Pass,London,UK,Adventure,6,318,4.3,Group,Year-round
+INT-AC-00240,Paris Cooking Class,Paris,France,Culture,3,51,4.7,Group,Year-round
+INT-AC-00241,Hong Kong Cooking Class,Hong Kong,China,Culture,2,64,4.5,Couple,Year-round
+INT-AC-00242,London City Tour,London,UK,Adventure,1,211,4.6,Solo,Year-round
+INT-AC-00243,New York River Cruise,New York,USA,Culture,2,247,4.8,Group,Year-round
+INT-AC-00244,Dubai River Cruise,Dubai,UAE,Culture,3,310,4.1,Couple,Year-round
+INT-AC-00245,Los Angeles City Tour,Los Angeles,USA,Culture,1,58,4.1,Group,Year-round
+INT-AC-00246,San Francisco City Tour,San Francisco,USA,Culture,3,123,4.0,Group,Year-round
+INT-AC-00247,Cape Town River Cruise,Cape Town,South Africa,Adventure,3,332,4.4,Solo,Year-round
+INT-AC-00248,Mumbai Cooking Class,Mumbai,India,Culture,1,371,4.2,Couple,Year-round
+INT-AC-00249,Mumbai Cooking Class,Mumbai,India,Culture,6,210,4.1,Group,Year-round
+INT-AC-00250,Cape Town Museum Pass,Cape Town,South Africa,Adventure,3,73,4.2,Couple,Year-round

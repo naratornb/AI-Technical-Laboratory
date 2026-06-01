@@ -1,0 +1,121 @@
+hotel_id,hotel_name,city,country,star_rating,room_type,price_per_night_aud
+INT-HT-00001,Mandarin Oriental Tokyo,Tokyo,Japan,5,Deluxe Suite,820
+INT-HT-00002,Marriott Paris,Paris,France,4,Junior Suite,370
+INT-HT-00003,InterContinental Brisbane,Brisbane,Australia,4,Superior,250
+INT-HT-00004,Mercure Berlin,Berlin,Germany,3,Superior,110
+INT-HT-00005,Holiday Inn Dubai,Dubai,UAE,3,Standard,90
+INT-HT-00006,Motel 6 Singapore,Singapore,Singapore,2,Economy,60
+INT-HT-00007,Four Seasons London,London,UK,5,Executive Suite,640
+INT-HT-00008,Sofitel New York,New York,USA,4,Junior Suite,330
+INT-HT-00009,Sofitel Sydney,Sydney,Australia,4,Suite,380
+INT-HT-00010,Ibis Bangkok,Bangkok,Thailand,3,Superior,100
+INT-HT-00011,Novotel Barcelona,Barcelona,Spain,3,Standard,100
+INT-HT-00012,OYO Rome,Rome,Italy,2,Economy,80
+INT-HT-00013,Mandarin Oriental Amsterdam,Amsterdam,Netherlands,5,Presidential Suite,740
+INT-HT-00014,Sofitel Seoul,Seoul,South Korea,4,Deluxe,280
+INT-HT-00015,Sofitel Bali,Bali,Indonesia,4,Superior,260
+INT-HT-00016,Mercure Cape Town,Cape Town,South Africa,3,Standard,130
+INT-HT-00017,Comfort Inn Kyoto,Kyoto,Japan,3,Deluxe,150
+INT-HT-00018,Motel 6 Vienna,Vienna,Austria,2,Economy,70
+INT-HT-00019,Mandarin Oriental Istanbul,Istanbul,Turkey,5,Executive Suite,770
+INT-HT-00020,Marriott Lisbon,Lisbon,Portugal,4,Suite,300
+INT-HT-00021,Westin Prague,Prague,Czech Republic,4,Junior Suite,270
+INT-HT-00022,Novotel Maldives,Maldives,Maldives,3,Deluxe,100
+INT-HT-00023,Mercure Zurich,Zurich,Switzerland,3,Deluxe,160
+INT-HT-00024,Motel 6 Los Angeles,Los Angeles,USA,2,Economy,70
+INT-HT-00025,Four Seasons Toronto,Toronto,Canada,5,Executive Suite,610
+INT-HT-00026,InterContinental Tokyo,Tokyo,Japan,4,Suite,290
+INT-HT-00027,InterContinental Paris,Paris,France,4,Superior,300
+INT-HT-00028,Holiday Inn Brisbane,Brisbane,Australia,3,Deluxe,100
+INT-HT-00029,Comfort Inn Berlin,Berlin,Germany,3,Deluxe,140
+INT-HT-00030,Premier Inn Dubai,Dubai,UAE,2,Standard,80
+INT-HT-00031,Ritz-Carlton Singapore,Singapore,Singapore,5,Executive Suite,580
+INT-HT-00032,Hyatt London,London,UK,4,Superior,210
+INT-HT-00033,Hyatt New York,New York,USA,4,Junior Suite,320
+INT-HT-00034,Ibis Sydney,Sydney,Australia,3,Superior,120
+INT-HT-00035,Comfort Inn Bangkok,Bangkok,Thailand,3,Standard,150
+INT-HT-00036,OYO Barcelona,Barcelona,Spain,2,Economy,70
+INT-HT-00037,Ritz-Carlton Rome,Rome,Italy,5,Suite,860
+INT-HT-00038,Marriott Amsterdam,Amsterdam,Netherlands,4,Junior Suite,250
+INT-HT-00039,Westin Seoul,Seoul,South Korea,4,Junior Suite,220
+INT-HT-00040,Holiday Inn Bali,Bali,Indonesia,3,Standard,130
+INT-HT-00041,Mercure Cape Town,Cape Town,South Africa,3,Deluxe,130
+INT-HT-00042,EasyHotel Kyoto,Kyoto,Japan,2,Economy,90
+INT-HT-00043,St. Regis Vienna,Vienna,Austria,5,Presidential Suite,840
+INT-HT-00044,Sofitel Istanbul,Istanbul,Turkey,4,Junior Suite,370
+INT-HT-00045,Westin Lisbon,Lisbon,Portugal,4,Junior Suite,290
+INT-HT-00046,Holiday Inn Prague,Prague,Czech Republic,3,Deluxe,110
+INT-HT-00047,Comfort Inn Maldives,Maldives,Maldives,3,Superior,140
+INT-HT-00048,Premier Inn Zurich,Zurich,Switzerland,2,Economy,50
+INT-HT-00049,Mandarin Oriental Los Angeles,Los Angeles,USA,5,Deluxe Suite,600
+INT-HT-00050,Hilton Toronto,Toronto,Canada,4,Deluxe,230
+INT-HT-00051,Hyatt Tokyo,Tokyo,Japan,4,Junior Suite,330
+INT-HT-00052,Holiday Inn Paris,Paris,France,3,Standard,120
+INT-HT-00053,Novotel Brisbane,Brisbane,Australia,3,Deluxe,130
+INT-HT-00054,Ibis Budget Berlin,Berlin,Germany,2,Standard,80
+INT-HT-00055,St. Regis Dubai,Dubai,UAE,5,Suite,850
+INT-HT-00056,Sofitel Singapore,Singapore,Singapore,4,Junior Suite,300
+INT-HT-00057,Hilton London,London,UK,4,Suite,350
+INT-HT-00058,Mercure New York,New York,USA,3,Deluxe,150
+INT-HT-00059,Comfort Inn Sydney,Sydney,Australia,3,Deluxe,160
+INT-HT-00060,OYO Bangkok,Bangkok,Thailand,2,Standard,60
+INT-HT-00061,St. Regis Barcelona,Barcelona,Spain,5,Suite,650
+INT-HT-00062,Westin Rome,Rome,Italy,4,Junior Suite,340
+INT-HT-00063,InterContinental Amsterdam,Amsterdam,Netherlands,4,Superior,390
+INT-HT-00064,Comfort Inn Seoul,Seoul,South Korea,3,Standard,160
+INT-HT-00065,Comfort Inn Bali,Bali,Indonesia,3,Deluxe,140
+INT-HT-00066,Ibis Budget Cape Town,Cape Town,South Africa,2,Economy,50
+INT-HT-00067,St. Regis Kyoto,Kyoto,Japan,5,Deluxe Suite,510
+INT-HT-00068,InterContinental Vienna,Vienna,Austria,4,Suite,250
+INT-HT-00069,Hilton Istanbul,Istanbul,Turkey,4,Suite,350
+INT-HT-00070,Mercure Lisbon,Lisbon,Portugal,3,Superior,150
+INT-HT-00071,Mercure Prague,Prague,Czech Republic,3,Superior,160
+INT-HT-00072,OYO Maldives,Maldives,Maldives,2,Standard,80
+INT-HT-00073,Four Seasons Zurich,Zurich,Switzerland,5,Executive Suite,580
+INT-HT-00074,Marriott Los Angeles,Los Angeles,USA,4,Deluxe,350
+INT-HT-00075,Hyatt Toronto,Toronto,Canada,4,Superior,360
+INT-HT-00076,Comfort Inn Tokyo,Tokyo,Japan,3,Standard,110
+INT-HT-00077,Mercure Paris,Paris,France,3,Deluxe,100
+INT-HT-00078,Motel 6 Brisbane,Brisbane,Australia,2,Economy,80
+INT-HT-00079,Mandarin Oriental Berlin,Berlin,Germany,5,Deluxe Suite,740
+INT-HT-00080,Westin Dubai,Dubai,UAE,4,Deluxe,350
+INT-HT-00081,Hyatt Singapore,Singapore,Singapore,4,Suite,230
+INT-HT-00082,Ibis London,London,UK,3,Superior,140
+INT-HT-00083,Mercure New York,New York,USA,3,Superior,160
+INT-HT-00084,Motel 6 Sydney,Sydney,Australia,2,Standard,70
+INT-HT-00085,Ritz-Carlton Bangkok,Bangkok,Thailand,5,Suite,780
+INT-HT-00086,Hilton Barcelona,Barcelona,Spain,4,Deluxe,350
+INT-HT-00087,Sofitel Rome,Rome,Italy,4,Deluxe,270
+INT-HT-00088,Mercure Amsterdam,Amsterdam,Netherlands,3,Deluxe,120
+INT-HT-00089,Comfort Inn Seoul,Seoul,South Korea,3,Deluxe,120
+INT-HT-00090,OYO Bali,Bali,Indonesia,2,Economy,50
+INT-HT-00091,Mandarin Oriental Cape Town,Cape Town,South Africa,5,Presidential Suite,790
+INT-HT-00092,InterContinental Kyoto,Kyoto,Japan,4,Superior,340
+INT-HT-00093,Westin Vienna,Vienna,Austria,4,Suite,320
+INT-HT-00094,Comfort Inn Istanbul,Istanbul,Turkey,3,Superior,130
+INT-HT-00095,Comfort Inn Lisbon,Lisbon,Portugal,3,Superior,120
+INT-HT-00096,Motel 6 Prague,Prague,Czech Republic,2,Standard,60
+INT-HT-00097,St. Regis Maldives,Maldives,Maldives,5,Deluxe Suite,810
+INT-HT-00098,Sofitel Zurich,Zurich,Switzerland,4,Junior Suite,270
+INT-HT-00099,InterContinental Los Angeles,Los Angeles,USA,4,Suite,240
+INT-HT-00100,Holiday Inn Toronto,Toronto,Canada,3,Superior,150
+INT-HT-00101,Novotel Tokyo,Tokyo,Japan,3,Superior,160
+INT-HT-00102,Premier Inn Paris,Paris,France,2,Standard,70
+INT-HT-00103,Ritz-Carlton Brisbane,Brisbane,Australia,5,Suite,590
+INT-HT-00104,InterContinental Berlin,Berlin,Germany,4,Junior Suite,310
+INT-HT-00105,Hyatt Dubai,Dubai,UAE,4,Junior Suite,330
+INT-HT-00106,Mercure Singapore,Singapore,Singapore,3,Superior,150
+INT-HT-00107,Ibis London,London,UK,3,Superior,110
+INT-HT-00108,Motel 6 New York,New York,USA,2,Economy,80
+INT-HT-00109,Mandarin Oriental Sydney,Sydney,Australia,5,Presidential Suite,720
+INT-HT-00110,Hilton Bangkok,Bangkok,Thailand,4,Junior Suite,390
+INT-HT-00111,Sofitel Barcelona,Barcelona,Spain,4,Suite,270
+INT-HT-00112,Mercure Rome,Rome,Italy,3,Superior,110
+INT-HT-00113,Holiday Inn Amsterdam,Amsterdam,Netherlands,3,Standard,150
+INT-HT-00114,Premier Inn Seoul,Seoul,South Korea,2,Standard,80
+INT-HT-00115,Ritz-Carlton Bali,Bali,Indonesia,5,Deluxe Suite,580
+INT-HT-00116,InterContinental Cape Town,Cape Town,South Africa,4,Suite,340
+INT-HT-00117,Sofitel Kyoto,Kyoto,Japan,4,Suite,390
+INT-HT-00118,Holiday Inn Vienna,Vienna,Austria,3,Superior,110
+INT-HT-00119,Holiday Inn Istanbul,Istanbul,Turkey,3,Superior,90
+INT-HT-00120,EasyHotel Lisbon,Lisbon,Portugal,2,Standard,60
